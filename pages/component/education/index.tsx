@@ -1,4 +1,4 @@
-import CommonRow from '../component/common/row';
+import CommonRow from '../common/row';
 
 export default function Education() {
   return (
