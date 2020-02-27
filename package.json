@@ -1,0 +1,41 @@
+{
+  "name": "resume-nextjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uyu423/resume-nextjs.git"
+  },
+  "keywords": [],
+  "author": "Yowu Yu <me@yowu.dev>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uyu423/resume-nextjs/issues"
+  },
+  "homepage": "https://github.com/uyu423/resume-nextjs#readme",
+  "dependencies": {
+    "install": "^0.13.0",
+    "next": "^9.2.2",
+    "npm": "^6.14.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.6",
+    "@types/react": "^16.9.23",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^2.21.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "prettier": "^1.19.1",
+    "typescript": "^3.8.2"
+  }
+}
