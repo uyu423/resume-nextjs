@@ -1,4 +1,7 @@
-import Profile from '@/pages/component/profile';
+import Profile from '@/pages/components/profile';
+import { faEnvelope, faPhone, faRss } from '@fortawesome/free-solid-svg-icons';
+import { faBell } from '@fortawesome/free-regular-svg-icons';
+import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 const profile: Profile.IPayload = {
   image: 'https://resume.yowu.dev/static/image/profile_2019.png',
@@ -8,33 +11,32 @@ const profile: Profile.IPayload = {
   },
   contact: [
     {
-      type: 'email',
       title: 'me@yowu.dev',
       link: 'mailto:me@yowu.dev',
-      facon: 'fa-envolope',
+      icon: faEnvelope,
     },
     {
-      type: 'phone',
       title: 'Please contact me by email',
-      facon: 'fa-phone',
+      icon: faPhone,
+      badge: true,
     },
     {
-      type: 'github',
       link: 'https://github.com/uyu423',
-      facon: 'fa-github',
+      icon: faGithub,
     },
     {
-      type: 'blog',
       link: 'https://blog.yowu.dev',
-      facon: 'fa-rss',
+      icon: faRss,
     },
     {
-      type: 'facebook',
       link: 'https://fb.com/luckyyowu',
-      facon: 'fa-facebook',
+      icon: faFacebook,
     },
   ],
-  notice: '휴대전화나 페이스북 메시지 아닌 이메일로 연락 부탁드립니다.',
+  notice: {
+    title: '휴대전화나 페이스북 메시지 아닌 이메일로 연락 부탁드립니다.',
+    icon: faBell,
+  },
 };
 
 export default profile;

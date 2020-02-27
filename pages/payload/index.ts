@@ -1,5 +1,5 @@
 import profile from './profile';
-import Profile from '../component/profile';
+import Profile from '../components/profile';
 
 export const Payload: Payload = {
   profile,
