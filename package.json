@@ -28,25 +28,23 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@zeit/next-css": "^1.0.1",
     "bootstrap": "^4.4.1",
-    "install": "^0.13.0",
-    "next": "^9.2.2",
-    "npm": "^6.14.1",
+    "next": "^9.3.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "reactstrap": "^8.4.1",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "@types/node": "^13.7.6",
+    "@types/node": "^13.9.1",
     "@types/react": "^16.9.23",
     "@types/reactstrap": "^8.4.2",
     "@types/styled-components": "^5.0.1",
-    "@typescript-eslint/eslint-plugin": "^2.21.0",
-    "@typescript-eslint/parser": "^2.21.0",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
     "prettier": "^1.19.1",
-    "typescript": "^3.8.2"
+    "typescript": "^3.8.3"
   }
 }
