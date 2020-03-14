@@ -1,17 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
 import { Row, Col, Badge } from 'reactstrap';
-import { NS_Profile } from '../profile';
-import debug from 'debug';
-
-const log = debug('yosume:ProfileContact');
+import Profile from '../profile';
 
 export default function ProfileContact(
-  props: PropsWithChildren<{ payload: NS_Profile.IContact }>
+  props: PropsWithChildren<{ payload: Profile.IContact }>
 ) {
-  log('');
-  // log(props.payload);
-
   return (
     <Row className="pb-2">
       <Col xs={1} className="text-right">
@@ -22,7 +16,7 @@ export default function ProfileContact(
   );
 }
 
-function createLink(payload: NS_Profile.IContact) {
+function createLink(payload: Profile.IContact) {
   if (payload.badge) {
     return <Badge color="light">{payload.title || payload.link}</Badge>;
   }

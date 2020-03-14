@@ -1,4 +1,4 @@
-import CommonRow from '../common/row';
+import { CommonRow } from '../common';
 
 export default function Etc() {
   return (

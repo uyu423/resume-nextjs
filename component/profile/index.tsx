@@ -3,40 +3,36 @@ import ProfileContact from './contact';
 import { Row, Col, Alert } from 'reactstrap';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import EmptyRowCol from '../common/EmptyRowCol';
-import debug from 'debug';
 import { PropsWithChildren } from 'react';
+import { Style } from '../common/Style';
+import { EmptyRowCol } from '../common';
 
-const log = debug('yosume:Profile');
+namespace Profile {
+  export function Component({
+    payload
+  }: PropsWithChildren<{ payload: IPayload }>) {
+    const { image, contact, name, notice } = payload;
+    return (
+      <div className="mt-5">
+        <Row>
+          <Col md={3} sm={12}>
+            <ProfileImage src={image} />
+          </Col>
+          <Col md={9} sm={12}>
+            {createNameArea(name)}
+            {createProfileContactMap(contact)}
+            {createNoticeArea(notice)}
+          </Col>
+        </Row>
+      </div>
+    );
+  }
 
-export default function Profile({
-  payload
-}: PropsWithChildren<{ payload: NS_Profile.IPayload }>) {
-  log('');
-  // log(payload);
-  const { image, contact, name, notice } = payload;
-  return (
-    <div className="mt-5">
-      <Row>
-        <Col md={3} sm={12}>
-          <ProfileImage src={image} />
-        </Col>
-        <Col md={9} sm={12}>
-          {NS_Profile.createNameArea(name)}
-          {NS_Profile.createProfileContactMap(contact)}
-          {NS_Profile.createNoticeArea(notice)}
-        </Col>
-      </Row>
-    </div>
-  );
-}
-
-export namespace NS_Profile {
   export function createNameArea(name: IPayload['name']) {
     return (
       <EmptyRowCol>
         <div className="text-center text-md-left">
-          <h1 style={{ color: '#3c78d8' }}>
+          <h1 style={Style.blue}>
             {name.title} <small>{name.small || ''}</small>
           </h1>
         </div>
@@ -89,3 +85,5 @@ export namespace NS_Profile {
     badge?: true;
   }
 }
+
+export default Profile;

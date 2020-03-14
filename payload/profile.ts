@@ -1,10 +1,12 @@
 import { faEnvelope, faPhone, faRss } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { NS_Profile } from '../component/profile';
+import image from '../asset/20200314-big.jpg';
+import Profile from '../component/profile';
 
-const profile: NS_Profile.IPayload = {
-  image: 'https://resume.yowu.dev/static/image/profile_2019.png',
+const profile: Profile.IPayload = {
+  // image: 'https://resume.yowu.dev/static/image/profile_2019.png',
+  image,
   name: {
     title: '유 용 우',
     small: '(요우)'

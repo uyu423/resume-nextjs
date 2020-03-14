@@ -1,12 +1,12 @@
 import profile from './profile';
-import { NS_Profile } from '../component/profile';
+import Profile from '../component/profile';
 
-export const Payload: IPayload = {
+export const Payload: Payload = {
   profile
 };
 
-export interface IPayload {
-  profile: NS_Profile.IPayload;
+interface Payload {
+  profile: Profile.IPayload;
 }
 
 export default Payload;
