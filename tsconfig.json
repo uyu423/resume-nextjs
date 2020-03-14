@@ -14,9 +14,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "paths": {
-      "@/*": ["*"]
-    },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
