@@ -8,9 +8,7 @@ import { Style } from '../common/Style';
 import { EmptyRowCol } from '../common';
 
 namespace Profile {
-  export function Component({
-    payload
-  }: PropsWithChildren<{ payload: IPayload }>) {
+  export function Component({ payload }: PropsWithChildren<{ payload: IPayload }>) {
     const { image, contact, name, notice } = payload;
     return (
       <div className="mt-5">
@@ -40,27 +38,23 @@ namespace Profile {
     );
   }
 
-  export function createNoticeArea(notice: IPayload['notice']) {
-    return (
-      <EmptyRowCol>
-        <Alert color="secondary" role="alert">
-          {notice.icon ? (
-            <FontAwesomeIcon className="mr-2" icon={notice.icon} />
-          ) : (
-            ''
-          )}
-          {notice.title}
-        </Alert>
-      </EmptyRowCol>
-    );
-  }
-
   export function createProfileContactMap(contacts: IPayload['contact']) {
     return (
       <EmptyRowCol>
         {contacts.map((contact, i) => (
           <ProfileContact key={i} payload={contact} />
         ))}
+      </EmptyRowCol>
+    );
+  }
+
+  export function createNoticeArea(notice: IPayload['notice']) {
+    return (
+      <EmptyRowCol>
+        <Alert color="secondary" role="alert" className="mt-3">
+          {notice.icon ? <FontAwesomeIcon className="mr-2" icon={notice.icon} /> : ''}
+          {notice.title}
+        </Alert>
       </EmptyRowCol>
     );
   }

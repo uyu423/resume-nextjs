@@ -13,12 +13,13 @@ import Footer from '../component/footer';
 import { Container } from 'reactstrap';
 import Profile from '../component/profile';
 import Payload from '../payload';
+import { Style } from '../component/common/Style';
 
 function Yosume() {
   return (
-    <Container>
+    <Container style={Style.global}>
       <Profile.Component payload={Payload.profile} />
-      <Introduce />
+      <Introduce.Component payload={Payload.introduce} />
       <Skill />
       <OpenSource />
       <Experience />
