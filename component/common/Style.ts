@@ -2,11 +2,11 @@ import { CSSProperties } from 'styled-components';
 
 export const Style: { [key: string]: CSSProperties } = {
   blue: {
-    color: '#3c78d8'
+    color: '#3c78d8',
   },
 
   gray: {
-    color: 'gray'
+    color: 'gray',
   },
 
   global: {
@@ -14,16 +14,16 @@ export const Style: { [key: string]: CSSProperties } = {
     fontWeight: 300,
     wordWrap: 'break-word',
     wordBreak: 'keep-all',
-    lineHeight: 1.8
+    lineHeight: 1.8,
   },
 
   sign: {
     fontFamily: "'Parisienne', cursive",
-    fontSize: '1.5em'
+    fontSize: '1.5em',
   },
 
   profileImg: {
-    maxHeight: '320px'
+    maxHeight: '320px',
   },
 
   footerCover: {
@@ -31,10 +31,10 @@ export const Style: { [key: string]: CSSProperties } = {
     paddingLeft: 0,
     paddingRight: 0,
     marginTop: '50px',
-    height: '80px'
+    height: '80px',
   },
 
   footer: {
-    paddingTop: '10px'
-  }
+    paddingTop: '10px',
+  },
 };

@@ -3,9 +3,9 @@ import introduce from './introduce';
 import { IProfile } from '../component/profile/IProfile';
 import { IIntroduce } from '../component/introduce/IIntroduce';
 
-export const Payload: Payload = {
+const Payload: Payload = {
   profile,
-  introduce
+  introduce,
 };
 
 interface Payload {

@@ -1,20 +1,18 @@
 import { Row, Col, Badge } from 'reactstrap';
-import { Style } from '../common/Style';
 import { PropsWithChildren } from 'react';
 import { DateTime } from 'luxon';
+import { Style } from '../common/Style';
 import Util from '../common/Util';
 import { IIntroduce } from './IIntroduce';
 
 export const Introduce = {
-  Component
+  Component,
 };
 
-function Component({
-  payload
-}: PropsWithChildren<{ payload: IIntroduce.Payload }>) {
+function Component({ payload }: PropsWithChildren<{ payload: IIntroduce.Payload }>) {
   const latestUpdated = DateTime.fromFormat(
     payload.latestUpdated,
-    Util.LUXON_DATE_FORMAT.YYYY_LL_DD
+    Util.LUXON_DATE_FORMAT.YYYY_LL_DD,
   );
 
   return (
@@ -24,8 +22,8 @@ function Component({
           <h2 style={Style.blue}>INTRODUCE</h2>
         </Col>
         <Col sm={12} md={9}>
-          {payload.contents.map((content, i) => (
-            <p key={i}>{content}</p>
+          {payload.contents.map((content) => (
+            <p>{content}</p>
           ))}
           <p className="text-md-right">
             <small>Latest Updated</small>{' '}

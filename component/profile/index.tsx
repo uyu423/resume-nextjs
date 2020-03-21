@@ -1,19 +1,17 @@
-import ProfileImage from './image';
-import ProfileContact from './contact';
 import { Row, Col, Alert } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
+import ProfileContact from './contact';
+import ProfileImage from './image';
 import { EmptyRowCol } from '../common';
 import { IProfile } from './IProfile';
 import { Style } from '../common/Style';
 
 export const Profile = {
-  Component
+  Component,
 };
 
-function Component({
-  payload
-}: PropsWithChildren<{ payload: IProfile.Payload }>) {
+function Component({ payload }: PropsWithChildren<{ payload: IProfile.Payload }>) {
   const { image, contact, name, notice } = payload;
   return (
     <div className="mt-5">
@@ -46,8 +44,8 @@ function createNameArea(name: IProfile.Payload['name']) {
 function createProfileContactMap(contacts: IProfile.Payload['contact']) {
   return (
     <EmptyRowCol>
-      {contacts.map((contact, i) => (
-        <ProfileContact key={i} payload={contact} />
+      {contacts.map((contact) => (
+        <ProfileContact payload={contact} />
       ))}
     </EmptyRowCol>
   );
@@ -57,11 +55,7 @@ function createNoticeArea(notice: IProfile.Payload['notice']) {
   return (
     <EmptyRowCol>
       <Alert color="secondary" role="alert" className="mt-3">
-        {notice.icon ? (
-          <FontAwesomeIcon className="mr-2" icon={notice.icon} />
-        ) : (
-          ''
-        )}
+        {notice.icon ? <FontAwesomeIcon className="mr-2" icon={notice.icon} /> : ''}
         {notice.title}
       </Alert>
     </EmptyRowCol>

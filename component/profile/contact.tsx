@@ -3,15 +3,15 @@ import { PropsWithChildren } from 'react';
 import { Row, Col, Badge } from 'reactstrap';
 import { IProfile } from './IProfile';
 
-export default function ProfileContact(
-  props: PropsWithChildren<{ payload: IProfile.Contact }>
-) {
+export default function ProfileContact({
+  payload,
+}: PropsWithChildren<{ payload: IProfile.Contact }>) {
   return (
     <Row className="pb-2">
       <Col xs={1} className="text-right">
-        <FontAwesomeIcon icon={props.payload.icon} />
+        <FontAwesomeIcon icon={payload.icon} />
       </Col>
-      <Col xs="auto">{createLink(props.payload)}</Col>
+      <Col xs="auto">{createLink(payload)}</Col>
     </Row>
   );
 }
@@ -21,7 +21,7 @@ function createLink(payload: IProfile.Contact) {
     return <Badge color="light">{payload.title || payload.link}</Badge>;
   }
   return (
-    <a href={payload.link} target="_blank">
+    <a href={payload.link} target="_blank" rel="noreferrer noopener">
       {payload.title || payload.link}
     </a>
   );

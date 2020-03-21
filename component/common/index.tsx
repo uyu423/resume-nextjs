@@ -1,10 +1,10 @@
 import { Row, Col } from 'reactstrap';
 import { PropsWithChildren } from 'react';
 
-export function EmptyRowCol<T = {}>(props: PropsWithChildren<T>) {
+export function EmptyRowCol<T = {}>({ children }: PropsWithChildren<T>) {
   return (
     <Row>
-      <Col>{props.children}</Col>
+      <Col>{children}</Col>
     </Row>
   );
 }

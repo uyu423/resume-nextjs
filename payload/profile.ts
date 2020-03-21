@@ -9,36 +9,36 @@ const profile: IProfile.Payload = {
   image,
   name: {
     title: '유 용 우',
-    small: '(요우)'
+    small: '(요우)',
   },
   contact: [
     {
       title: 'me@yowu.dev',
       link: 'mailto:me@yowu.dev',
-      icon: faEnvelope
+      icon: faEnvelope,
     },
     {
       title: 'Please contact me by email',
       icon: faPhone,
-      badge: true
+      badge: true,
     },
     {
       link: 'https://github.com/uyu423',
-      icon: faGithub
+      icon: faGithub,
     },
     {
       link: 'https://blog.yowu.dev',
-      icon: faRss
+      icon: faRss,
     },
     {
       link: 'https://fb.com/luckyyowu',
-      icon: faFacebook
-    }
+      icon: faFacebook,
+    },
   ],
   notice: {
     title: '휴대전화나 페이스북 메시지 아닌 이메일로 연락 부탁드립니다.',
-    icon: faBell
-  }
+    icon: faBell,
+  },
 };
 
 export default profile;

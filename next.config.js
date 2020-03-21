@@ -1,3 +1,4 @@
+/* eslint-disable */
 const withImages = require('next-images');
 const withCSS = require('@zeit/next-css');
 
@@ -7,5 +8,5 @@ module.exports = withImages(
     //   config.resolve.alias['@'] = __dirname;
     //   return config;
     // }
-  })
+  }),
 );

@@ -1,6 +1,6 @@
-/// <reference types="next" />
-/// <reference types="next/types/global" />
-/// <reference types="next-images" />
+// / <reference types="next" />
+// / <reference types="next/types/global" />
+// / <reference types="next-images" />
 
 // import { CSSProperties } from 'styled-components';
 
@@ -8,3 +8,13 @@
 //   const classes: { [key: string]: CSSProperties };
 //   export default classes;
 // }
+
+declare module '*.png' {
+  const value: string;
+  export default value;
+}
+
+declare module '*.jpg' {
+  const value: string;
+  export default value;
+}
