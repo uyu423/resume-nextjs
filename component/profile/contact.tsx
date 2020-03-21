@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
 import { Row, Col, Badge } from 'reactstrap';
-import Profile from '../profile';
+import { IProfile } from './IProfile';
 
 export default function ProfileContact(
-  props: PropsWithChildren<{ payload: Profile.IContact }>
+  props: PropsWithChildren<{ payload: IProfile.Contact }>
 ) {
   return (
     <Row className="pb-2">
@@ -16,7 +16,7 @@ export default function ProfileContact(
   );
 }
 
-function createLink(payload: Profile.IContact) {
+function createLink(payload: IProfile.Contact) {
   if (payload.badge) {
     return <Badge color="light">{payload.title || payload.link}</Badge>;
   }

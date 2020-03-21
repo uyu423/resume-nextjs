@@ -1,40 +1,40 @@
 import { CSSProperties } from 'styled-components';
 
-export namespace Style {
-  export const blue: CSSProperties = {
-    color: '#3c78d8',
-  };
+export const Style: { [key: string]: CSSProperties } = {
+  blue: {
+    color: '#3c78d8'
+  },
 
-  export const gray: CSSProperties = {
-    color: 'gray',
-  };
+  gray: {
+    color: 'gray'
+  },
 
-  export const global: CSSProperties = {
+  global: {
     fontFamily: "'Noto Sans KR', sans-serif",
     fontWeight: 300,
-    wordWrap: 'break-word' as 'break-word',
-    wordBreak: 'keep-all' as 'keep-all',
-    lineHeight: 1.8,
-  };
+    wordWrap: 'break-word',
+    wordBreak: 'keep-all',
+    lineHeight: 1.8
+  },
 
-  export const sign: CSSProperties = {
+  sign: {
     fontFamily: "'Parisienne', cursive",
-    fontSize: '1.5em',
-  };
+    fontSize: '1.5em'
+  },
 
-  export const profileImg: CSSProperties = {
-    maxHeight: '320px',
-  };
+  profileImg: {
+    maxHeight: '320px'
+  },
 
-  export const footerCover: CSSProperties = {
+  footerCover: {
     backgroundColor: '#f5f5f5',
     paddingLeft: 0,
     paddingRight: 0,
     marginTop: '50px',
-    height: '80px',
-  };
+    height: '80px'
+  },
 
-  export const footer: CSSProperties = {
-    paddingTop: '10px',
-  };
-}
+  footer: {
+    paddingTop: '10px'
+  }
+};

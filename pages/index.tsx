@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import { Container } from 'reactstrap';
 
-import Introduce from '../component/introduce';
+import { Introduce } from '../component/introduce';
 import Skill from '../component/skill';
 import OpenSource from '../component/openSource';
 import Experience from '../component/experience';
@@ -10,8 +11,7 @@ import Education from '../component/education';
 import Etc from '../component/etc';
 import ButtonBox from '../component/buttonBox';
 import Footer from '../component/footer';
-import { Container } from 'reactstrap';
-import Profile from '../component/profile';
+import { Profile } from '../component/profile';
 import Payload from '../payload';
 import { Style } from '../component/common/Style';
 

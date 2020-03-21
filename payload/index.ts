@@ -1,16 +1,16 @@
 import profile from './profile';
 import introduce from './introduce';
-import Profile from '../component/profile';
-import Introduce from '../component/introduce';
+import { IProfile } from '../component/profile/IProfile';
+import { IIntroduce } from '../component/introduce/IIntroduce';
 
 export const Payload: Payload = {
   profile,
-  introduce,
+  introduce
 };
 
 interface Payload {
-  profile: Profile.IPayload;
-  introduce: Introduce.IPayload;
+  profile: IProfile.Payload;
+  introduce: IIntroduce.Payload;
 }
 
 export default Payload;

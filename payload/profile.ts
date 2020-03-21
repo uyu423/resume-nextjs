@@ -2,9 +2,9 @@ import { faEnvelope, faPhone, faRss } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import image from '../asset/20200314-big.jpg';
-import Profile from '../component/profile';
+import { IProfile } from '../component/profile/IProfile';
 
-const profile: Profile.IPayload = {
+const profile: IProfile.Payload = {
   // image: 'https://resume.yowu.dev/static/image/profile_2019.png',
   image,
   name: {
