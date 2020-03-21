@@ -22,8 +22,8 @@ function Component({ payload }: PropsWithChildren<{ payload: IIntroduce.Payload 
           <h2 style={Style.blue}>INTRODUCE</h2>
         </Col>
         <Col sm={12} md={9}>
-          {payload.contents.map((content) => (
-            <p>{content}</p>
+          {payload.contents.map((content, index) => (
+            <p key={index.toString()}>{content}</p>
           ))}
           <p className="text-md-right">
             <small>Latest Updated</small>{' '}

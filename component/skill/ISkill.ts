@@ -1,6 +1,7 @@
 export declare namespace ISkill {
   export interface Payload {
     skills: Skill[];
+    tooltip?: string;
   }
 
   export interface Skill {

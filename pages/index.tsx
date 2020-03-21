@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Container } from 'reactstrap';
 
 import { Introduce } from '../component/introduce';
-import Skill from '../component/skill';
+import { Skill } from '../component/skill';
 import OpenSource from '../component/openSource';
 import Experience from '../component/experience';
 import Project from '../component/project';
@@ -20,7 +20,7 @@ function Yosume() {
     <Container style={Style.global}>
       <Profile.Component payload={Payload.profile} />
       <Introduce.Component payload={Payload.introduce} />
-      <Skill />
+      <Skill.Component payload={Payload.skill} />
       <OpenSource />
       <Experience />
       <Project />

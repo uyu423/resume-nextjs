@@ -44,8 +44,8 @@ function createNameArea(name: IProfile.Payload['name']) {
 function createProfileContactMap(contacts: IProfile.Payload['contact']) {
   return (
     <EmptyRowCol>
-      {contacts.map((contact) => (
-        <ProfileContact payload={contact} />
+      {contacts.map((contact, index) => (
+        <ProfileContact key={index.toString()} payload={contact} />
       ))}
     </EmptyRowCol>
   );
