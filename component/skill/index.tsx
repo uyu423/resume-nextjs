@@ -25,7 +25,7 @@ function Component({ payload }: PropsWithChildren<{ payload: ISkill.Payload }>) 
           </Col>
         </Row>
         {payload.skills.map((skill, index) => (
-          <SkillRow key={index.toString()} skill={skill} />
+          <SkillRow key={index.toString()} skill={skill} index={index} />
         ))}
       </EmptyRowCol>
     </div>

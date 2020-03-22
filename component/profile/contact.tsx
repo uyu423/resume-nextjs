@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
 import { Row, Col, Badge } from 'reactstrap';
 import { IProfile } from './IProfile';
+import { HrefTargetBlank } from '../common';
 
 export default function ProfileContact({
   payload,
@@ -20,9 +21,9 @@ function createLink(payload: IProfile.Contact) {
   if (payload.badge) {
     return <Badge color="light">{payload.title || payload.link}</Badge>;
   }
-  return (
-    <a href={payload.link} target="_blank" rel="noreferrer noopener">
-      {payload.title || payload.link}
-    </a>
+  return payload.link ? (
+    <HrefTargetBlank url={payload.link} text={payload.title} />
+  ) : (
+    <span>{payload.title}</span>
   );
 }

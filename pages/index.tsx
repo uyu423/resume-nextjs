@@ -3,7 +3,7 @@ import { Container } from 'reactstrap';
 
 import { Introduce } from '../component/introduce';
 import { Skill } from '../component/skill';
-import OpenSource from '../component/openSource';
+import { OpenSource } from '../component/openSource';
 import Experience from '../component/experience';
 import Project from '../component/project';
 import Presentation from '../component/presentation';
@@ -21,7 +21,7 @@ function Yosume() {
       <Profile.Component payload={Payload.profile} />
       <Introduce.Component payload={Payload.introduce} />
       <Skill.Component payload={Payload.skill} />
-      <OpenSource />
+      <OpenSource.Component payload={Payload.openSource} />
       <Experience />
       <Project />
       <Presentation />

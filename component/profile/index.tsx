@@ -31,23 +31,25 @@ function Component({ payload }: PropsWithChildren<{ payload: IProfile.Payload }>
 
 function createNameArea(name: IProfile.Payload['name']) {
   return (
-    <EmptyRowCol>
-      <div className="text-center text-md-left">
+    <Row>
+      <Col className="text-center text-md-left">
         <h1 style={Style.blue}>
           {name.title} <small>{name.small || ''}</small>
         </h1>
-      </div>
-    </EmptyRowCol>
+      </Col>
+    </Row>
   );
 }
 
 function createProfileContactMap(contacts: IProfile.Payload['contact']) {
   return (
-    <EmptyRowCol>
-      {contacts.map((contact, index) => (
-        <ProfileContact key={index.toString()} payload={contact} />
-      ))}
-    </EmptyRowCol>
+    <Row>
+      <Col className="pt-3">
+        {contacts.map((contact, index) => (
+          <ProfileContact key={index.toString()} payload={contact} />
+        ))}
+      </Col>
+    </Row>
   );
 }
 

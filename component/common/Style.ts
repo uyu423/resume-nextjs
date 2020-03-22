@@ -1,6 +1,9 @@
 import { CSSProperties } from 'styled-components';
 
-export const Style: { [key: string]: CSSProperties } = {
+/** Style 추론을 위하여.. */
+type TStyleKey = 'blue' | 'gray' | 'global' | 'sign' | 'profileImg' | 'footerCover' | 'footer';
+
+export const Style: Record<TStyleKey, CSSProperties> = {
   blue: {
     color: '#3c78d8',
   },
