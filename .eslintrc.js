@@ -27,6 +27,7 @@ module.exports = {
     // Cypress: true,
   },
   rules: {
+    'no-underscore-dangle': 0,
     '@typescript-eslint/no-namespace': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-use-before-define': 0,

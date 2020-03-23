@@ -1,4 +1,4 @@
-import { CSSProperties } from 'styled-components';
+import { CSSProperties } from 'react';
 
 /** Style 추론을 위하여.. */
 type TStyleKey = 'blue' | 'gray' | 'global' | 'sign' | 'profileImg' | 'footerCover' | 'footer';

@@ -1,5 +1,4 @@
 import { PropsWithChildren } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 
 export default function ProfileImage({ src }: PropsWithChildren<{ src: string }>) {
   return (

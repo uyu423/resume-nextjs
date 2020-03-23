@@ -1,10 +1,9 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import { Container } from 'reactstrap';
 
 import { Introduce } from '../component/introduce';
 import { Skill } from '../component/skill';
 import { OpenSource } from '../component/openSource';
-import Experience from '../component/experience';
+import { Experience } from '../component/experience';
 import Project from '../component/project';
 import Presentation from '../component/presentation';
 import Education from '../component/education';
@@ -22,7 +21,7 @@ function Yosume() {
       <Introduce.Component payload={Payload.introduce} />
       <Skill.Component payload={Payload.skill} />
       <OpenSource.Component payload={Payload.openSource} />
-      <Experience />
+      <Experience.Component payload={Payload.experience} />
       <Project />
       <Presentation />
       <Education />

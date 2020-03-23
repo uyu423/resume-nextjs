@@ -17,8 +17,8 @@ export default function OpenSourceRow({
         </Col>
         <Col sm={12} md={9}>
           <ul>
-            {item.descriptions.map((description) => (
-              <Description description={description} />
+            {item.descriptions.map((description, descIndex) => (
+              <Description description={description} key={descIndex.toString()} />
             ))}
           </ul>
         </Col>
