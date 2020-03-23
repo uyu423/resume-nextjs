@@ -16,7 +16,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2017"
+    "target": "es2017",
+    "outDir": "docs"
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx"]

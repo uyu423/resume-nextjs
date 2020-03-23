@@ -9,9 +9,9 @@
     "build": "next build",
     "prebuild": "npm run lint",
     "start": "next start",
-    "export": "next export",
+    "export": "next export --outdir docs/",
     "preexport": "npm run clean && npm run build",
-    "clean": "rm -rf out .next",
+    "clean": "rm -rf docs .next",
     "lint": "eslint 'component/**/*' 'pages/**/*' 'payload/**/*' '*.ts' --fix"
   },
   "repository": {
