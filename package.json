@@ -10,7 +10,7 @@
     "prebuild": "npm run lint",
     "start": "next start",
     "export": "next export --outdir docs/",
-    "preexport": "npm run build",
+    "preexport": "npm run clean && npm run build",
     "postexport": "touch docs/.nojekyll && cp ./CNAME docs",
     "clean": "rm -rf docs .next",
     "lint": "eslint 'component/**/*' 'pages/**/*' 'payload/**/*' '*.ts' --fix"
