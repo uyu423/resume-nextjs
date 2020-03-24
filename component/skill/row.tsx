@@ -27,6 +27,9 @@ export default function SkillRow({
 function createCalculatedSkillItems(items: ISkill.Item[]) {
   const log = Util.debug('SkillRow:createCalculatedSkillItems');
 
+  /**
+   * @developer_commentary 단을 3단, 4단을 시도해봤지만 생각보다 이쁘게 나오지 않았고, 우선은 3단으로 한다. 만약 이쪽을 발전시킨다면 조금 더 이쁘고 능동적이게 데이터를 쪼갤 수 있는 방법을 찾으면 될 듯..
+   */
   const layer = 3;
 
   // const splitPoint = layer % 2 ? Math.ceil(items.length / layer) : Math.floor(items.length / layer);

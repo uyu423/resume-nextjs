@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import ProjectRow from './row';
-import { CommonSection } from '../common/Section';
+import { CommonSection } from '../common/CommonSection';
 import { IProject } from './IProject';
 
 export const Project = {

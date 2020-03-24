@@ -1,8 +1,8 @@
 import { DateTime } from 'luxon';
 import { PropsWithChildren } from 'react';
-import { CommonSection } from '../common/Section';
+import { CommonSection } from '../common/CommonSection';
 import { EmptyRowCol } from '../common';
-import { CommonRows } from '../common/Row';
+import { CommonRows } from '../common/CommonRow';
 import { IRow } from '../common/IRow';
 import Util from '../common/Util';
 import { IEtc } from './IEtc';

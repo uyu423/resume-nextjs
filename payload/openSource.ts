@@ -1,6 +1,6 @@
 import { IOpenSource } from '../component/openSource/IOpenSource';
 
-const r2curl = {
+const r2curl: IOpenSource.Item = {
   title: 'r2curl',
   descriptions: [
     {
@@ -14,7 +14,7 @@ const r2curl = {
     },
     {
       content: 'https://github.com/uyu423/r2curl',
-      link: 'https://github.com/uyu423/r2curl',
+      href: 'https://github.com/uyu423/r2curl',
     },
     {
       content: 'Monthly Download: ',
@@ -27,7 +27,7 @@ const r2curl = {
   ],
 };
 
-const nodeEscpos = {
+const nodeEscpos: IOpenSource.Item = {
   title: 'node-escpos',
   descriptions: [
     {
@@ -44,7 +44,7 @@ const nodeEscpos = {
     },
     {
       content: 'https://github.com/song940/node-escpos',
-      link: 'https://github.com/song940/node-escpos',
+      href: 'https://github.com/song940/node-escpos',
     },
     {
       content: 'Github Star: ',
@@ -53,7 +53,7 @@ const nodeEscpos = {
   ],
 };
 
-const yop = {
+const yop: IOpenSource.Item = {
   title: 'yop',
   descriptions: [
     {
@@ -67,12 +67,12 @@ const yop = {
     },
     {
       content: 'https://github.com/9XDM/YOP',
-      link: 'https://github.com/9XDM/YOP',
+      href: 'https://github.com/9XDM/YOP',
     },
   ],
 };
 
-const kanboard = {
+const kanboard: IOpenSource.Item = {
   title: 'kanboard',
   descriptions: [
     {
@@ -89,7 +89,7 @@ const kanboard = {
     },
     {
       content: 'https://github.com/kanboard/kanboard',
-      link: 'https://github.com/kanboard/kanboard',
+      href: 'https://github.com/kanboard/kanboard',
     },
     {
       content: 'Github Star: ',
@@ -98,7 +98,7 @@ const kanboard = {
   ],
 };
 
-const ossDeveloperComunity = {
+const ossDeveloperComunity: IOpenSource.Item = {
   title: 'OSS 개발자 커뮤니티',
   descriptions: [
     {
@@ -113,7 +113,7 @@ const ossDeveloperComunity = {
   ],
 };
 
-const nineXdDeveloperComunity = {
+const nineXdDeveloperComunity: IOpenSource.Item = {
   title: '9XD 개발자 커뮤니티',
   descriptions: [
     {

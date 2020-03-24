@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { CommonSection } from '../common/Section';
+import { CommonSection } from '../common/CommonSection';
 import PresentationRow from './row';
 import { IPresentation } from './IPresentation';
 

@@ -1,3 +1,5 @@
+import { IRow } from '../common/IRow';
+
 export declare namespace IOpenSource {
   export interface Payload {
     list: Item[];
@@ -5,12 +7,6 @@ export declare namespace IOpenSource {
 
   interface Item {
     title: string;
-    descriptions: Description[];
-  }
-
-  interface Description {
-    content: string;
-    link?: string;
-    postImage?: string;
+    descriptions: IRow.Description[];
   }
 }

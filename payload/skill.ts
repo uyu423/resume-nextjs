@@ -40,7 +40,7 @@ const backend: ISkill.Skill = {
       level: 1,
     },
     {
-      title: 'Python',
+      title: 'C/C++',
       level: 1,
     },
   ],

@@ -23,10 +23,10 @@ export function CommonRows({
           </Row>
         </Col>
         <Col sm={12} md={9}>
-          <h4>{right.title}</h4>
-          <i style={Style.gray}>{right.subTitle}</i>
+          {right.title ? <h4>{right.title}</h4> : ''}
+          {right.subTitle ? <i style={Style.gray}>{right.subTitle}</i> : ''}
           {right.descriptions ? (
-            <ul className="pt-3">
+            <ul className={right.title || right.subTitle ? 'pt-2' : ''}>
               {right.descriptions.map((description, descIndex) => {
                 return <Description description={description} key={descIndex.toString()} />;
               })}
