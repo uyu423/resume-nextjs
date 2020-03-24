@@ -87,7 +87,7 @@ const ecubelabs = {
 };
 
 const kyny = {
-  title: 'KYNY',
+  title: '키니 (KYNY)',
   position: '웹 개발자',
   startedAt: '2014-09',
   endedAt: '2015-03',
