@@ -96,13 +96,19 @@ const etc: ISkill.Skill = {
       title: 'Vim',
     },
     {
-      title: 'Information Security',
+      title: 'Security',
     },
     {
       title: 'VS Code',
     },
     {
-      title: 'Jira / Confluence',
+      title: 'Jira',
+    },
+    {
+      title: 'Confluence',
+    },
+    {
+      title: 'Bitbucket',
     },
     {
       title: 'DevOps',
@@ -121,7 +127,7 @@ const etc: ISkill.Skill = {
 
 const skill: ISkill.Payload = {
   skills: [backend, database, frontend, etc],
-  tooltip: '1: 기초 수준, 2: 취미 개발 수준, 3: Production 개발 가능 수준',
+  tooltip: '1: 기초 수준\n2: 취미 개발 수준\n3: Production 개발 가능 수준',
 };
 
 export default skill;

@@ -1,5 +1,6 @@
+import _debug from 'debug';
+
 import { DateTime } from 'luxon';
-import debug from './debug';
 
 enum LUXON_DATE_FORMAT {
   YYYY_LL_DD = 'yyyy-LL-dd',
@@ -30,9 +31,14 @@ function getFormattingDuration(from: DateTime, to: DateTime = DateTime.local()) 
   return diff.toFormat(format);
 }
 
+function debug(channel: string) {
+  return _debug(`yosume:${channel}`);
+}
+
 const Util = {
   LUXON_DATE_FORMAT,
   getFormattingDuration,
+  debug,
 };
 
 export default Util;

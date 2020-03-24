@@ -1,12 +1,11 @@
-/* eslint-disable import/order */
-import { Row, Col } from 'reactstrap';
-import { PropsWithChildren } from 'react';
+import { Row, Col, Tooltip } from 'reactstrap';
+import { PropsWithChildren, useState } from 'react';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Style } from '../common/Style';
 import { ISkill } from './ISkill';
 import SkillRow from './row';
 import { EmptyRowCol } from '../common';
-// import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Skill = {
   Component,
@@ -18,9 +17,9 @@ function Component({ payload }: PropsWithChildren<{ payload: ISkill.Payload }>) 
       <EmptyRowCol>
         <Row className="pb-3">
           <Col>
-            <h2 style={Style.blue}>
-              <span>SKILL</span>
-              {/* {createTooltip(payload.tooltip)} */}
+            <h2>
+              <span style={Style.blue}>SKILL</span>
+              {createTooltip(payload.tooltip)}
             </h2>
           </Col>
         </Row>
@@ -32,14 +31,27 @@ function Component({ payload }: PropsWithChildren<{ payload: ISkill.Payload }>) 
   );
 }
 
-// function createTooltip(content?: string) {
-//   if (!content) {
-//     return '';
-//   }
-//   return (
-//     <span>
-//       <FontAwesomeIcon icon={faQuestionCircle} id="skill-tooltip" />
-//       <Tooltip target="skill-tooltip">{content}</Tooltip>
-//     </span>
-//   );
-// }
+function createTooltip(content?: string) {
+  if (!content) {
+    return '';
+  }
+
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+  const toggle = () => setTooltipOpen(!tooltipOpen);
+
+  return (
+    <small>
+      {' '}
+      <FontAwesomeIcon icon={faQuestionCircle} id="skill-tooltip" />
+      <Tooltip
+        style={{ whiteSpace: 'pre-wrap' }}
+        placement="right"
+        target="skill-tooltip"
+        isOpen={tooltipOpen}
+        toggle={toggle}
+      >
+        {content}
+      </Tooltip>
+    </small>
+  );
+}
