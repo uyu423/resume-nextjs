@@ -4,7 +4,7 @@ import { Introduce } from '../component/introduce';
 import { Skill } from '../component/skill';
 import { OpenSource } from '../component/openSource';
 import { Experience } from '../component/experience';
-import Project from '../component/project';
+import { Project } from '../component/project';
 import Presentation from '../component/presentation';
 import Education from '../component/education';
 import Etc from '../component/etc';
@@ -22,7 +22,7 @@ function Yosume() {
       <Skill.Component payload={Payload.skill} />
       <OpenSource.Component payload={Payload.openSource} />
       <Experience.Component payload={Payload.experience} />
-      <Project />
+      <Project.Component payload={Payload.project} />
       <Presentation />
       <Education />
       <Etc />

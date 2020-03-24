@@ -15,7 +15,7 @@ export const Skill = {
 function Component({ payload }: PropsWithChildren<{ payload: ISkill.Payload }>) {
   return (
     <div className="mt-5">
-      <EmptyRowCol className="pt-5">
+      <EmptyRowCol>
         <Row className="pb-3">
           <Col>
             <h2 style={Style.blue}>

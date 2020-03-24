@@ -1,10 +1,16 @@
+import { PropsWithChildren } from 'react';
 import ProjectRow from './row';
+import { CommonSection } from '../common/Section';
+import { IProject } from './IProject';
 
-export default function Project() {
+export const Project = {
+  Component,
+};
+
+function Component({ payload }: PropsWithChildren<{ payload: IProject.Payload }>) {
   return (
-    <div>
-      <p>Project</p>
-      <ProjectRow />
-    </div>
+    <CommonSection title="PROJECT">
+      <ProjectRow payload={payload} />
+    </CommonSection>
   );
 }

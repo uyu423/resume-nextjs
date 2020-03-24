@@ -9,14 +9,6 @@ export function EmptyRowCol<T = {}>({ children }: PropsWithChildren<T>) {
   );
 }
 
-export function CommonRow() {
-  return (
-    <div>
-      <p>CommonRow</p>
-    </div>
-  );
-}
-
 export function HrefTargetBlank({ url, text }: PropsWithChildren<{ url: string; text?: string }>) {
   return (
     <a href={url} target="_blank" rel="noreferrer noopener">

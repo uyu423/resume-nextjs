@@ -12,7 +12,7 @@ export const Experience = {
 function Component({ payload }: PropsWithChildren<{ payload: IExperience.Payload }>) {
   return (
     <div className="mt-5">
-      <EmptyRowCol className="pt-5">
+      <EmptyRowCol>
         <Row className="pb-3">
           <Col>
             <h2 style={Style.blue}>EXPERIENCE</h2>
