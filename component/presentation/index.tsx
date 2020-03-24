@@ -1,10 +1,16 @@
-import PresentationRow from './row';
+import { PropsWithChildren } from 'react';
+import ProjectRow from './row';
+import { CommonSection } from '../common/Section';
+import { IPresentation } from './IPresentation';
 
-export default function Presentation() {
+export const Presentation = {
+  Component,
+};
+
+function Component({ payload }: PropsWithChildren<{ payload: IPresentation.Payload }>) {
   return (
-    <div>
-      <p>Presentation</p>
-      <PresentationRow />
-    </div>
+    <CommonSection title="PRESENTATION">
+      <ProjectRow payload={payload} />
+    </CommonSection>
   );
 }
