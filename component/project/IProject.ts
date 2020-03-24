@@ -9,7 +9,7 @@ export declare namespace IProject {
     title: string;
     where: string;
     startedAt: string;
-    endedAt: string;
+    endedAt?: string;
     descriptions: IRow.Description[];
   }
 }

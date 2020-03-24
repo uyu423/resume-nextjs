@@ -21,13 +21,19 @@ function serialize(payload: IProject.Item): IRow.Payload {
   const startedAt = DateTime.fromFormat(payload.startedAt, DATE_FORMAT.YYYY_LL).toFormat(
     DATE_FORMAT.YYYY_DOT_LL,
   );
-  const endedAt = DateTime.fromFormat(payload.endedAt, DATE_FORMAT.YYYY_LL).toFormat(
-    DATE_FORMAT.YYYY_DOT_LL,
-  );
+  const title = (() => {
+    if (payload.endedAt) {
+      const endedAt = DateTime.fromFormat(payload.endedAt, DATE_FORMAT.YYYY_LL).toFormat(
+        DATE_FORMAT.YYYY_DOT_LL,
+      );
+      return `${startedAt} ~ ${endedAt}`;
+    }
+    return `${startedAt} ~`;
+  })();
 
   return {
     left: {
-      title: `${startedAt} ~ ${endedAt}`,
+      title,
     },
     right: {
       title: payload.title,
