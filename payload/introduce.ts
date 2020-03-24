@@ -1,4 +1,5 @@
 import { IIntroduce } from '../component/introduce/IIntroduce';
+// import packageJson from '../package.json';
 
 const introduce: IIntroduce.Payload = {
   contents: [
@@ -7,6 +8,7 @@ const introduce: IIntroduce.Payload = {
     '서비스 개발이란 결국 개발과 비즈니스와의 커뮤니케이션이 가장 중요하다고 생각하고 있습니다. 능동적이고 적극적인 커뮤니케이션으로 문제 해결과 비즈니스 발전을 위해 뛰어듭니다. 이러한 점을 바탕으로 더 좋은 개발자로서 성장하기 위해 더 치열하게 학습하고, 경험하고, 노력하고 있습니다.',
   ],
   sign: 'Yu Yongwoo',
+  // sign: packageJson.author.name,
   latestUpdated: '2019-07-24',
 };
 

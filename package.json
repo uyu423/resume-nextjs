@@ -10,7 +10,7 @@
     "prebuild": "npm run lint",
     "start": "next start",
     "export": "next export --outdir docs/",
-    "preexport": "npm run clean && npm run build",
+    "preexport": "npm run build",
     "postexport": "touch docs/.nojekyll && cp ./CNAME docs",
     "clean": "rm -rf docs .next",
     "lint": "eslint 'component/**/*' 'pages/**/*' 'payload/**/*' '*.ts' --fix"
@@ -19,13 +19,18 @@
     "type": "git",
     "url": "git+https://github.com/uyu423/resume-nextjs.git"
   },
-  "keywords": [],
-  "author": "Yowu Yu <me@yowu.dev>",
+  "keywords": [
+    "resume"
+  ],
+  "author": {
+    "name": "Yowu Yu",
+    "email": "me@yowu.dev"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/uyu423/resume-nextjs/issues"
   },
-  "homepage": "https://github.com/uyu423/resume-nextjs#readme",
+  "homepage": "https://github.com/uyu423/resume-nextjs",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",

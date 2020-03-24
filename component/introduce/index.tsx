@@ -25,13 +25,13 @@ function Component({ payload }: PropsWithChildren<{ payload: IIntroduce.Payload 
           {payload.contents.map((content, index) => (
             <p key={index.toString()}>{content}</p>
           ))}
-          <p className="text-md-right">
+          <p className="text-right">
             <small>Latest Updated</small>{' '}
             <Badge color="secondary">
               {latestUpdated.toFormat(Util.LUXON_DATE_FORMAT.KINDNESS_FULL)}
             </Badge>
           </p>
-          <p className="text-md-right" style={Style.sign}>
+          <p className="text-right" style={Style.sign}>
             {payload.sign}
           </p>
         </Col>

@@ -5,6 +5,9 @@ import experience from './experience';
 import openSource from './openSource';
 import project from './project';
 import presentation from './presentation';
+import education from './education';
+import etc from './etc';
+import footer from './footer';
 
 import { IProfile } from '../component/profile/IProfile';
 import { IIntroduce } from '../component/introduce/IIntroduce';
@@ -13,6 +16,9 @@ import { IOpenSource } from '../component/openSource/IOpenSource';
 import { IExperience } from '../component/experience/IExperience';
 import { IProject } from '../component/project/IProject';
 import { IPresentation } from '../component/presentation/IPresentation';
+import { IEducation } from '../component/education/IEducation';
+import { IEtc } from '../component/etc/IEtc';
+import { IFooter } from '../component/footer/IFooter';
 
 const Payload: Payload = {
   profile,
@@ -22,6 +28,9 @@ const Payload: Payload = {
   experience,
   project,
   presentation,
+  education,
+  etc,
+  footer,
 };
 
 interface Payload {
@@ -32,6 +41,9 @@ interface Payload {
   experience: IExperience.Payload;
   project: IProject.Payload;
   presentation: IPresentation.Payload;
+  education: IEducation.Payload;
+  etc: IEtc.Payload;
+  footer: IFooter.Payload;
 }
 
 export default Payload;

@@ -12,7 +12,7 @@ export declare namespace IRow {
   export interface Right {
     title: string;
     subTitle?: string;
-    descriptions: Description[];
+    descriptions?: Description[];
   }
 
   export interface Description {
