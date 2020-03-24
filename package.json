@@ -1,7 +1,8 @@
 {
   "name": "resume-nextjs",
+  "lastestUpdatedAt": "2019-07-24",
   "version": "1.0.0",
-  "description": "",
+  "description": "Developer Resume made with next.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -31,6 +32,7 @@
     "url": "https://github.com/uyu423/resume-nextjs/issues"
   },
   "homepage": "https://github.com/uyu423/resume-nextjs",
+  "example": "https://resume-next.yowu.dev",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",

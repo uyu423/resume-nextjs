@@ -1,5 +1,5 @@
 import { IIntroduce } from '../component/introduce/IIntroduce';
-// import packageJson from '../package.json';
+import { lastestUpdatedAt } from '../package.json';
 
 const introduce: IIntroduce.Payload = {
   contents: [
@@ -9,7 +9,8 @@ const introduce: IIntroduce.Payload = {
   ],
   sign: 'Yu Yongwoo',
   // sign: packageJson.author.name,
-  latestUpdated: '2019-07-24',
+  // latestUpdated: '2019-07-24',
+  latestUpdated: lastestUpdatedAt,
 };
 
 export default introduce;
