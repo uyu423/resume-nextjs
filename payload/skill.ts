@@ -39,6 +39,10 @@ const backend: ISkill.Skill = {
       title: 'Python',
       level: 1,
     },
+    {
+      title: 'Python',
+      level: 1,
+    },
   ],
 };
 
