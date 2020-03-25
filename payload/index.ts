@@ -9,6 +9,8 @@ import education from './education';
 import etc from './etc';
 import footer from './footer';
 
+import { GlobalPayload, _global } from './_global';
+
 import { IProfile } from '../component/profile/IProfile';
 import { IIntroduce } from '../component/introduce/IIntroduce';
 import { ISkill } from '../component/skill/ISkill';
@@ -31,6 +33,8 @@ const Payload: Payload = {
   education,
   etc,
   footer,
+
+  _global,
 };
 
 interface Payload {
@@ -44,6 +48,8 @@ interface Payload {
   education: IEducation.Payload;
   etc: IEtc.Payload;
   footer: IFooter.Payload;
+
+  _global: GlobalPayload;
 }
 
 export default Payload;

@@ -12,7 +12,7 @@ function Component({ payload }: PropsWithChildren<{ payload: IFooter.Payload }>)
   return (
     <Row>
       <Col style={Style.footerCover}>
-        <div style={Style.footer} className="text-center">
+        <div style={Style.footer} className="text-center mt-2">
           <EmptyRowCol>
             <small>
               CSS by <HrefTargetBlank url="https://getbootstrap.com" text="Bootstrap 4" />. Thanks
@@ -22,9 +22,11 @@ function Component({ payload }: PropsWithChildren<{ payload: IFooter.Payload }>)
           <EmptyRowCol>
             <small>
               v.{`${payload.version} / `}
+              {/* Changelog 는 본인의 github 주소를 넣는다. */}
               <HrefTargetBlank url={`${payload.github}/commits/master`} text="Changelog" />
               {' / '}
-              <HrefTargetBlank url={payload.github} text="Github" />
+              {/* Github 주소는 origin repository 의 주소를 넣는다. */}
+              <HrefTargetBlank url="https://github.com/uyu423/resume-nextjs" text="Github" />
             </small>
           </EmptyRowCol>
           <br />

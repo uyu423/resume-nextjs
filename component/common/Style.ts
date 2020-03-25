@@ -46,7 +46,7 @@ export const Style: Record<TStyleKey, CSSProperties> = {
   },
 
   footer: {
-    paddingTop: '10px',
+    // paddingTop: '10px',
   },
 
   skillKeywordBadge: {
