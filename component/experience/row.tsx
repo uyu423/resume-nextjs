@@ -40,7 +40,12 @@ function createSkillKeywords(skillKeywords?: string[]) {
       <strong>Skill Keywords</strong>
       <div>
         {skillKeywords.map((keyword, index) => (
-          <Badge key={index.toString()} color="secondary" className="mr-1">
+          <Badge
+            style={Style.skillKeywordBadge}
+            key={index.toString()}
+            color="secondary"
+            className="mr-1"
+          >
             {keyword}
           </Badge>
         ))}
