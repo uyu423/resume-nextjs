@@ -22,6 +22,13 @@ export const _global: GlobalPayload = {
           alt: '쿠알라룸푸르가서 찍은 사진.png',
         },
       ],
+      type: 'profile',
+      profile: {
+        firstName: 'Yongwoo',
+        lastName: 'Yu',
+        username: 'luckyyowu',
+        gender: 'male',
+      },
     },
   },
 };

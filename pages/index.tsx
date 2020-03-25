@@ -17,17 +17,13 @@ import { Style } from '../component/common/Style';
 import Payload from '../payload';
 
 function Yosume() {
-  const head = (
-    <Head>
-      <title>{Payload._global.headTitle}</title>
-      <link rel="shortcut icon" href={Payload._global.favicon} />
-      <NextSeo {...Payload._global.seo} />;
-    </Head>
-  );
-
   return (
     <>
-      {head}
+      <NextSeo {...Payload._global.seo} />;
+      <Head>
+        <title>{Payload._global.headTitle}</title>
+        <link rel="shortcut icon" href={Payload._global.favicon} />
+      </Head>
       <Container style={Style.global}>
         <Profile.Component payload={Payload.profile} />
         <Introduce.Component payload={Payload.introduce} />
