@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { Container } from 'reactstrap';
 
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import { Education } from '../component/education';
 import { Etc } from '../component/etc';
 import { Experience } from '../component/experience';
@@ -15,12 +17,17 @@ import { Style } from '../component/common/Style';
 import Payload from '../payload';
 
 function Yosume() {
+  const head = (
+    <Head>
+      <title>{Payload._global.headTitle}</title>
+      <link rel="shortcut icon" href={Payload._global.favicon} />
+      <NextSeo {...Payload._global.seo} />;
+    </Head>
+  );
+
   return (
-    <div>
-      <Head>
-        <title>{Payload._global.resumeTitle}</title>
-        <link rel="shortcut icon" href={Payload._global.favicon} />
-      </Head>
+    <>
+      {head}
       <Container style={Style.global}>
         <Profile.Component payload={Payload.profile} />
         <Introduce.Component payload={Payload.introduce} />
@@ -34,7 +41,7 @@ function Yosume() {
         {/* <ButtonBox /> */}
         <Footer.Component payload={Payload.footer} />
       </Container>
-    </div>
+    </>
   );
 }
 
