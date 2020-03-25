@@ -9,7 +9,11 @@ export default class ResumeDocument extends Document {
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link
-            href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Parisienne&display=swap&subset=korean"
+            href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700|Parisienne&display=swap&subset=korean"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Parisienne&display=swap"
             rel="stylesheet"
           />
         </Head>
