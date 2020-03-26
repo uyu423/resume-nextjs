@@ -15,8 +15,10 @@ function Component({ payload }: PropsWithChildren<{ payload: IFooter.Payload }>)
         <div style={Style.footer} className="text-center mt-2">
           <EmptyRowCol>
             <small>
-              CSS by <HrefTargetBlank url="https://getbootstrap.com" text="Bootstrap 4" />. Thanks
-              for <HrefTargetBlank url="https://blog.outsider.ne.kr/1234" text="Outsider" />
+              <HrefTargetBlank url="https://nextjs.org/" text="Next.js" /> v{payload.nextVersion}
+              {' / '}
+              CSS by <HrefTargetBlank url="https://getbootstrap.com" text="Bootstrap" /> v
+              {payload.bootstrapVersion}
             </small>
           </EmptyRowCol>
           <EmptyRowCol>
@@ -27,6 +29,8 @@ function Component({ payload }: PropsWithChildren<{ payload: IFooter.Payload }>)
               {' / '}
               {/* Github 주소는 origin repository 의 주소를 넣는다. */}
               <HrefTargetBlank url="https://github.com/uyu423/resume-nextjs" text="Github" />
+              {' / '}
+              Thanks for <HrefTargetBlank url="https://blog.outsider.ne.kr/1234" text="Outsider" />
             </small>
           </EmptyRowCol>
           <br />
