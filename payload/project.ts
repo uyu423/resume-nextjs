@@ -19,7 +19,7 @@ const yaNol2020: IProject.Item = {
         '비즈니스 요구사항 구체화 및 제약 사항 파악, 개발 방향성 수립, 포인트 지급 알고리즘 및 API 구현',
     },
     {
-      content: '이벤트 지표 모니터링 도구 및 비상용 관리자 CLI 기능 구현',
+      content: 'Batch Worker 미 이벤트 지표 모니터링 도구, 비상용 관리자 CLI 기능 구현',
     },
     { content: '2020년 1월 기준 DAU n% 향상 및 평균 구매 건수 n건 향상' },
     {

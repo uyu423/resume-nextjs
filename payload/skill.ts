@@ -126,6 +126,9 @@ const etc: ISkill.Skill = {
     {
       title: 'Socket.io',
     },
+    {
+      title: 'Jenkins',
+    },
   ],
 };
 
