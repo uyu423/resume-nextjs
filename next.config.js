@@ -1,8 +1,27 @@
 /* eslint-disable */
 const withImages = require('next-images');
-// const withCSS = require('@zeit/next-css');
+const { homepage } = require('./package.json');
 
-module.exports = withImages();
+const { NODE_ENV } = process.env;
+
+module.exports = withImages({
+  assetPrefix: (() => {
+    if (NODE_ENV === 'production' && homepage) {
+      try {
+        console.log('> Detected homepage url in package.json');
+        const { pathname } = new URL(homepage);
+        if (pathname.length > 0) {
+          console.log(`> Apply \'${pathname}\' to assetPrefix(subPath)`);
+        }
+        return pathname;
+      } catch {
+        console.log('> Can not parse homepage URL not apply assetPrefix(subPath)');
+        return '';
+      }
+    }
+    return '';
+  })(),
+});
 // withCSS({
 // webpack: config => {
 //   config.resolve.alias['@'] = __dirname;

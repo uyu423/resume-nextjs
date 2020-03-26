@@ -10,7 +10,7 @@
     "build": "next build",
     "prebuild": "npm install && npm run lint",
     "start": "next start",
-    "export": "next export --outdir docs/",
+    "export": "NODE_ENV=production next export --outdir docs/",
     "preexport": "npm run clean && npm run build",
     "postexport": "touch docs/.nojekyll && cp ./CNAME docs",
     "clean": "rm -rf docs .next",
@@ -31,8 +31,7 @@
   "bugs": {
     "url": "https://github.com/uyu423/resume-nextjs/issues"
   },
-  "homepage": "https://github.com/uyu423/resume-nextjs",
-  "deploy": "https://resume-next.yowu.dev",
+  "homepage": "https://resume-next.yowu.dev",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
