@@ -1,6 +1,6 @@
 # Resume Next.js
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fe3253d51d544a2a971b637ed1570ac7)](https://app.codacy.com/manual/uyu423/resume-nextjs?utm_source=github.com&utm_medium=referral&utm_content=uyu423/resume-nextjs&utm_campaign=Badge_Grade_Dashboard)
+[![dependencies Status](https://david-dm.org/uyu423/resume-nextjs/status.svg)](https://david-dm.org/uyu423/resume-nextjs) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fe3253d51d544a2a971b637ed1570ac7)](https://app.codacy.com/manual/uyu423/resume-nextjs?utm_source=github.com&utm_medium=referral&utm_content=uyu423/resume-nextjs&utm_campaign=Badge_Grade_Dashboard) [![Maintainability](https://api.codeclimate.com/v1/badges/19edd90e9309634ee66a/maintainability)](https://codeclimate.com/github/uyu423/resume-nextjs/maintainability)
 
 - 누구나 예쁜 웹 이력서를 쉽게 만들 수 있어 <small>(코딩 쫌만 할 줄 알면..)</small>
 - 사실 https://github.com/uyu423/resume 를 next.js 로 포팅한 것.
