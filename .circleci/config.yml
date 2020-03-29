@@ -1,0 +1,12 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  build:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          name: install & lint build & export
+          command: npm run export
