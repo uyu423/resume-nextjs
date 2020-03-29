@@ -18,6 +18,9 @@ export declare namespace IRow {
   export interface Description {
     content: string;
 
+    /** 폰트 두께 */
+    weight?: FontWeightType;
+
     /** content 에 하이퍼링크 씌우기 */
     href?: string;
 
@@ -26,5 +29,10 @@ export declare namespace IRow {
 
     /** content 끝에 붙일 하이퍼링크 */
     postHref?: string;
+
+    /** Depth 가 하나 더 들어가는 Description */
+    descriptions?: Description[];
   }
+
+  export type FontWeightType = 'DEFAULT' | 'LIGHT' | 'REGULAR' | 'MEDIUM' | 'BOLD';
 }

@@ -4,7 +4,7 @@ const presentation: IPresentation.Payload = {
   list: [
     {
       title: '2018 종합선물세트 for 취준생',
-      subTitle: '가톨릭대학교 컴퓨터정보공학부 졸업생 특강',
+      subTitle: '가톨릭대학교 컴퓨터정보공학부 졸업생 취업 특강',
       at: '2018-11',
       descriptions: [
         {
@@ -18,7 +18,7 @@ const presentation: IPresentation.Payload = {
     },
     {
       title: '나도 내가 뭘 말해야되는지 잘 모르겠어',
-      subTitle: '가톨릭대학교 컴퓨터정보공학부 졸업생 특강',
+      subTitle: '가톨릭대학교 컴퓨터정보공학부 졸업생 취업 특강',
       at: '2017-10',
       descriptions: [
         {

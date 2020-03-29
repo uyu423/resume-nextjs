@@ -29,22 +29,10 @@ const yaNol2020: IProject.Item = {
   ],
 };
 
-const yaAdvertA: IProject.Item = {
-  title: '야놀자 숙소 리스트 신규 광고 상품 추가',
-  startedAt: '2019-08',
-  endedAt: '2019-10',
-  where: WHERE.YA,
-  descriptions: [
-    {
-      content: 'TBD',
-    },
-  ],
-};
-
 const yaRedis: IProject.Item = {
-  title: 'Legacy Redis 청산 및 구조 리팩토링',
+  title: 'Legacy Redis 청산 및 구조 개편',
   startedAt: '2019-07',
-  endedAt: '2019-08',
+  endedAt: '2019-10',
   where: WHERE.YA,
   descriptions: [
     { content: '용도와 목적 없이 사용되고 있던 Redis 전체 정리' },
@@ -54,112 +42,128 @@ const yaRedis: IProject.Item = {
   ],
 };
 
-const yaHotDeal: IProject.Item = {
-  title: '야놀자 쇼킹특가/핫딜 서비스 런칭',
-  startedAt: '2019-05',
-  endedAt: '2019-07',
-  where: WHERE.YA,
-  descriptions: [
-    {
-      content: 'TBD',
-    },
-  ],
-};
-
-const yaPrivacy: IProject.Item = {
-  title: '야놀자 마케팅 수신 동의 절차 개선',
-  startedAt: '2019-04',
-  endedAt: '2019-05',
-  where: WHERE.YA,
-  descriptions: [
-    { content: '기존 불필요 절차 개선으로 마케팅 수신 동의율 향상' },
-    { content: '개정된 마케팅 관련 법률 제약사항 적용으로 개인정보 이슈 사전 방지' },
-    { content: 'TBD' },
-  ],
-};
-
-const yaAwsIsms: IProject.Item = {
-  title: 'AWS 인프라 재정비 / ISMS 심사 보조',
-  startedAt: '2019-02',
-  endedAt: '2019-04',
-  where: WHERE.YA,
-  descriptions: [
-    {
-      content: 'TBD',
-    },
-  ],
-};
-
-const yaGlobal: IProject.Item = {
-  title: '야놀자 글로벌 서비스 런칭',
-  startedAt: '2018-10',
-  endedAt: '2019-02',
-  where: WHERE.YA,
-  descriptions: [
-    {
-      content: 'TBD',
-    },
-  ],
-};
-
-const yaLeisure: IProject.Item = {
-  title: '야놀자 레저 서비스 런칭',
-  startedAt: '2018-05',
-  endedAt: '2018-09',
-  where: WHERE.YA,
-  descriptions: [
-    {
-      content: 'TBD',
-    },
-  ],
-};
-
-const yaPlaceDetail: IProject.Item = {
-  title: '국내 숙소 상세 개편 및 유지보수',
-  startedAt: '2018-03',
-  // endedAt: '2019-12',
-  where: WHERE.YA,
-  descriptions: [
-    { content: '2018년 상반기에 국내 숙소 상세(PDP) 리팩토링 및 서비스 개선 완료' },
-    { content: 'Response Cache 도입 및 리팩토링으로 기존 대비 latency 90% 감소' },
-    { content: '2019년 마케팅 배너 창구 추가 구현 및 호텔 KTO 등급 적용 등 작업' },
-    { content: 'TBD' },
-  ],
-};
-
 const yaJoyAPI: IProject.Item = {
-  title: 'Mashup API 개발 및 운영',
-  startedAt: '2018-03',
-  // endedAt: '2019-12',
+  title: '야놀자 Mashup API 개발 및 유지보수',
+  startedAt: '2018-02',
   where: WHERE.YA,
-  descriptions: [{ content: 'Aggregation Layer의 Mashup API 개발 및 운영' }, { content: 'TBD' }],
+  descriptions: [
+    { content: 'Aggregation Layer의 Mashup API 개발 및 운영' },
+    {
+      content: '2019년 숙소 리스트 신규 광고 상품 추가',
+      weight: 'MEDIUM',
+      descriptions: [
+        { content: '신규 광고 상품 추가로 신규 매출 발생에 기여' },
+        { content: 'TBD' },
+      ],
+    },
+    {
+      content: '2019년 쇼킹특가/핫딜 서비스 런칭',
+      weight: 'MEDIUM',
+      descriptions: [
+        { content: '신규 할인 상품 추가로 추가 매출 발생 및 사용자 구매율 향상' },
+        { content: 'TBD' },
+      ],
+    },
+    {
+      content: '2019년 해외숙소 예약 서비스 런칭',
+      weight: 'MEDIUM',
+      descriptions: [
+        { content: '해외 OTA 연동으로 해외 숙소 예약 가능하도록 런칭' },
+        { content: 'TBD' },
+      ],
+    },
+    {
+      content: '2018년 레저 서비스 런칭',
+      weight: 'MEDIUM',
+      descriptions: [
+        { content: '레저 상품 데이터 연동으로 레저 서비스 예약 기능 런칭' },
+        {
+          content: '(참고자료) 야놀자가 레저를 판매하려고 할 때 벌어지는 일 (by 송요창님)',
+          href:
+            'https://speakerdeck.com/totuworld/yanoljaga-rejeoreul-panmaeharyeogo-hal-ddae-beoleojineun-il',
+        },
+        { content: 'TBD' },
+      ],
+    },
+    {
+      content: '2018년 국내 숙소 상세 개편 및 유지보수',
+      weight: 'MEDIUM',
+      descriptions: [
+        { content: '2018년 상반기에 국내 숙소 상세(PDP) 리팩토링 및 서비스 개선 완료' },
+        { content: 'Redis 활용한 Response Cache 도입 및 리팩토링으로 기존 대비 Latency 90% 감소' },
+        { content: '사용자 경험 및 매출 향상 위한 추가 비즈니스 요구사항 개발 및 구조 개선' },
+        { content: 'TBD' },
+      ],
+    },
+    {
+      content: 'AWS 인프라 유지보수 및 ISMS 인증 작업',
+      weight: 'MEDIUM',
+      descriptions: [
+        { content: '주기적으로 변경 및 강화되는 인프라 정책을 팀 프로젝트에 적용' },
+        { content: '팀 내 AWS 사용 구조 개선과 비용 최적화' },
+        { content: 'ISMS 인증 획득을 위한 인프라 보안 강화 작업 담당' },
+      ],
+    },
+  ],
 };
 
 const plBackend: IProject.Item = {
-  title: '플레이팅 백엔드 서비스 개발',
+  title: '플레이팅 백엔드/프론트엔드 서비스 개발',
   startedAt: '2016-10',
   endedAt: '2017-11',
   where: WHERE.PL,
   descriptions: [
     {
-      content: 'TBD',
+      content: 'API Server v1 / v2',
+      weight: 'MEDIUM',
+      descriptions: [
+        { content: '플레이팅 서비스에 사용되는 API 서버 개발' },
+        {
+          content: '기존 PHP로 작성된 v1 API를 Node.js와 Express.js로 이전 및 기능 추가, 코드 개선',
+        },
+        { content: 'API v2 부터 TDD, ORM 등 도입' },
+        { content: 'AWS EC2, pm2, nginx를 서버 인프라로 사용' },
+        { content: 'AWS RDS의 MySQL를 데이터베이스로 사용' },
+      ],
     },
-  ],
-};
-
-const plEscPos: IProject.Item = {
-  title: 'ESC/POS Printer Native 프로그램 개발',
-  startedAt: '2017-08',
-  endedAt: '2017-10',
-  where: WHERE.PL,
-  descriptions: [
-    { content: '플레이팅 자체 주문 확인지와 영수증 출력용 프로그램' },
-    { content: 'Node.js와 Electron.js, node-escpos를 사용하여 개발' },
-    { content: 'Socket을 사용하여 웹 → 서버 → POS 프린터 통신 구현' },
-    { content: '플레이팅 각 영업점 별로 배포하여 사용' },
     {
-      content: '오픈소스 기여:',
-      postHref: 'https://github.com/song940/node-escpos',
+      content: 'Socket Server',
+      weight: 'MEDIUM',
+      descriptions: [
+        { content: '주문 관련 백오피스에 사용되는 소켓 서버 개발' },
+        { content: 'Node.js와 Socket.io, Express.js를 사용하여 개발' },
+        { content: 'AWS EC2 내의 MongoDB를 데이터베이스로 사용' },
+      ],
+    },
+    {
+      content: 'ETC',
+      weight: 'MEDIUM',
+      descriptions: [
+        {
+          content: 'Admin 서비스 개발',
+          descriptions: [
+            { content: 'React.js 등을 사용하여 내부 백오피스 툴 개발' },
+            { content: 'ERP, 라이더 앱, 서버 모니터링 등 개발' },
+            { content: 'Socket Client 통신, 비동기 HTTP 통신 등을 사용' },
+          ],
+        },
+        {
+          content: 'ESC/POS Printer Navtive 프로그램 개발',
+          descriptions: [
+            { content: '플레이팅 자체 주문 확인지와 영수증 출력용 프로그램' },
+            { content: 'Node.js와 Electron.js, node-escpos를 사용하여 개발' },
+            {
+              content: '오픈소스 기여:',
+              postHref: 'https://github.com/song940/node-escpos',
+            },
+          ],
+        },
+        { content: '백엔드 Batch 서비스 개발' },
+        { content: 'Telegram Bot API, CloudWatch Event 사용한 지표 모니터링 서비스 개발' },
+        { content: 'Microservice 가격 계산 서버 개발' },
+        { content: 'AWS S3, CloudFront 등을 사용한 자체 CDN 구축' },
+        { content: 'React Native 사용한 앱 서비스 유지보수' },
+      ],
     },
   ],
 };
@@ -175,19 +179,6 @@ const plDelivery: IProject.Item = {
     { content: '새벽 주문 전용 Node.js API 서버를 구축하고 기능 개발' },
     { content: 'API v2 프로젝트의 코드 베이스가 됨.' },
     { content: '개발 시 확장성과 모듈화 고려의 중요성을 깨닫게 됨' },
-  ],
-};
-
-const plBigboss: IProject.Item = {
-  title: '플레이팅 Admin 서비스 개발',
-  startedAt: '2016-10',
-  endedAt: '2017-11',
-  where: WHERE.PL,
-  descriptions: [
-    { content: '개발 인력 부족으로 간간히 프론트엔드 개발에 투입' },
-    { content: 'React.js 등을 사용하여 내부 백오피스 툴 개발' },
-    { content: 'ERP, 라이더 앱, 서버 모니터링 등 개발' },
-    { content: 'Socket Client 통신, 비동기 HTTP 통신 등을 사용' },
   ],
 };
 
@@ -222,24 +213,7 @@ const kyToto: IProject.Item = {
 };
 
 const project: IProject.Payload = {
-  list: [
-    yaNol2020,
-    yaAdvertA,
-    yaRedis,
-    yaHotDeal,
-    yaPrivacy,
-    yaAwsIsms,
-    yaGlobal,
-    yaLeisure,
-    yaPlaceDetail,
-    yaJoyAPI,
-    plBackend,
-    plEscPos,
-    plDelivery,
-    plBigboss,
-    ecBackend,
-    kyToto,
-  ],
+  list: [yaNol2020, yaRedis, yaJoyAPI, plBackend, plDelivery, ecBackend, kyToto],
 };
 
 export default project;
