@@ -16,7 +16,7 @@
     "clean": "rm -rf docs .next",
     "lint": "eslint 'component/**/*' 'pages/**/*' 'payload/**/*' '*.ts' --fix"
   },
-  "homepage": "https://resume-next.yowu.dev",
+  "homepage": "https://resume.yowu.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/uyu423/resume-nextjs.git"
