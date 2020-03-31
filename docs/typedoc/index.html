@@ -75,7 +75,10 @@
 					<li>누구나 예쁜 웹 이력서를 쉽게 만들 수 있어 <small>(코딩 쫌만 할 줄 알면..)</small></li>
 					<li>Next.js, Bootstrap CSS 가 사용되었다.</li>
 					<li>사실 <a href="https://github.com/uyu423/resume">https://github.com/uyu423/resume</a> 를 Next.js 로 포팅한 것.</li>
-					<li>Sample: <a href="https://resume.yowu.dev">https://resume.yowu.dev</a></li>
+					<li>Example: <a href="https://resume.yowu.dev">https://resume.yowu.dev</a><ul>
+							<li>more: <a href="https://github.com/uyu423/resume-nextjs/EXAMPLE.md">EXAMPLE.md</a></li>
+						</ul>
+					</li>
 				</ul>
 				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
 					<h2>Install</h2>
@@ -103,8 +106,8 @@ npm install</code></pre>
 						</ul>
 					</li>
 					<li><strong>payload</strong><ul>
-							<li>이력서 렌더링에 필요한 이력서 데이터가 들어있다.</li>
-							<li>코드에 직접적인 수정을 가하지 않는다면 Payload 조작만으로 개인 웹 이력서를 뽑아낼 수 있다.</li>
+							<li>이력서 렌더링에 필요한 데이터가 포함된다.</li>
+							<li>코드에 직접적인 수정을 가하지 않는다면 <strong>Payload 데이터 변경만으로 개인 웹 이력서를 뽑아낼 수 있다.</strong></li>
 							<li>하단의 Payload Detail 참고</li>
 						</ul>
 					</li>
@@ -118,8 +121,11 @@ npm install</code></pre>
 					<h3>Payload Description</h3>
 				</a>
 				<ul>
-					<li>TypeDoc 내에 모든 Payload 에 대한 Rendering Sample Screenshot 이 포함되어 있습니다.</li>
-					<li><a href="https://resume.yowu.dev/typedoc">https://resume.yowu.dev/typedoc</a></li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc">https://resume.yowu.dev/typedoc</a><ul>
+							<li>TypeDoc 내에 모든 Payload 에 대한 Rendering Sample Screenshot 이 포함되어 있습니다.</li>
+						</ul>
+					</li>
+					<li><code>_global</code>, <code>footer</code> Payload 을 제외한 모든 Payload 에는 <code>disable?: boolean</code> 필드가 존재합니다. 해당 필드가 <code>true</code> 면 해당 Payload 의 Section 을 렌더링하지 않습니다.</li>
 				</ul>
 				<a href="#profile" id="profile" style="color: inherit; text-decoration: none;">
 					<h4>Profile</h4>
@@ -232,11 +238,21 @@ npm install</code></pre>
 					</li>
 					<li><code>*.github.io</code> 도메인을 그대로 사용하는 경우 <code>http://{username}.github.io/{repository_name}</code> 접속하면 웹 이력서가 나타난다.</li>
 				</ul>
+				<a href="#contribution" id="contribution" style="color: inherit; text-decoration: none;">
+					<h2>Contribution</h2>
+				</a>
+				<ul>
+					<li>If you want additional features, please pull request. Always open.</li>
+				</ul>
 				<a href="#question" id="question" style="color: inherit; text-decoration: none;">
 					<h2>Question?</h2>
 				</a>
 				<ul>
-					<li>There are no questions yet.</li>
+					<li>Section 의 순서는 어떻게 조절하나요?<ul>
+							<li>현재는 <code>pages/index.tsx</code> 에서 직접 렌더링 순서를 변경하는 수 밖에 없습니다.</li>
+							<li>데이터나 <code>_global</code> payload 로 핸들링하는 방법을 고민 중입니다.</li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -245,6 +261,9 @@ npm install</code></pre>
 				<ul>
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/icommon.html">ICommon</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="modules/ieducation.html">IEducation</a>

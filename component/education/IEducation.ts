@@ -1,5 +1,7 @@
+import { ICommon } from '../common/ICommon';
+
 export declare namespace IEducation {
-  export interface Payload {
+  export interface Payload extends ICommon.Payload {
     list: Item[];
   }
 

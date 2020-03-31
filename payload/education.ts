@@ -1,6 +1,8 @@
 import { IEducation } from '../component/education/IEducation';
 
 const education: IEducation.Payload = {
+  disable: false,
+
   list: [
     {
       title: '가톨릭대학교',

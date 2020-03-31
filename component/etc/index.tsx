@@ -12,6 +12,10 @@ export const Etc = {
 };
 
 function Component({ payload }: PropsWithChildren<{ payload: IEtc.Payload }>) {
+  if (payload?.disable) {
+    return <></>;
+  }
+
   return (
     <CommonSection title="ETC">
       <EducationRow payload={payload} />

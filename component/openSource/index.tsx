@@ -8,6 +8,10 @@ export const OpenSource = {
 };
 
 function Component({ payload }: PropsWithChildren<{ payload: IOpenSource.Payload }>) {
+  if (payload?.disable) {
+    return <></>;
+  }
+
   return (
     <CommonSection title="OPEN SOURCE">
       <OpenSourceRow payload={payload} />

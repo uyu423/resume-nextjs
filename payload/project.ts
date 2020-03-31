@@ -213,6 +213,7 @@ const kyToto: IProject.Item = {
 };
 
 const project: IProject.Payload = {
+  disable: false,
   list: [yaNol2020, yaRedis, yaJoyAPI, plBackend, plDelivery, ecBackend, kyToto],
 };
 

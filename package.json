@@ -57,7 +57,7 @@
     "@types/luxon": "^1.22.0",
     "@types/next-seo": "^1.10.0",
     "@types/node": "^13.9.8",
-    "@types/react": "^16.9.29",
+    "@types/react": "^16.9.30",
     "@types/reactstrap": "^8.4.2",
     "@types/styled-components": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^2.26.0",

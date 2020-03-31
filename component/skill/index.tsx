@@ -12,6 +12,10 @@ export const Skill = {
 };
 
 function Component({ payload }: PropsWithChildren<{ payload: ISkill.Payload }>) {
+  if (payload?.disable) {
+    return <></>;
+  }
+
   return (
     <div className="mt-5">
       <EmptyRowCol>

@@ -126,6 +126,7 @@ const nineXdDeveloperComunity: IOpenSource.Item = {
 };
 
 const openSource: IOpenSource.Payload = {
+  disable: false,
   list: [r2curl, nodeEscpos, yop, kanboard, ossDeveloperComunity, nineXdDeveloperComunity],
 };
 

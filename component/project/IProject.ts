@@ -1,4 +1,5 @@
 import { IRow } from '../common/IRow';
+import { ICommon } from '../common/ICommon';
 
 export declare namespace IProject {
   /**
@@ -6,7 +7,7 @@ export declare namespace IProject {
    *
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/project.ts
    */
-  export interface Payload {
+  export interface Payload extends ICommon.Payload {
     /** ### 프로젝트 리스트 */
     list: Item[];
   }

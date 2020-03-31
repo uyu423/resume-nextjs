@@ -1,6 +1,8 @@
 import { IEtc } from '../component/etc/IEtc';
 
 const etc: IEtc.Payload = {
+  disable: false,
+
   list: [
     {
       title: '가톨릭대학교 캡스톤디자인경연대회 최우수상',

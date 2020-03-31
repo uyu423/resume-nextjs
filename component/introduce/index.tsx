@@ -10,6 +10,10 @@ export const Introduce = {
 };
 
 function Component({ payload }: PropsWithChildren<{ payload: IIntroduce.Payload }>) {
+  if (payload?.disable) {
+    return <></>;
+  }
+
   const latestUpdated = DateTime.fromFormat(
     payload.latestUpdated,
     Util.LUXON_DATE_FORMAT.YYYY_LL_DD,

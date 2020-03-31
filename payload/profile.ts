@@ -5,6 +5,8 @@ import image from '../asset/20200314-big.jpg';
 import { IProfile } from '../component/profile/IProfile';
 
 const profile: IProfile.Payload = {
+  disable: false,
+
   // image: 'https://resume.yowu.dev/static/image/profile_2019.png',
   image,
   name: {

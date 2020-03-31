@@ -8,6 +8,10 @@ export const Project = {
 };
 
 function Component({ payload }: PropsWithChildren<{ payload: IProject.Payload }>) {
+  if (payload?.disable) {
+    return <></>;
+  }
+
   return (
     <CommonSection title="PROJECT">
       <ProjectRow payload={payload} />

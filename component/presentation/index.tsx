@@ -8,6 +8,10 @@ export const Presentation = {
 };
 
 function Component({ payload }: PropsWithChildren<{ payload: IPresentation.Payload }>) {
+  if (payload?.disable) {
+    return <></>;
+  }
+
   return (
     <CommonSection title="PRESENTATION">
       <PresentationRow payload={payload} />

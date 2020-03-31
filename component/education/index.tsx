@@ -12,6 +12,10 @@ export const Education = {
 };
 
 function Component({ payload }: PropsWithChildren<{ payload: IEducation.Payload }>) {
+  if (payload?.disable) {
+    return <></>;
+  }
+
   return (
     <CommonSection title="EDUCATION">
       <EducationRow payload={payload} />

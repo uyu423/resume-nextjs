@@ -1,4 +1,5 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { ICommon } from '../common/ICommon';
 
 export declare namespace IProfile {
   /**
@@ -6,7 +7,7 @@ export declare namespace IProfile {
    *
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/profile.ts
    */
-  export interface Payload {
+  export interface Payload extends ICommon.Payload {
     /**
      * ### 프로필 이미지
      */

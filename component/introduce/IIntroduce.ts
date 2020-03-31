@@ -1,10 +1,12 @@
+import { ICommon } from '../common/ICommon';
+
 export declare namespace IIntroduce {
   /**
    * ![image](https://user-images.githubusercontent.com/8033320/78027282-156e6100-7398-11ea-9afa-91fa95716d1e.png)
    *
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/introduce.ts
    */
-  export interface Payload {
+  export interface Payload extends ICommon.Payload {
     /**
      * ### 자기소개 내용
      *

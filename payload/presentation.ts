@@ -1,6 +1,8 @@
 import { IPresentation } from '../component/presentation/IPresentation';
 
 const presentation: IPresentation.Payload = {
+  disable: false,
+
   list: [
     {
       title: '2018 종합선물세트 for 취준생',

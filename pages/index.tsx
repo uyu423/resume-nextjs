@@ -34,7 +34,6 @@ function Yosume() {
         <Presentation.Component payload={Payload.presentation} />
         <Education.Component payload={Payload.education} />
         <Etc.Component payload={Payload.etc} />
-        {/* <ButtonBox /> */}
         <Footer.Component payload={Payload.footer} />
       </Container>
     </>

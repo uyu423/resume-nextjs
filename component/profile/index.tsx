@@ -12,6 +12,10 @@ export const Profile = {
 };
 
 function Component({ payload }: PropsWithChildren<{ payload: IProfile.Payload }>) {
+  if (payload?.disable) {
+    return <></>;
+  }
+
   const { image, contact, name, notice } = payload;
   return (
     <div className="mt-5">
