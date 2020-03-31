@@ -1,5 +1,3 @@
-# Resume Next.js
-
 <div align="center">
   <img src="logo_enlarge.jpg" alt="Resume Next.js Logo">
   <br/>
