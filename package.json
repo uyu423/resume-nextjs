@@ -43,7 +43,7 @@
     "debug": "^4.1.1",
     "jquery": "^3.4.1",
     "luxon": "^1.22.2",
-    "next": "^9.3.2",
+    "next": "^9.3.3",
     "next-images": "^1.4.0",
     "next-seo": "^4.4.0",
     "react": "^16.13.1",
@@ -54,12 +54,12 @@
   "devDependencies": {
     "@types/luxon": "^1.22.0",
     "@types/next-seo": "^1.10.0",
-    "@types/node": "^13.9.5",
-    "@types/react": "^16.9.27",
+    "@types/node": "^13.9.8",
+    "@types/react": "^16.9.29",
     "@types/reactstrap": "^8.4.2",
     "@types/styled-components": "^5.0.1",
-    "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-airbnb-typescript": "^7.2.0",
@@ -71,5 +71,8 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "prettier": "^1.19.1",
     "typescript": "^3.8.3"
+  },
+  "resolutions": {
+    "**/minimist": "^1.2.3"
   }
 }
