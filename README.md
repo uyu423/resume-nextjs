@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logo_enlarge.jpg" alt="Resume Next.js Logo">
+  <img src="https://github.com/uyu423/resume-nextjs/raw/master/logo.jpg" alt="Resume Next.js Logo">
   <br/>
   <a href="https://github.com/uyu423/resume-nextjs"><img src="https://img.shields.io/github/stars/uyu423/resume-nextjs.svg?style=popout" alt="Github Star"/></a>
   <a href="https://circleci.com/gh/uyu423/resume-nextjs"><img src="https://circleci.com/gh/uyu423/resume-nextjs.svg?style=shield" alt="CircleCI"/></a>
@@ -12,7 +12,7 @@
 
 ## Introduce
 
-- 누구나 예쁜 웹 이력서를 쉽게 만들 수 있어 <small>(코딩 쫌만 할 줄 알면..)</small>
+- 누구나 예쁜 웹 이력서를 쉽게 만들 수 있어 <small>(약간의 코딩으로..)</small>
 - Next.js, Bootstrap CSS 가 사용되었다.
 - 사실 https://github.com/uyu423/resume-legacy 를 Next.js 로 포팅한 것.
 - Sample: https://resume.yowu.dev
