@@ -2,6 +2,8 @@ import { ICommon } from '../common/ICommon';
 
 export declare namespace IIntroduce {
   /**
+   * ### Sample Rendering
+   *
    * ![image](https://user-images.githubusercontent.com/8033320/78027282-156e6100-7398-11ea-9afa-91fa95716d1e.png)
    *
    * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/introduce.ts

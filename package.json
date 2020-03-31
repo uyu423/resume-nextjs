@@ -2,7 +2,7 @@
   "name": "resume-nextjs",
   "lastestUpdatedAt": "2020-03-30",
   "version": "1.0.1",
-  "description": "Developer Resume made with next.js",
+  "description": "Static HTML based RESUME made with next.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,12 +24,14 @@
     "url": "git+https://github.com/uyu423/resume-nextjs.git"
   },
   "keywords": [
-    "resume"
+    "resume",
+    "next"
   ],
   "author": {
     "name": "Yowu Yu",
     "email": "me@yowu.dev"
   },
+  "contributors": [],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/uyu423/resume-nextjs/issues"

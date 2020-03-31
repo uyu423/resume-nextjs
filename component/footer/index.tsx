@@ -24,9 +24,6 @@ function Component({ payload }: PropsWithChildren<{ payload: IFooter.Payload }>)
           <EmptyRowCol>
             <small>
               v.{`${payload.version} / `}
-              {/* Changelog 는 본인의 github 주소를 넣는다. */}
-              <HrefTargetBlank url={`${payload.github}/commits/master`} text="Changelog" />
-              {' / '}
               {/* Github 주소는 origin repository 의 주소를 넣는다. */}
               <HrefTargetBlank url="https://github.com/uyu423/resume-nextjs" text="Github" />
               {' / '}
