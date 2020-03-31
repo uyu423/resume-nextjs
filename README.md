@@ -9,9 +9,9 @@
 
 - 누구나 예쁜 웹 이력서를 쉽게 만들 수 있어 <small>(코딩 쫌만 할 줄 알면..)</small>
 - Next.js, Bootstrap CSS 가 사용되었다.
-- 사실 https://github.com/uyu423/resume 를 Next.js 로 포팅한 것.
-- Example: https://resume.yowu.dev
-  - more: [EXAMPLE.md](https://github.com/uyu423/resume-nextjs/EXAMPLE.md)
+- 사실 https://github.com/uyu423/resume-legacy 를 Next.js 로 포팅한 것.
+- Sample: https://resume.yowu.dev
+  - 더 많은 예제는 [EXAMPLE.md](https://github.com/uyu423/resume-nextjs/blob/master/EXAMPLE.md) 를 참고한다.
 
 ## Install
 
