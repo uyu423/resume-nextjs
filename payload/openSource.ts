@@ -1,5 +1,26 @@
 import { IOpenSource } from '../component/openSource/IOpenSource';
 
+const resume: IOpenSource.Item = {
+  title: 'resume-nextjs',
+  descriptions: [
+    { content: 'next.js 로 누구나 쉽게 만드는 웹 이력서 프로젝트' },
+    { content: 'Owner & Maintainer' },
+    { content: 'Next.js with TypeScrpt' },
+    {
+      content: 'https://github.com/uyu423/resume-nextjs',
+      href: 'https://github.com/uyu423/resume-nextjs',
+    },
+    {
+      content: 'Github Stars: ',
+      postImage: 'https://img.shields.io/github/stars/uyu423/resume-nextjs.svg?style=popout',
+    },
+    {
+      content: 'Codacy: ',
+      postImage: 'https://api.codacy.com/project/badge/Grade/fe3253d51d544a2a971b637ed1570ac7',
+    },
+  ],
+};
+
 const r2curl: IOpenSource.Item = {
   title: 'r2curl',
   descriptions: [
@@ -21,8 +42,12 @@ const r2curl: IOpenSource.Item = {
       postImage: 'https://img.shields.io/npm/dm/r2curl.svg',
     },
     {
-      content: 'Github Star: ',
+      content: 'Github Stars: ',
       postImage: 'https://img.shields.io/github/stars/uyu423/r2curl.svg?style=popout',
+    },
+    {
+      content: 'Codacy: ',
+      postImage: 'https://api.codacy.com/project/badge/Grade/f74cdea970d44550a0bff9319e467256',
     },
   ],
 };
@@ -47,30 +72,30 @@ const nodeEscpos: IOpenSource.Item = {
       href: 'https://github.com/song940/node-escpos',
     },
     {
-      content: 'Github Star: ',
+      content: 'Github Stars: ',
       postImage: 'https://img.shields.io/github/stars/song940/node-escpos.svg?style=popout',
     },
   ],
 };
 
-const yop: IOpenSource.Item = {
-  title: 'yop',
-  descriptions: [
-    {
-      content: '9XD 커뮤니티 개발자 1년 회고록 웹 프로젝트',
-    },
-    {
-      content: 'Contributor',
-    },
-    {
-      content: '실질적인 개발 참여보다는 Bug Reporting과 약간의 Pull Request',
-    },
-    {
-      content: 'https://github.com/9XDM/YOP',
-      href: 'https://github.com/9XDM/YOP',
-    },
-  ],
-};
+// const yop: IOpenSource.Item = {
+//   title: 'yop',
+//   descriptions: [
+//     {
+//       content: '9XD 커뮤니티 개발자 1년 회고록 웹 프로젝트',
+//     },
+//     {
+//       content: 'Contributor',
+//     },
+//     {
+//       content: '실질적인 개발 참여보다는 Bug Reporting과 약간의 Pull Request',
+//     },
+//     {
+//       content: 'https://github.com/9XDM/YOP',
+//       href: 'https://github.com/9XDM/YOP',
+//     },
+//   ],
+// };
 
 const kanboard: IOpenSource.Item = {
   title: 'kanboard',
@@ -92,7 +117,7 @@ const kanboard: IOpenSource.Item = {
       href: 'https://github.com/kanboard/kanboard',
     },
     {
-      content: 'Github Star: ',
+      content: 'Github Stars: ',
       postImage: 'https://img.shields.io/github/stars/kanboard/kanboard.svg?style=popout',
     },
   ],
@@ -127,7 +152,7 @@ const nineXdDeveloperComunity: IOpenSource.Item = {
 
 const openSource: IOpenSource.Payload = {
   disable: false,
-  list: [r2curl, nodeEscpos, yop, kanboard, ossDeveloperComunity, nineXdDeveloperComunity],
+  list: [resume, r2curl, nodeEscpos, kanboard, ossDeveloperComunity, nineXdDeveloperComunity],
 };
 
 export default openSource;

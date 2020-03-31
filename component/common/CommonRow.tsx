@@ -84,6 +84,13 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
   const { content, href, postImage, postHref, weight } = description;
 
   const component = (() => {
+    if (href && postImage) {
+      return (
+        <li style={getFontWeight(weight)}>
+          <HrefTargetBlank url={href} text={content} /> <img src={postImage} alt={postImage} />
+        </li>
+      );
+    }
     if (href) {
       return (
         <li style={getFontWeight(weight)}>
