@@ -28,19 +28,20 @@ npm run dev
 
 ## Structure
 
-- asset
+- asset/
   - images, favicon
-- component
+- component/
   - React Components
-- page
-  - 하나의 페이지 뿐이다.
-- **payload**
+- pages/
+  - `index.html` 을 렌더링하기 위한 하나의 페이지 뿐이다.
+- **payload/**
+  - **Payload 데이터 변경만으로 개인 웹 이력서를 뽑아낼 수 있다.**
   - 이력서 렌더링에 필요한 데이터가 포함된다.
-  - 코드에 직접적인 수정을 가하지 않는다면 **Payload 데이터 변경만으로 개인 웹 이력서를 뽑아낼 수 있다.**
   - 하단의 Payload Detail 참고
-- docs
+- docs/
   - `npm run export (next export)` 를 실행하면 Static HTML 이 렌더링되어 `docs` 디렉토리 하단에 생성된다.
   - Github Pages 의 master branch 의 `docs/` 디렉토리를 지정하여 Github Pages 호스팅을 할 수 있는데, 이를 위해 export 디렉토리 이름을 docs 로 명명했다.
+  - `docs/typedoc/` 에는 TypeDoc HTML 이 포함되지만 `npm run export` 로는 생성하지 않는다. `npm run typedoc` 으로 TypeDoc 을 생성할 수 있다.
 
 ### Payload Description
 
@@ -80,35 +81,30 @@ npm run dev
 
 #### Open Source
 
-- `NOT WRITE TYPEDOC YET`
 - 오픈소스 활동에 대한 소개 영역
 - TypeDoc: [IOpenSource.Payload](https://resume.yowu.dev/typedoc/interfaces/iopensource.payload.html)
 - TS Sample: [payload/openSource.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/openSource.ts)
 
 #### Presentation
 
-- `NOT WRITE TYPEDOC YET`
 - 발표 활동에 대한 소개 영역
 - TypeDoc: [IPresentation.Payload](https://resume.yowu.dev/typedoc/interfaces/ipresentation.payload.html)
 - TS Sample: [payload/presentation.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/presentation.ts)
 
 #### Education
 
-- `NOT WRITE TYPEDOC YET`
 - 학업에 대한 소개 영역
 - TypeDoc: [IEducation.Payload](https://resume.yowu.dev/typedoc/interfaces/ieducation.payload.html)
 - TS Sample: [payload/education.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/education.ts)
 
 #### ETC
 
-- `NOT WRITE TYPEDOC YET`
 - 기타 항목(대회, 자격증, 봉사 등)에 대한 소개 영역
 - TypeDoc: [IEtc.Payload](https://resume.yowu.dev/typedoc/interfaces/ietc.payload.html)
 - TS Sample: [payload/etc.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/etc.ts)
 
 #### \_Global
 
-- `NOT WRITE TYPEDOC YET`
 - 전역 설정(Web Title, SEO, favicon 등)에 대한 설정 영역
 - TypeDoc: [IGlobal.Payload](https://resume.yowu.dev/typedoc/interfaces/iglobal.payload.html)
 - TS Sample: [payload/\_global.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/_global.ts)
@@ -127,10 +123,12 @@ npm run export
 
 #### Repository Setting
 
-- Options - GithubPages - Source - master branch /docs folder 를 선택
+- Options - Github Pages - Source - master branch /docs folder 를 선택
+  - Github Pages Source 에 대한 자세한 내용은 [help.github.com](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) 을 참고한다.
 - `npm run export` 를 실행하여 `docs` 내 Static HTML 을 갱신한다.
 - 외부 도메인이 있는 경우 Custom Domain 항목에 기입해주고, `/CNAME` 을 수정하여 Custom Domain 과 동일한 record 를 입력한다.
-  - 이 친구는 export 과정에서 docs 에 포함됨.
+  - `CNAME` 은 export 과정에서 docs 에 포함됨.
+  - 외부 도메인에 대한 자세한 내용은 [help.github.com](https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site) 를 참고한다.
 - `*.github.io` 도메인을 그대로 사용하는 경우 `http://{username}.github.io/{repository_name}` 접속하면 웹 이력서가 나타난다.
 
 ## Contribution

@@ -93,27 +93,28 @@ npm install</code></pre>
 					<h2>Structure</h2>
 				</a>
 				<ul>
-					<li>asset<ul>
+					<li>asset/<ul>
 							<li>images, favicon</li>
 						</ul>
 					</li>
-					<li>component<ul>
+					<li>component/<ul>
 							<li>React Components</li>
 						</ul>
 					</li>
-					<li>page<ul>
-							<li>하나의 페이지 뿐이다.</li>
+					<li>pages/<ul>
+							<li><code>index.html</code> 을 렌더링하기 위한 하나의 페이지 뿐이다.</li>
 						</ul>
 					</li>
-					<li><strong>payload</strong><ul>
+					<li><strong>payload/</strong><ul>
+							<li><strong>Payload 데이터 변경만으로 개인 웹 이력서를 뽑아낼 수 있다.</strong></li>
 							<li>이력서 렌더링에 필요한 데이터가 포함된다.</li>
-							<li>코드에 직접적인 수정을 가하지 않는다면 <strong>Payload 데이터 변경만으로 개인 웹 이력서를 뽑아낼 수 있다.</strong></li>
 							<li>하단의 Payload Detail 참고</li>
 						</ul>
 					</li>
-					<li>docs<ul>
+					<li>docs/<ul>
 							<li><code>npm run export (next export)</code> 를 실행하면 Static HTML 이 렌더링되어 <code>docs</code> 디렉토리 하단에 생성된다.</li>
 							<li>Github Pages 의 master branch 의 <code>docs/</code> 디렉토리를 지정하여 Github Pages 호스팅을 할 수 있는데, 이를 위해 export 디렉토리 이름을 docs 로 명명했다.</li>
+							<li><code>docs/typedoc/</code> 에는 TypeDoc HTML 이 포함되지만 <code>npm run export</code> 로는 생성하지 않는다. <code>npm run typedoc</code> 으로 TypeDoc 을 생성할 수 있다.</li>
 						</ul>
 					</li>
 				</ul>
@@ -171,7 +172,6 @@ npm install</code></pre>
 					<h4>Open Source</h4>
 				</a>
 				<ul>
-					<li><code>NOT WRITE TYPEDOC YET</code></li>
 					<li>오픈소스 활동에 대한 소개 영역</li>
 					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/iopensource.payload.html">IOpenSource.Payload</a></li>
 					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/openSource.ts">payload/openSource.ts</a></li>
@@ -180,7 +180,6 @@ npm install</code></pre>
 					<h4>Presentation</h4>
 				</a>
 				<ul>
-					<li><code>NOT WRITE TYPEDOC YET</code></li>
 					<li>발표 활동에 대한 소개 영역</li>
 					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/ipresentation.payload.html">IPresentation.Payload</a></li>
 					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/presentation.ts">payload/presentation.ts</a></li>
@@ -189,7 +188,6 @@ npm install</code></pre>
 					<h4>Education</h4>
 				</a>
 				<ul>
-					<li><code>NOT WRITE TYPEDOC YET</code></li>
 					<li>학업에 대한 소개 영역</li>
 					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/ieducation.payload.html">IEducation.Payload</a></li>
 					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/education.ts">payload/education.ts</a></li>
@@ -198,7 +196,6 @@ npm install</code></pre>
 					<h4>ETC</h4>
 				</a>
 				<ul>
-					<li><code>NOT WRITE TYPEDOC YET</code></li>
 					<li>기타 항목(대회, 자격증, 봉사 등)에 대한 소개 영역</li>
 					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/ietc.payload.html">IEtc.Payload</a></li>
 					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/etc.ts">payload/etc.ts</a></li>
@@ -207,7 +204,6 @@ npm install</code></pre>
 					<h4>_Global</h4>
 				</a>
 				<ul>
-					<li><code>NOT WRITE TYPEDOC YET</code></li>
 					<li>전역 설정(Web Title, SEO, favicon 등)에 대한 설정 영역</li>
 					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/iglobal.payload.html">IGlobal.Payload</a></li>
 					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/_global.ts">payload/_global.ts</a></li>
@@ -230,10 +226,14 @@ npm install</code></pre>
 					<h4>Repository Setting</h4>
 				</a>
 				<ul>
-					<li>Options - GithubPages - Source - master branch /docs folder 를 선택</li>
+					<li>Options - Github Pages - Source - master branch /docs folder 를 선택<ul>
+							<li>Github Pages Source 에 대한 자세한 내용은 <a href="https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">help.github.com</a> 을 참고한다.</li>
+						</ul>
+					</li>
 					<li><code>npm run export</code> 를 실행하여 <code>docs</code> 내 Static HTML 을 갱신한다.</li>
 					<li>외부 도메인이 있는 경우 Custom Domain 항목에 기입해주고, <code>/CNAME</code> 을 수정하여 Custom Domain 과 동일한 record 를 입력한다.<ul>
-							<li>이 친구는 export 과정에서 docs 에 포함됨.</li>
+							<li><code>CNAME</code> 은 export 과정에서 docs 에 포함됨.</li>
+							<li>외부 도메인에 대한 자세한 내용은 <a href="https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site">help.github.com</a> 를 참고한다.</li>
 						</ul>
 					</li>
 					<li><code>*.github.io</code> 도메인을 그대로 사용하는 경우 <code>http://{username}.github.io/{repository_name}</code> 접속하면 웹 이력서가 나타난다.</li>
