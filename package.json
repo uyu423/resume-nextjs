@@ -10,9 +10,10 @@
     "build": "next build",
     "prebuild": "npm install && npm run lint",
     "start": "next start",
+    "export:with-typedoc": "npm run export && npm run typedoc",
     "export": "NODE_ENV=production next export --outdir docs/",
     "preexport": "npm run clean && npm run build",
-    "postexport": "touch docs/.nojekyll && cp ./CNAME docs && npm run typedoc",
+    "postexport": "touch docs/.nojekyll && cp ./CNAME docs",
     "clean": "rm -rf docs .next",
     "lint": "eslint 'component/**/*' 'pages/**/*' 'payload/**/*' '*.ts' --fix",
     "typedoc": "typedoc --excludeExternals"

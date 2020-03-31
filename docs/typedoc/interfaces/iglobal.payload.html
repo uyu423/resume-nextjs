@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/iexperience.html">IExperience</a>
+					<a href="../modules/iglobal.html">IGlobal</a>
 				</li>
 				<li>
-					<a href="iexperience.payload.html">Payload</a>
+					<a href="iglobal.payload.html">Payload</a>
 				</li>
 			</ul>
 			<h1>Interface Payload</h1>
@@ -67,18 +67,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p><img src="https://user-images.githubusercontent.com/8033320/78032558-27540200-73a0-11ea-83cd-3fd1cea68402.png" alt="image"></p>
-					</div>
-					<dl class="tsd-comment-tags">
-						<dt>example</dt>
-						<dd><p><a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/experience.ts">https://github.com/uyu423/resume-nextjs/blob/master/payload/experience.ts</a></p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -94,7 +82,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.payload.html#list" class="tsd-kind-icon">list</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iglobal.payload.html#favicon" class="tsd-kind-icon">favicon</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iglobal.payload.html#headtitle" class="tsd-kind-icon">head<wbr>Title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iglobal.payload.html#seo" class="tsd-kind-icon">seo</a></li>
 							</ul>
 						</section>
 					</div>
@@ -103,20 +93,40 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="list" class="tsd-anchor"></a>
-					<h3>list</h3>
-					<div class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">:</span> <a href="iexperience.item.html" class="tsd-signature-type">Item</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="favicon" class="tsd-anchor"></a>
+					<h3>favicon</h3>
+					<div class="tsd-signature tsd-kind-icon">favicon<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/uyu423/resume-nextjs/blob/fffad4f/component/experience/IExperience.ts#L9">experience/IExperience.ts:9</a></li>
+							<li>Defined in common/IGlobal.ts:6</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="headtitle" class="tsd-anchor"></a>
+					<h3>head<wbr>Title</h3>
+					<div class="tsd-signature tsd-kind-icon">head<wbr>Title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in common/IGlobal.ts:5</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="seo" class="tsd-anchor"></a>
+					<h3>seo</h3>
+					<div class="tsd-signature tsd-kind-icon">seo<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NextSeoProps</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in common/IGlobal.ts:8</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<a href="#experience-데이터-목록" id="experience-데이터-목록" style="color: inherit; text-decoration: none;">
-								<h3>Experience 데이터 목록</h3>
-							</a>
-						</div>
+						<dl class="tsd-comment-tags">
+							<dt>see</dt>
+							<dd><p><a href="https://github.com/garmeeh/next-seo">https://github.com/garmeeh/next-seo</a></p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 			</section>
@@ -133,13 +143,13 @@
 					<li class=" tsd-kind-namespace">
 						<a href="../modules/ietc.html">IEtc</a>
 					</li>
-					<li class="current tsd-kind-namespace">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/iexperience.html">IExperience</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="../modules/ifooter.html">IFooter</a>
 					</li>
-					<li class=" tsd-kind-namespace">
+					<li class="current tsd-kind-namespace">
 						<a href="../modules/iglobal.html">IGlobal</a>
 					</li>
 					<li class=" tsd-kind-namespace">
@@ -167,16 +177,19 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="iexperience.item.html" class="tsd-kind-icon">Item</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="iexperience.payload.html" class="tsd-kind-icon">Payload</a>
+						<a href="iglobal.payload.html" class="tsd-kind-icon">Payload</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iexperience.payload.html#list" class="tsd-kind-icon">list</a>
+								<a href="iglobal.payload.html#favicon" class="tsd-kind-icon">favicon</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="iglobal.payload.html#headtitle" class="tsd-kind-icon">head<wbr>Title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="iglobal.payload.html#seo" class="tsd-kind-icon">seo</a>
 							</li>
 						</ul>
 					</li>

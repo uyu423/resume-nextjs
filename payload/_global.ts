@@ -1,11 +1,11 @@
-import { NextSeoProps } from 'next-seo';
 import favicon from '../asset/favicon.ico';
 import previewImage from '../asset/preview_resize.png';
+import { IGlobal } from '../component/common/IGlobal';
 
 const title = '(대충 유용우 개발자 Resume 라는 제목)';
 const description = '(대충 유용우 개발자 Resume 라는 설명)';
 
-export const _global: GlobalPayload = {
+export const _global: IGlobal.Payload = {
   favicon,
   headTitle: title,
   seo: {
@@ -32,10 +32,3 @@ export const _global: GlobalPayload = {
     },
   },
 };
-
-export interface GlobalPayload {
-  headTitle: string;
-  favicon: string;
-  /** @see https://github.com/garmeeh/next-seo */
-  seo: NextSeoProps;
-}

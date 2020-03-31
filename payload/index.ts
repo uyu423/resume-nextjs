@@ -9,7 +9,7 @@ import education from './education';
 import etc from './etc';
 import footer from './footer';
 
-import { GlobalPayload, _global } from './_global';
+import { _global } from './_global';
 
 import { IProfile } from '../component/profile/IProfile';
 import { IIntroduce } from '../component/introduce/IIntroduce';
@@ -21,6 +21,7 @@ import { IPresentation } from '../component/presentation/IPresentation';
 import { IEducation } from '../component/education/IEducation';
 import { IEtc } from '../component/etc/IEtc';
 import { IFooter } from '../component/footer/IFooter';
+import { IGlobal } from '../component/common/IGlobal';
 
 const Payload: Payload = {
   profile,
@@ -49,7 +50,7 @@ interface Payload {
   etc: IEtc.Payload;
   footer: IFooter.Payload;
 
-  _global: GlobalPayload;
+  _global: IGlobal.Payload;
 }
 
 export default Payload;

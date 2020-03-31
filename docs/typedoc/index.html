@@ -65,41 +65,146 @@
 				<a href="#resume-nextjs" id="resume-nextjs" style="color: inherit; text-decoration: none;">
 					<h1>Resume Next.js</h1>
 				</a>
-				<p><a href="https://circleci.com/gh/uyu423/resume-nextjs"><img src="https://circleci.com/gh/uyu423/resume-nextjs.svg?style=shield" alt="CircleCI"></a>
+				<p><a href="https://github.com/uyu423/resume-nextjs"><img src="https://img.shields.io/github/stars/uyu423/resume-nextjs.svg?style=popout" alt="Github Star"></a>
+					<a href="https://circleci.com/gh/uyu423/resume-nextjs"><img src="https://circleci.com/gh/uyu423/resume-nextjs.svg?style=shield" alt="CircleCI"></a>
 					<a href="https://app.codacy.com/manual/uyu423/resume-nextjs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uyu423/resume-nextjs&amp;utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/fe3253d51d544a2a971b637ed1570ac7" alt="Codacy Badge"></a>
 					<a href="https://codeclimate.com/github/uyu423/resume-nextjs/maintainability"><img src="https://api.codeclimate.com/v1/badges/19edd90e9309634ee66a/maintainability" alt="Maintainability"></a>
 					<a href="https://david-dm.org/uyu423/resume-nextjs"><img src="https://david-dm.org/uyu423/resume-nextjs/status.svg" alt="dependencies Status"></a>
 				<a href="https://david-dm.org/uyu423/resume-nextjs?type=dev"><img src="https://david-dm.org/uyu423/resume-nextjs/dev-status.svg" alt="devDependencies Status"></a></p>
 				<ul>
 					<li>누구나 예쁜 웹 이력서를 쉽게 만들 수 있어 <small>(코딩 쫌만 할 줄 알면..)</small></li>
-					<li>사실 <a href="https://github.com/uyu423/resume">https://github.com/uyu423/resume</a> 를 next.js 로 포팅한 것.</li>
-					<li>Sample: <a href="https://resume-next.yowu.dev">https://resume-next.yowu.dev</a></li>
+					<li>Next.js, Bootstrap CSS 가 사용되었다.</li>
+					<li>사실 <a href="https://github.com/uyu423/resume">https://github.com/uyu423/resume</a> 를 Next.js 로 포팅한 것.</li>
+					<li>Sample: <a href="https://resume.yowu.dev">https://resume.yowu.dev</a></li>
 				</ul>
 				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
 					<h2>Install</h2>
 				</a>
 				<pre><code class="language-bash"><span class="hljs-comment"># fork to your github account &amp; git cloning your forked repository</span>
 npm install</code></pre>
-				<a href="#run-dev" id="run-dev" style="color: inherit; text-decoration: none;">
-					<h2>Run dev</h2>
+				<a href="#run-development-mode" id="run-development-mode" style="color: inherit; text-decoration: none;">
+					<h2>Run Development Mode</h2>
 				</a>
 				<pre><code class="language-bash">npm run dev</code></pre>
 				<a href="#structure" id="structure" style="color: inherit; text-decoration: none;">
 					<h2>Structure</h2>
 				</a>
 				<ul>
-					<li>asset</li>
-					<li>component</li>
-					<li>page</li>
-					<li>payload</li>
-					<li>docs</li>
-					<li>TBU</li>
+					<li>asset<ul>
+							<li>images, favicon</li>
+						</ul>
+					</li>
+					<li>component<ul>
+							<li>React Components</li>
+						</ul>
+					</li>
+					<li>page<ul>
+							<li>하나의 페이지 뿐이다.</li>
+						</ul>
+					</li>
+					<li><strong>payload</strong><ul>
+							<li>이력서 렌더링에 필요한 이력서 데이터가 들어있다.</li>
+							<li>코드에 직접적인 수정을 가하지 않는다면 Payload 조작만으로 개인 웹 이력서를 뽑아낼 수 있다.</li>
+							<li>하단의 Payload Detail 참고</li>
+						</ul>
+					</li>
+					<li>docs<ul>
+							<li><code>npm run export (next export)</code> 를 실행하면 Static HTML 이 렌더링되어 <code>docs</code> 디렉토리 하단에 생성된다.</li>
+							<li>Github Pages 의 master branch 의 <code>docs/</code> 디렉토리를 지정하여 Github Pages 호스팅을 할 수 있는데, 이를 위해 export 디렉토리 이름을 docs 로 명명했다.</li>
+						</ul>
+					</li>
 				</ul>
-				<a href="#payload-detail" id="payload-detail" style="color: inherit; text-decoration: none;">
-					<h3>Payload Detail</h3>
+				<a href="#payload-description" id="payload-description" style="color: inherit; text-decoration: none;">
+					<h3>Payload Description</h3>
 				</a>
 				<ul>
-					<li>TBU</li>
+					<li>TypeDoc 내에 모든 Payload 에 대한 Rendering Sample Screenshot 이 포함되어 있습니다.</li>
+					<li><a href="https://resume.yowu.dev/typedoc">https://resume.yowu.dev/typedoc</a></li>
+				</ul>
+				<a href="#profile" id="profile" style="color: inherit; text-decoration: none;">
+					<h4>Profile</h4>
+				</a>
+				<ul>
+					<li>프로플 사진, 이름, 연락수단, 약간의 공지사항 영역</li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/iprofile.payload.html">IProfile.Payload</a></li>
+					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/profile.ts">payload/profile.ts</a></li>
+				</ul>
+				<a href="#introduce" id="introduce" style="color: inherit; text-decoration: none;">
+					<h4>Introduce</h4>
+				</a>
+				<ul>
+					<li>자기 소개 영역</li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/iintroduce.payload.html">IIntroduce.Payload</a></li>
+					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/introduce.ts">payload/introduce.ts</a></li>
+				</ul>
+				<a href="#skill" id="skill" style="color: inherit; text-decoration: none;">
+					<h4>Skill</h4>
+				</a>
+				<ul>
+					<li>본인 보유 기술에 대한 소개 영역</li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/iskill.payload.html">ISkill.Payload</a></li>
+					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/skill.ts">payload/skill.ts</a></li>
+				</ul>
+				<a href="#experience" id="experience" style="color: inherit; text-decoration: none;">
+					<h4>Experience</h4>
+				</a>
+				<ul>
+					<li>(직장)경험에 대한 소개 영역</li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/iexperience.payload.html">IExperience.Payload</a></li>
+					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/experience.ts">payload/experience.ts</a></li>
+				</ul>
+				<a href="#project" id="project" style="color: inherit; text-decoration: none;">
+					<h4>Project</h4>
+				</a>
+				<ul>
+					<li>수행 프로젝트에 대한 소개 영역</li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/iproject.payload.html">IProject.Payload</a></li>
+					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/project.ts">payload/project.ts</a></li>
+				</ul>
+				<a href="#open-source" id="open-source" style="color: inherit; text-decoration: none;">
+					<h4>Open Source</h4>
+				</a>
+				<ul>
+					<li><code>NOT WRITE TYPEDOC YET</code></li>
+					<li>오픈소스 활동에 대한 소개 영역</li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/iopensource.payload.html">IOpenSource.Payload</a></li>
+					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/openSource.ts">payload/openSource.ts</a></li>
+				</ul>
+				<a href="#presentation" id="presentation" style="color: inherit; text-decoration: none;">
+					<h4>Presentation</h4>
+				</a>
+				<ul>
+					<li><code>NOT WRITE TYPEDOC YET</code></li>
+					<li>발표 활동에 대한 소개 영역</li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/ipresentation.payload.html">IPresentation.Payload</a></li>
+					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/presentation.ts">payload/presentation.ts</a></li>
+				</ul>
+				<a href="#education" id="education" style="color: inherit; text-decoration: none;">
+					<h4>Education</h4>
+				</a>
+				<ul>
+					<li><code>NOT WRITE TYPEDOC YET</code></li>
+					<li>학업에 대한 소개 영역</li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/ieducation.payload.html">IEducation.Payload</a></li>
+					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/education.ts">payload/education.ts</a></li>
+				</ul>
+				<a href="#etc" id="etc" style="color: inherit; text-decoration: none;">
+					<h4>ETC</h4>
+				</a>
+				<ul>
+					<li><code>NOT WRITE TYPEDOC YET</code></li>
+					<li>기타 항목(대회, 자격증, 봉사 등)에 대한 소개 영역</li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/ietc.payload.html">IEtc.Payload</a></li>
+					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/etc.ts">payload/etc.ts</a></li>
+				</ul>
+				<a href="#_global" id="_global" style="color: inherit; text-decoration: none;">
+					<h4>_Global</h4>
+				</a>
+				<ul>
+					<li><code>NOT WRITE TYPEDOC YET</code></li>
+					<li>전역 설정(Web Title, SEO, favicon 등)에 대한 설정 영역</li>
+					<li>TypeDoc: <a href="https://resume.yowu.dev/typedoc/interfaces/iglobal.payload.html">IGlobal.Payload</a></li>
+					<li>TS Sample: <a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/_global.ts">payload/_global.ts</a></li>
 				</ul>
 				<a href="#export" id="export" style="color: inherit; text-decoration: none;">
 					<h2>Export</h2>
@@ -112,18 +217,26 @@ npm install</code></pre>
 						</ul>
 					</li>
 				</ul>
-				<a href="#github-pages" id="github-pages" style="color: inherit; text-decoration: none;">
-					<h3>Github Pages</h3>
+				<a href="#export-to-github-pages" id="export-to-github-pages" style="color: inherit; text-decoration: none;">
+					<h3>Export to Github Pages</h3>
 				</a>
 				<a href="#repository-setting" id="repository-setting" style="color: inherit; text-decoration: none;">
 					<h4>Repository Setting</h4>
 				</a>
 				<ul>
 					<li>Options - GithubPages - Source - master branch /docs folder 를 선택</li>
+					<li><code>npm run export</code> 를 실행하여 <code>docs</code> 내 Static HTML 을 갱신한다.</li>
 					<li>외부 도메인이 있는 경우 Custom Domain 항목에 기입해주고, <code>/CNAME</code> 을 수정하여 Custom Domain 과 동일한 record 를 입력한다.<ul>
 							<li>이 친구는 export 과정에서 docs 에 포함됨.</li>
 						</ul>
 					</li>
+					<li><code>*.github.io</code> 도메인을 그대로 사용하는 경우 <code>http://{username}.github.io/{repository_name}</code> 접속하면 웹 이력서가 나타난다.</li>
+				</ul>
+				<a href="#question" id="question" style="color: inherit; text-decoration: none;">
+					<h2>Question?</h2>
+				</a>
+				<ul>
+					<li>There are no questions yet.</li>
 				</ul>
 			</div>
 		</div>
@@ -144,6 +257,9 @@ npm install</code></pre>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="modules/ifooter.html">IFooter</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/iglobal.html">IGlobal</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="modules/iintroduce.html">IIntroduce</a>
