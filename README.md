@@ -1,5 +1,9 @@
 # Resume Next.js
 
+<div align="center">
+<img src="logo_enlarge.jpg">
+</div>
+
 [![Github Star](https://img.shields.io/github/stars/uyu423/resume-nextjs.svg?style=popout)](https://github.com/uyu423/resume-nextjs)
 [![CircleCI](https://circleci.com/gh/uyu423/resume-nextjs.svg?style=shield)](https://circleci.com/gh/uyu423/resume-nextjs)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fe3253d51d544a2a971b637ed1570ac7)](https://app.codacy.com/manual/uyu423/resume-nextjs?utm_source=github.com&utm_medium=referral&utm_content=uyu423/resume-nextjs&utm_campaign=Badge_Grade_Dashboard)
