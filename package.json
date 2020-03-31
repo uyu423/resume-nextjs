@@ -12,9 +12,10 @@
     "start": "next start",
     "export": "NODE_ENV=production next export --outdir docs/",
     "preexport": "npm run clean && npm run build",
-    "postexport": "touch docs/.nojekyll && cp ./CNAME docs",
+    "postexport": "touch docs/.nojekyll && cp ./CNAME docs && npm run typedoc",
     "clean": "rm -rf docs .next",
-    "lint": "eslint 'component/**/*' 'pages/**/*' 'payload/**/*' '*.ts' --fix"
+    "lint": "eslint 'component/**/*' 'pages/**/*' 'payload/**/*' '*.ts' --fix",
+    "typedoc": "typedoc --excludeExternals"
   },
   "homepage": "https://resume.yowu.dev",
   "repository": {
@@ -70,6 +71,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "prettier": "^1.19.1",
+    "typedoc": "^0.17.3",
     "typescript": "^3.8.3"
   },
   "resolutions": {

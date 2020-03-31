@@ -20,5 +20,11 @@
     "outDir": "docs"
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "typedocOptions": {
+    "out": "docs/typedoc",
+    "mode": "file",
+    "name": "Resume Next.js: TypeDoc",
+    "externalPattern": "!**/I*.ts"
+  }
 }
