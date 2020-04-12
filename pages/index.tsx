@@ -19,7 +19,7 @@ import Payload from '../payload';
 function Yosume() {
   return (
     <>
-      <NextSeo {...Payload._global.seo} />;
+      <NextSeo {...Payload._global.seo} />
       <Head>
         <title>{Payload._global.headTitle}</title>
         <link rel="shortcut icon" href={Payload._global.favicon} />
