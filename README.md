@@ -50,68 +50,68 @@ npm run dev
 
 ### Payload Description
 
-- TypeDoc: https://resume.yowu.dev/typedoc
+- TypeDoc: https://uyu423.github.io/resume-nextjs/typedoc
   - TypeDoc 내에 모든 Payload 에 대한 Rendering Sample Screenshot 이 포함되어 있습니다.
 - `_global`, `footer` Payload 을 제외한 모든 Payload 에는 `disable?: boolean` 필드가 존재합니다. 해당 필드가 `true` 면 해당 Payload 의 Section 을 렌더링하지 않습니다.
 
 #### Profile
 
 - 프로플 사진, 이름, 연락수단, 약간의 공지사항 영역
-- TypeDoc: [IProfile.Payload](https://resume.yowu.dev/typedoc/interfaces/iprofile.payload.html)
+- TypeDoc: [IProfile.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/iprofile.payload.html)
 - TS Sample: [payload/profile.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/profile.ts)
 
 #### Introduce
 
 - 자기 소개 영역
-- TypeDoc: [IIntroduce.Payload](https://resume.yowu.dev/typedoc/interfaces/iintroduce.payload.html)
+- TypeDoc: [IIntroduce.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/iintroduce.payload.html)
 - TS Sample: [payload/introduce.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/introduce.ts)
 
 #### Skill
 
 - 본인 보유 기술에 대한 소개 영역
-- TypeDoc: [ISkill.Payload](https://resume.yowu.dev/typedoc/interfaces/iskill.payload.html)
+- TypeDoc: [ISkill.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/iskill.payload.html)
 - TS Sample: [payload/skill.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/skill.ts)
 
 #### Experience
 
 - (직장)경험에 대한 소개 영역
-- TypeDoc: [IExperience.Payload](https://resume.yowu.dev/typedoc/interfaces/iexperience.payload.html)
+- TypeDoc: [IExperience.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/iexperience.payload.html)
 - TS Sample: [payload/experience.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/experience.ts)
 
 #### Project
 
 - 수행 프로젝트에 대한 소개 영역
-- TypeDoc: [IProject.Payload](https://resume.yowu.dev/typedoc/interfaces/iproject.payload.html)
+- TypeDoc: [IProject.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/iproject.payload.html)
 - TS Sample: [payload/project.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/project.ts)
 
 #### Open Source
 
 - 오픈소스 활동에 대한 소개 영역
-- TypeDoc: [IOpenSource.Payload](https://resume.yowu.dev/typedoc/interfaces/iopensource.payload.html)
+- TypeDoc: [IOpenSource.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/iopensource.payload.html)
 - TS Sample: [payload/openSource.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/openSource.ts)
 
 #### Presentation
 
 - 발표 활동에 대한 소개 영역
-- TypeDoc: [IPresentation.Payload](https://resume.yowu.dev/typedoc/interfaces/ipresentation.payload.html)
+- TypeDoc: [IPresentation.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/ipresentation.payload.html)
 - TS Sample: [payload/presentation.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/presentation.ts)
 
 #### Education
 
 - 학업에 대한 소개 영역
-- TypeDoc: [IEducation.Payload](https://resume.yowu.dev/typedoc/interfaces/ieducation.payload.html)
+- TypeDoc: [IEducation.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/ieducation.payload.html)
 - TS Sample: [payload/education.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/education.ts)
 
 #### ETC
 
 - 기타 항목(대회, 자격증, 봉사 등)에 대한 소개 영역
-- TypeDoc: [IEtc.Payload](https://resume.yowu.dev/typedoc/interfaces/ietc.payload.html)
+- TypeDoc: [IEtc.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/ietc.payload.html)
 - TS Sample: [payload/etc.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/etc.ts)
 
 #### \_Global
 
 - 전역 설정(Web Title, SEO, favicon 등)에 대한 설정 영역
-- TypeDoc: [IGlobal.Payload](https://resume.yowu.dev/typedoc/interfaces/iglobal.payload.html)
+- TypeDoc: [IGlobal.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/iglobal.payload.html)
 - TS Sample: [payload/\_global.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/_global.ts)
 
 ## Export
