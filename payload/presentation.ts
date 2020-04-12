@@ -1,7 +1,7 @@
 import { IPresentation } from '../component/presentation/IPresentation';
 
 const presentation: IPresentation.Payload = {
-  disable: false,
+  disable: true,
 
   list: [
     {
