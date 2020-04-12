@@ -236,8 +236,9 @@ npm install</code></pre>
 						</ul>
 					</li>
 					<li><code>npm run export</code> 를 실행하여 <code>docs</code> 내 Static HTML 을 갱신한다.</li>
-					<li>외부 도메인이 있는 경우 Custom Domain 항목에 기입해주고, <code>/CNAME</code> 을 수정하여 Custom Domain 과 동일한 record 를 입력한다.<ul>
+					<li>외부 도메인이 있는 경우 Custom Domain 항목에 기입해주고, <code>/CNAME</code> 을 생성하여 Custom Domain 과 동일한 record 를 입력한다.<ul>
 							<li><code>CNAME</code> 은 export 과정에서 docs 에 포함됨.</li>
+							<li><code>CNAME</code> 파일의 내용은 아래와 같이 hostname 만 포함되면 된다.<pre><code><span class="hljs-selector-tag">resume</span><span class="hljs-selector-class">.yowu</span><span class="hljs-selector-class">.dev</span></code></pre></li>
 							<li>외부 도메인에 대한 자세한 내용은 <a href="https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site">help.github.com</a> 를 참고한다.</li>
 						</ul>
 					</li>

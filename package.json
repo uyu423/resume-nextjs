@@ -13,8 +13,8 @@
     "export:with-typedoc": "npm run export && npm run typedoc",
     "export": "cross-env NODE_ENV=production next export --outdir docs/",
     "preexport": "npm run clean && npm run build",
-    "postexport": "touch docs/.nojekyll && cp ./CNAME docs",
-    "clean": "rm -rf docs .next",
+    "postexport": "touch docs/.nojekyll && cpy ./CNAME docs || :",
+    "clean": "rimraf docs .next",
     "lint": "eslint 'component/**/*' 'pages/**/*' 'payload/**/*' '*.ts' --fix",
     "typedoc": "typedoc --excludeExternals"
   },
@@ -64,6 +64,7 @@
     "@types/styled-components": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
+    "cpy-cli": "^3.1.0",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
@@ -75,6 +76,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
     "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
   },

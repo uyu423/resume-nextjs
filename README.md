@@ -15,7 +15,7 @@
 - 누구나 예쁜 웹 이력서를 쉽게 만들 수 있어 <small>(약간의 코딩으로..)</small>
 - Next.js, Bootstrap CSS 가 사용되었다.
 - 사실 https://github.com/uyu423/resume-legacy 를 Next.js 로 포팅한 것.
-- Sample: https://resume.yowu.dev
+- Sample: https://uyu423.github.io/resume-nextjs
   - 더 많은 예제는 [EXAMPLE.md](https://github.com/uyu423/resume-nextjs/blob/master/EXAMPLE.md) 를 참고한다.
 
 ## Install
@@ -131,8 +131,12 @@ npm run export
 - Options - Github Pages - Source - master branch /docs folder 를 선택
   - Github Pages Source 에 대한 자세한 내용은 [help.github.com](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) 을 참고한다.
 - `npm run export` 를 실행하여 `docs` 내 Static HTML 을 갱신한다.
-- 외부 도메인이 있는 경우 Custom Domain 항목에 기입해주고, `/CNAME` 을 수정하여 Custom Domain 과 동일한 record 를 입력한다.
+- 외부 도메인이 있는 경우 Custom Domain 항목에 기입해주고, `/CNAME` 을 생성하여 Custom Domain 과 동일한 record 를 입력한다.
   - `CNAME` 은 export 과정에서 docs 에 포함됨.
+  - `CNAME` 파일의 내용은 아래와 같이 hostname 만 포함되면 된다.
+    ```
+    resume.yowu.dev
+    ```
   - 외부 도메인에 대한 자세한 내용은 [help.github.com](https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site) 를 참고한다.
 - `*.github.io` 도메인을 그대로 사용하는 경우 `http://{username}.github.io/{repository_name}` 접속하면 웹 이력서가 나타난다.
 
