@@ -1,7 +1,7 @@
-import { faEnvelope, faPhone, faRss } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
-import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import image from '../asset/20200314-big.jpg';
+import { faGithub, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import image from '../asset/_sample.jpg';
 import { IProfile } from '../component/profile/IProfile';
 
 const profile: IProfile.Payload = {
@@ -10,13 +10,13 @@ const profile: IProfile.Payload = {
   // image: 'https://resume.yowu.dev/static/image/profile_2019.png',
   image,
   name: {
-    title: '유 용 우',
-    small: '(요우)',
+    title: 'Lorem ipsum',
+    small: '(LI)',
   },
   contact: [
     {
-      title: 'me@yowu.dev',
-      link: 'mailto:me@yowu.dev',
+      title: 'foo@bar.xyz',
+      link: '#',
       icon: faEnvelope,
     },
     {
@@ -25,20 +25,23 @@ const profile: IProfile.Payload = {
       badge: true,
     },
     {
-      link: 'https://github.com/uyu423',
+      title: 'https://github.com',
+      link: 'https://github.com/uyu423/resume-nextjs',
       icon: faGithub,
     },
     {
-      link: 'https://blog.yowu.dev',
-      icon: faRss,
+      link: 'https://www.facebook.com/iu.loen',
+      icon: faFacebook,
     },
     {
-      link: 'https://fb.com/luckyyowu',
-      icon: faFacebook,
+      title: 'YouTube',
+      link: 'https://www.youtube.com/channel/UC3SyT4_WLHzN7JmHQwKQZww',
+      // icon: faRss,
+      icon: faYoutube,
     },
   ],
   notice: {
-    title: '휴대전화나 페이스북 메시지 아닌 이메일로 연락 부탁드립니다.',
+    title: "This resume is a sample page of 'https://github.com/uyu423/resume-nextjs'.",
     icon: faBell,
   },
 };
