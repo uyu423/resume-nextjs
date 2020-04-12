@@ -9,4 +9,4 @@ jobs:
       - checkout
       - run:
           name: install & lint build & export
-          command: npm run export
+          command: npm run export:with-typedoc
