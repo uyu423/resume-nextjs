@@ -13,7 +13,7 @@ function Component({ payload }: PropsWithChildren<{ payload: IPresentation.Paylo
   }
 
   return (
-    <CommonSection title="PRESENTATION">
+    <CommonSection title="BLOG">
       <PresentationRow payload={payload} />
     </CommonSection>
   );

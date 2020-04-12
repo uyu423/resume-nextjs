@@ -5,20 +5,10 @@ const etc: IEtc.Payload = {
 
   list: [
     {
-      title: 'Capstone Design Contest',
-      subTitle: 'Grand Prize',
-      startedAt: '2015-05',
-    },
-    {
-      title: 'IT Education Service Activities',
-      subTitle: 'Wrold Friends IT Volunteer',
-      startedAt: '2013-07',
-      endedAt: '2013-08',
-    },
-    {
-      title: 'Information Olympiad',
-      subTitle: 'Silver Prize',
-      startedAt: '2008-05',
+      title: '백준 알고리즘 문제풀이',
+      subTitle: 'https://www.acmicpc.net/user/fortescape (https://github.com/joshua-qa/PS)',
+      startedAt: '2016-12',
+      endedAt: '2020-04',
     },
   ],
 };

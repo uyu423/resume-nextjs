@@ -5,16 +5,16 @@ const presentation: IPresentation.Payload = {
 
   list: [
     {
-      title: 'Lorem ipsum',
-      subTitle: 'consectetur adipiscing elit',
-      at: '2017-10',
+      title: '2017년 회고',
+      subTitle: 'QA -> 개발자 전직 후기',
+      at: '2017-12',
       descriptions: [
         {
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          content: '직장을 그만두고 1년간 공부하여 개발자로 취업한 후기',
         },
         {
-          content: 'Slideshare:',
-          postHref: 'https://www.slideshare.net//',
+          content: 'Blog',
+          postHref: 'https://bit.ly/3eh2qFZ',
         },
       ],
     },

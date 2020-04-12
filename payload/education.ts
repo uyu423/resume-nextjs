@@ -5,16 +5,16 @@ const education: IEducation.Payload = {
 
   list: [
     {
-      title: 'Foo University',
-      subTitle: 'Bar Major Bachelor',
-      startedAt: '2010-03',
-      endedAt: '2016-08',
+      title: '유원대학교 (구 영동대학교)',
+      subTitle: '임베디드소프트웨어 전공 학사 졸업',
+      startedAt: '2008-03',
+      endedAt: '2015-02',
     },
     {
-      title: 'Foo High School',
-      subTitle: 'Graduated',
-      startedAt: '2007-03',
-      endedAt: '2010-02',
+      title: '상일 고등학교',
+      subTitle: '자연계 졸업 (경기도 부천시)',
+      startedAt: '2005-03',
+      endedAt: '2008-02',
     },
   ],
 };

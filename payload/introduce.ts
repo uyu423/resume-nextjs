@@ -5,10 +5,13 @@ const introduce: IIntroduce.Payload = {
   disable: false,
 
   contents: [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer massa magna, feugiat commodo arcu sed, sagittis sollicitudin tortor. Nullam diam ex, interdum nec lacus vel, ultrices pretium sapien. Proin bibendum non nibh eu aliquet. In sit amet arcu sed nisi tincidunt ultricies. Fusce magna tellus, egestas at pretium quis, rutrum et ante. Phasellus efficitur lectus felis, sed lacinia enim rhoncus ut. Sed id mi vitae neque aliquet porttitor. Fusce dignissim ipsum urna, at finibus lectus sodales ut. Nulla ut purus vestibulum, dapibus tellus consequat, porttitor purus. Nunc egestas tortor ut vehicula mollis.',
-    'Integer ut libero eu libero mattis rutrum at at urna. Integer non turpis ante. Suspendisse vestibulum odio id libero facilisis gravida. In ipsum est, pellentesque vestibulum tortor eu, bibendum imperdiet metus. Quisque ornare eget ex ut congue. Nam vel finibus sem. Phasellus id neque nibh. Nullam turpis velit, pharetra vitae mi non, bibendum maximus urna.',
+    '간편결제, O2O 서비스의 QA를 하다가 개발자가 되고 싶다는 마음에 전직을 한 3년차 주니어 개발자입니다.',
+    '친구들과 함께 웹 / 앱 서비스를 두 차례 런칭한 경험이 있으며, 이후 서비스 업체에서 자바 서버 개발과 웹 백엔드 개발로서의 경험을 쌓을 수 있었습니다. 주로 Java (+ Spring Boot), Kotlin, PHP (+ Codeigniter), MySQL, Linux (Ubuntu) 등의 기술을 활용하여 실제 서비스를 개발, 운영해본 경험이 있으며, 특히 580만 회원 & 12,000여대의 차량을 보유한 카셰어링 서비스의 백오피스를 개발, 운영하며 다양한 경험을 쌓을 수 있었습니다.',
+    '알고리즘 문제 풀이를 취미 생활로 삼고 있으며, 내부 구현을 살펴보는 것에 큰 관심이 있습니다. 레거시 서비스 분석과 각종 트러블슈팅을 두려워하지 않고, 깊게 분석하는 것을 즐겁게 생각하며 실제 운영 과정에서 발생한 다양한 문제들을 해결하는데 기여할 수 있었습니다. 가끔 codeforces 같은 사이트에서 알고리즘 대회 참가도 하고 있으며, 문제 풀이에 대한 포스팅을 블로그에 주기적으로 게시하기도 합니다.',
+    '서비스 개발은 혼자하는 것이 아니기에, 같이 일하는 팀원들의 어려움을 도와줄 수 있는지 늘 고민하고 실천하려 합니다. 생산성을 높일 수 있는 팁이 있다면 문서로 작성해서 공유하고, 팀원들의 자리를 방문하여 트러블슈팅을 같이 도와주기도 합니다. 설령 저의 담당 업무가 아니더라도, 그렇게해서 같이 일하는 구성원들이 고생하는 시간을 줄일 수 있다면 팀 생산성 향상에 직결된다는 믿음을 가지고 있기 때문입니다.',
+    'QA와 개발자를 경험하며 항상 가지고 있던 생각은 바로 \'내 자식 같은 서비스를 만들자\'입니다. 회사에 몸담고 있는 순간에는 담당한 서비스를 더 없이 사랑하며, 일정 수준의 주인 의식을 갖추려고 노력합니다. 그러한 마음가짐이 맡은 일을 더 잘해나갈 수 있는 원동력이라고 생각하고 있습니다.'
   ],
-  sign: 'Love poem',
+  sign: '',
   // sign: packageJson.author.name,
   // latestUpdated: '2019-07-24',
   latestUpdated: lastestUpdatedAt,
