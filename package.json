@@ -13,7 +13,7 @@
     "export:with-typedoc": "npm run export && npm run typedoc",
     "export": "cross-env NODE_ENV=production next export --outdir docs/",
     "preexport": "npm run clean && npm run build",
-    "postexport": "touch docs/.nojekyll && cpy ./CNAME docs || :",
+    "postexport": "node shellwork.js",
     "clean": "npx rimraf docs .next",
     "lint": "eslint 'component/**/*' 'pages/**/*' 'payload/**/*' '*.ts' --fix",
     "typedoc": "typedoc --excludeExternals"
@@ -44,6 +44,7 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@types/debug": "^4.1.5",
     "bootstrap": "^4.4.1",
+    "chalk": "^4.0.0",
     "debug": "^4.1.1",
     "jquery": "^3.5.0",
     "luxon": "^1.23.0",
@@ -53,6 +54,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "reactstrap": "^8.4.1",
+    "shelljs": "^0.8.3",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
@@ -61,6 +63,7 @@
     "@types/node": "^13.11.1",
     "@types/react": "^16.9.34",
     "@types/reactstrap": "^8.4.2",
+    "@types/shelljs": "^0.8.7",
     "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "@typescript-eslint/parser": "^2.28.0",
