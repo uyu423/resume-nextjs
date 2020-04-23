@@ -10,3 +10,4 @@
 ## Developer
 
 - https://resume.yowu.dev : Node.js Back-end Developer
+- https://daeheekim93.github.io/resume : Java Spring Developer
