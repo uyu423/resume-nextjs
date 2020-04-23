@@ -5,31 +5,31 @@ export declare namespace IPresentation {
   /**
    * ### Sample Rendering
    *
-   * ![image](https://user-images.githubusercontent.com/8033320/78058621-8c6d1f00-73c3-11ea-92ec-7f9f036dc985.png)
+   * ![image](https://user-images.githubusercontent.com/8033320/80116477-fd69b600-85c0-11ea-9fe5-5e5e664605f2.png)
    *
-   * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/education.ts
+   * @example https://github.com/uyu423/resume-nextjs/blob/master/payload/presentation.ts
    */
   export interface Payload extends ICommon.Payload {
-    /** ### 교육 수료 리스트 */
+    /** ### 발표 목록 */
     list: Item[];
   }
 
   export interface Item {
-    /** ### 수료 교육 명 */
+    /** ### 발표명 */
     title: string;
 
-    /** ### 수료 교육 서브 타이틀 */
+    /** ### 발표 서브 타이틀 */
     subTitle: string;
 
     /**
-     * ### 교육 수료 시점
+     * ### 발표 시점
      *
      * @format YYYY-MM
      * @example '2010-03'
      */
     at: string;
 
-    /** ### 교육 수료 설명 */
+    /** ### 발표 설명 */
     descriptions: IRow.Description[];
   }
 }
