@@ -96,6 +96,12 @@ npm run dev
 - TypeDoc: [IPresentation.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/ipresentation.payload.html)
 - TS Sample: [payload/presentation.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/presentation.ts)
 
+#### Article
+
+- 블로그/SNS 포스트, 기사에 대한 소개 영역
+- TypeDoc: [IArticle.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/iarticle.payload.html)
+- TS Sample: [payload/article.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/article.ts)
+
 #### Education
 
 - 학업에 대한 소개 영역
