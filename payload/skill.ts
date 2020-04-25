@@ -44,9 +44,9 @@ const cloud: ISkill.Skill = {
     {
       title: 'GCP (Stackdriver)',
       level: 2,
-    }
-  ]
-}
+    },
+  ],
+};
 
 const framework: ISkill.Skill = {
   category: 'Framework',
@@ -62,7 +62,7 @@ const framework: ISkill.Skill = {
     {
       title: 'Netty',
       level: 1,
-    }
+    },
   ],
 };
 
