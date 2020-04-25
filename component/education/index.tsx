@@ -6,16 +6,21 @@ import { CommonRows } from '../common/CommonRow';
 import { IEducation } from './IEducation';
 import { IRow } from '../common/IRow';
 import Util from '../common/Util';
+import { PreProcessingComponent } from '../common/PreProcessingComponent';
+
+type Payload = IEducation.Payload;
+type Item = IEducation.Item;
 
 export const Education = {
-  Component,
+  Component: ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
+    return PreProcessingComponent<Payload>({
+      payload,
+      component: Component,
+    });
+  },
 };
 
-function Component({ payload }: PropsWithChildren<{ payload: IEducation.Payload }>) {
-  if (payload?.disable) {
-    return <></>;
-  }
-
+function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
     <CommonSection title="EDUCATION">
       <EducationRow payload={payload} />
@@ -23,7 +28,7 @@ function Component({ payload }: PropsWithChildren<{ payload: IEducation.Payload 
   );
 }
 
-function EducationRow({ payload }: PropsWithChildren<{ payload: IEducation.Payload }>) {
+function EducationRow({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
     <EmptyRowCol>
       {payload.list.map((item, index) => {
@@ -33,7 +38,7 @@ function EducationRow({ payload }: PropsWithChildren<{ payload: IEducation.Paylo
   );
 }
 
-function serialize(item: IEducation.Item): IRow.Payload {
+function serialize(item: Item): IRow.Payload {
   const DATE_FORMAT = Util.LUXON_DATE_FORMAT;
   const [startedAt, endedAt] = [item.startedAt, item.endedAt].map((at) =>
     DateTime.fromFormat(at, DATE_FORMAT.YYYY_LL).toFormat(DATE_FORMAT.YYYY_DOT_LL),

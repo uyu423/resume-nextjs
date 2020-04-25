@@ -4,16 +4,20 @@ import { DateTime } from 'luxon';
 import { Style } from '../common/Style';
 import Util from '../common/Util';
 import { IIntroduce } from './IIntroduce';
+import { PreProcessingComponent } from '../common/PreProcessingComponent';
+
+type Payload = IIntroduce.Payload;
 
 export const Introduce = {
-  Component,
+  Component: ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
+    return PreProcessingComponent<Payload>({
+      payload,
+      component: Component,
+    });
+  },
 };
 
-function Component({ payload }: PropsWithChildren<{ payload: IIntroduce.Payload }>) {
-  if (payload?.disable) {
-    return <></>;
-  }
-
+function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   const latestUpdated = DateTime.fromFormat(
     payload.latestUpdated,
     Util.LUXON_DATE_FORMAT.YYYY_LL_DD,

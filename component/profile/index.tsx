@@ -6,16 +6,20 @@ import ProfileImage from './image';
 import { EmptyRowCol } from '../common';
 import { IProfile } from './IProfile';
 import { Style } from '../common/Style';
+import { PreProcessingComponent } from '../common/PreProcessingComponent';
+
+type Payload = IProfile.Payload;
 
 export const Profile = {
-  Component,
+  Component: ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
+    return PreProcessingComponent<Payload>({
+      payload,
+      component: Component,
+    });
+  },
 };
 
-function Component({ payload }: PropsWithChildren<{ payload: IProfile.Payload }>) {
-  if (payload?.disable) {
-    return <></>;
-  }
-
+function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   const { image, contact, name, notice } = payload;
   return (
     <div className="mt-5">
@@ -33,7 +37,7 @@ function Component({ payload }: PropsWithChildren<{ payload: IProfile.Payload }>
   );
 }
 
-function createNameArea(name: IProfile.Payload['name']) {
+function createNameArea(name: Payload['name']) {
   return (
     <Row>
       <Col className="text-center text-md-left">
@@ -45,7 +49,7 @@ function createNameArea(name: IProfile.Payload['name']) {
   );
 }
 
-function createProfileContactMap(contacts: IProfile.Payload['contact']) {
+function createProfileContactMap(contacts: Payload['contact']) {
   return (
     <Row>
       <Col className="pt-3">
@@ -57,7 +61,7 @@ function createProfileContactMap(contacts: IProfile.Payload['contact']) {
   );
 }
 
-function createNoticeArea(notice: IProfile.Payload['notice']) {
+function createNoticeArea(notice: Payload['notice']) {
   return (
     <EmptyRowCol>
       <Alert color="secondary" role="alert" className="mt-3">

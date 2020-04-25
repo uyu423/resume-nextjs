@@ -6,16 +6,20 @@ import { Style } from '../common/Style';
 import { ISkill } from './ISkill';
 import SkillRow from './row';
 import { EmptyRowCol } from '../common';
+import { PreProcessingComponent } from '../common/PreProcessingComponent';
+
+type Payload = ISkill.Payload;
 
 export const Skill = {
-  Component,
+  Component: ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
+    return PreProcessingComponent<Payload>({
+      payload,
+      component: Component,
+    });
+  },
 };
 
-function Component({ payload }: PropsWithChildren<{ payload: ISkill.Payload }>) {
-  if (payload?.disable) {
-    return <></>;
-  }
-
+function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
     <div className="mt-5">
       <EmptyRowCol>

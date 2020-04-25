@@ -4,16 +4,20 @@ import { EmptyRowCol } from '../common';
 import { Style } from '../common/Style';
 import { IExperience } from './IExperience';
 import ExperienceRow from './row';
+import { PreProcessingComponent } from '../common/PreProcessingComponent';
+
+type Payload = IExperience.Payload;
 
 export const Experience = {
-  Component,
+  Component: ({ payload }: PropsWithChildren<{ payload: Payload }>) => {
+    return PreProcessingComponent<Payload>({
+      payload,
+      component: Component,
+    });
+  },
 };
 
-function Component({ payload }: PropsWithChildren<{ payload: IExperience.Payload }>) {
-  if (payload?.disable) {
-    return <></>;
-  }
-
+function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   // 여기는 기간 표시, Skill Keywords 같은 특이 요소가 있어서 CommonSection, CommonRow 로 못바꾸지 않을까..
   return (
     <div className="mt-5">
