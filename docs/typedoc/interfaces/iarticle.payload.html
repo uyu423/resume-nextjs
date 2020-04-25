@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Left | Resume Next.js: TypeDoc</title>
+	<title>Payload | Resume Next.js: TypeDoc</title>
 	<meta name="description" content="Documentation for Resume Next.js: TypeDoc">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,24 +54,44 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/irow.html">IRow</a>
+					<a href="../modules/iarticle.html">IArticle</a>
 				</li>
 				<li>
-					<a href="irow.left.html">Left</a>
+					<a href="iarticle.payload.html">Payload</a>
 				</li>
 			</ul>
-			<h1>Interface Left</h1>
+			<h1>Interface Payload</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<a href="#sample-rendering" id="sample-rendering" style="color: inherit; text-decoration: none;">
+							<h3>Sample Rendering</h3>
+						</a>
+					</div>
+					<p><img src="https://user-images.githubusercontent.com/8033320/80271217-268d6200-86f9-11ea-822b-438508d2cf09.png" alt="image"></p>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><p><a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/article.ts">https://github.com/uyu423/resume-nextjs/blob/master/payload/article.ts</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Left</span>
+						<a href="icommon.payload.html" class="tsd-signature-type">Payload</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">Payload</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -82,8 +102,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="irow.left.html#subtitle" class="tsd-kind-icon">sub<wbr>Title</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="irow.left.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="iarticle.payload.html#disable" class="tsd-kind-icon">disable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iarticle.payload.html#list" class="tsd-kind-icon">list</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,25 +111,41 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="subtitle" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sub<wbr>Title</h3>
-					<div class="tsd-signature tsd-kind-icon">sub<wbr>Title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">JSX.Element</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="disable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
+					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="icommon.payload.html">Payload</a>.<a href="icommon.payload.html#disable">disable</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/uyu423/resume-nextjs/blob/3011cc9/component/common/IRow.ts#L9">common/IRow.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/uyu423/resume-nextjs/blob/3011cc9/component/common/ICommon.ts#L11">common/ICommon.ts:11</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Section Enable Flag</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>description</dt>
+							<dd><p>해당 옵션이 <code>true</code> 라면 렌더링 하지 않는다. <code>undefined</code> 거나 <code>false</code> 라면 렌더링한다.</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="list" class="tsd-anchor"></a>
+					<h3>list</h3>
+					<div class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">:</span> <a href="irow.description.html" class="tsd-signature-type">Description</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/uyu423/resume-nextjs/blob/3011cc9/component/common/IRow.ts#L8">common/IRow.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/uyu423/resume-nextjs/blob/3011cc9/component/article/IArticle.ts#L15">article/IArticle.ts:15</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>아티클 리스트</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -119,7 +155,7 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-namespace">
+					<li class="current tsd-kind-namespace">
 						<a href="../modules/iarticle.html">IArticle</a>
 					</li>
 					<li class=" tsd-kind-namespace">
@@ -155,7 +191,7 @@
 					<li class=" tsd-kind-namespace">
 						<a href="../modules/iproject.html">IProject</a>
 					</li>
-					<li class="current tsd-kind-namespace">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/irow.html">IRow</a>
 					</li>
 					<li class=" tsd-kind-namespace">
@@ -165,33 +201,21 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="irow.description.html" class="tsd-kind-icon">Description</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="irow.left.html" class="tsd-kind-icon">Left</a>
+						<a href="iarticle.payload.html" class="tsd-kind-icon">Payload</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="irow.left.html#subtitle" class="tsd-kind-icon">sub<wbr>Title</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="iarticle.payload.html#disable" class="tsd-kind-icon">disable</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="irow.left.html#title" class="tsd-kind-icon">title</a>
+								<a href="iarticle.payload.html#list" class="tsd-kind-icon">list</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="irow.payload.html" class="tsd-kind-icon">Payload</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="irow.right.html" class="tsd-kind-icon">Right</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/irow.html#fontweighttype" class="tsd-kind-icon">Font<wbr>Weight<wbr>Type</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
