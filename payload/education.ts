@@ -8,7 +8,7 @@ const education: IEducation.Payload = {
       title: 'Foo University',
       subTitle: 'Bar Major Bachelor',
       startedAt: '2010-03',
-      endedAt: '2016-08',
+      // endedAt: '2010-02',
     },
     {
       title: 'Foo High School',
