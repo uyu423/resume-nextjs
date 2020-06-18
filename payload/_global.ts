@@ -27,7 +27,7 @@ export const _global: IGlobal.Payload = {
         firstName: 'Lorem',
         lastName: 'ipsum',
         username: 'lorem',
-        gender: 'femail',
+        gender: 'female',
       },
     },
   },
