@@ -16,7 +16,10 @@ export function CommonDescription({
               <>
                 <Description description={description} key={descIndex.toString()} />
                 {description.descriptions ? (
-                  <DescriptionRecursion descriptions={description.descriptions} />
+                  <DescriptionRecursion
+                    descriptions={description.descriptions}
+                    key={descIndex.toString()}
+                  />
                 ) : (
                   ''
                 )}
@@ -42,7 +45,10 @@ function DescriptionRecursion({
           <>
             <Description description={description} key={index.toString()} />
             {description.descriptions ? (
-              <DescriptionRecursion descriptions={description.descriptions} />
+              <DescriptionRecursion
+                descriptions={description.descriptions}
+                key={index.toString()}
+              />
             ) : (
               ''
             )}

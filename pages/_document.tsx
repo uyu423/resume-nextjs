@@ -1,13 +1,13 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class ResumeDocument extends Document {
   render() {
     return (
-      <html lang="ko-KR">
+      <Html lang="ko-KR">
         <Head>
           {/* Step 5: Output the styles in the head  */}
           <meta charSet="utf-8" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          {/* <meta name="viewport" content="initial-scale=1.0, width=device-width" /> */}
           <link
             href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700|Parisienne&display=swap&subset=korean"
             rel="stylesheet"
@@ -21,7 +21,7 @@ export default class ResumeDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
