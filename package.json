@@ -29,7 +29,8 @@
   ],
   "author": {
     "name": "Yowu Yu",
-    "email": "me@yowu.dev"
+    "email": "me@yowu.dev",
+    "url": "https://yowu.dev"
   },
   "contributors": [],
   "license": "MIT",
@@ -43,7 +44,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.0",
     "@fortawesome/react-fontawesome": "^0.1.12",
     "@types/debug": "^4.1.5",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "chalk": "^4.1.0",
     "debug": "^4.2.0",
     "jquery": "^3.5.1",
