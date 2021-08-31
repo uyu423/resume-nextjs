@@ -11,6 +11,8 @@ export declare namespace IExperience {
   export interface Payload extends ICommon.Payload {
     /** ### Experience 데이터 목록 */
     list: Item[];
+    /** ### 총 경력 기간 표시 유/무 */
+    disableTotalPeriod?: boolean;
   }
 
   export interface Item {
