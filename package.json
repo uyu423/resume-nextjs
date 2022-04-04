@@ -55,7 +55,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "reactstrap": "^8.9.0",
-    "shelljs": "^0.8.4",
+    "shelljs": "^0.8.5",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
