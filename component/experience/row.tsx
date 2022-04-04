@@ -1,9 +1,9 @@
 import { DateTime } from 'luxon';
 import { PropsWithChildren } from 'react';
-import { Row, Col, Badge } from 'reactstrap';
-import { IExperience } from './IExperience';
+import { Badge, Col, Row } from 'reactstrap';
 import { Style } from '../common/Style';
 import Util from '../common/Util';
+import { IExperience } from './IExperience';
 
 export default function ExperienceRow({
   item,
@@ -63,6 +63,7 @@ function createWorkingPeriod(startedAtString: string, endedAtString?: string) {
       return {
         periodTitle: `${startedAt.toFormat(DATE_FORMAT.YYYY_DOT_LL)} ~`,
         isWorking: true,
+        endedAt: undefined,
       };
     }
 
