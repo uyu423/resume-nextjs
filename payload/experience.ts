@@ -17,7 +17,7 @@ const experience: IExperience.Payload = {
     },
     {
       title: 'Bar Co., Ltd.',
-      position: 'Software Enginner',
+      position: 'Software Engineer',
       startedAt: '2016-10',
       endedAt: '2017-11',
       descriptions: [
