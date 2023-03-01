@@ -56,7 +56,7 @@ npm run dev
 
 #### Profile
 
-- 프로플 사진, 이름, 연락수단, 약간의 공지사항 영역
+- 프로필 사진, 이름, 연락수단, 약간의 공지사항 영역
 - TypeDoc: [IProfile.Payload](https://uyu423.github.io/resume-nextjs/typedoc/interfaces/iprofile.payload.html)
 - TS Sample: [payload/profile.ts](https://github.com/uyu423/resume-nextjs/blob/master/payload/profile.ts)
 
