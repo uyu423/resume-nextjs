@@ -15,25 +15,24 @@ import { Project } from '../component/project';
 import { Skill } from '../component/skill';
 import { Style } from '../component/common/Style';
 import Payload from '../payload';
-import { Article } from '../component/article';
+// import { Article } from '../component/article';
 
 function Yosume() {
   return (
     <>
       <NextSeo {...Payload._global.seo} />
       <Head>
-        <title>{Payload._global.headTitle}</title>
+        <title>최지우 이력서</title>
         <link rel="shortcut icon" href={Payload._global.favicon} />
       </Head>
       <Container style={Style.global}>
         <Profile.Component payload={Payload.profile} />
         <Introduce.Component payload={Payload.introduce} />
-        <Skill.Component payload={Payload.skill} />
         <Experience.Component payload={Payload.experience} />
         <Project.Component payload={Payload.project} />
         <OpenSource.Component payload={Payload.openSource} />
         <Presentation.Component payload={Payload.presentation} />
-        <Article.Component payload={Payload.article} />
+        <Skill.Component payload={Payload.skill} />
         <Education.Component payload={Payload.education} />
         <Etc.Component payload={Payload.etc} />
         <Footer.Component payload={Payload.footer} />

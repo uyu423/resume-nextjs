@@ -1,6 +1,6 @@
 {
-  "name": "resume-nextjs",
-  "lastestUpdatedAt": "2021-09-01",
+  "name": "resume",
+  "lastestUpdatedAt": "2023-03-06",
   "version": "1.2.0",
   "description": "Static HTML based RESUME made with next.js",
   "main": "index.js",
@@ -18,19 +18,18 @@
     "lint": "eslint \"component/**/*\" \"pages/**/*\" \"payload/**/*\" \"*.ts\" --fix",
     "typedoc": "typedoc --excludeExternals"
   },
-  "homepage": "https://uyu423.github.io/resume-nextjs",
+  "homepage": "https://heyjyu.github.io",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uyu423/resume-nextjs.git"
+    "url": "git+https://github.com/heyjyu/resume.git"
   },
   "keywords": [
     "resume",
     "next"
   ],
   "author": {
-    "name": "Yowu Yu",
-    "email": "me@yowu.dev",
-    "url": "https://yowu.dev"
+    "name": "Jiwoo Choi",
+    "email": "jooooosmile@gmail.com"
   },
   "contributors": [],
   "license": "MIT",

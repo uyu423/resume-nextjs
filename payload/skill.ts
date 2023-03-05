@@ -4,11 +4,11 @@ const backend: ISkill.Skill = {
   category: 'Back-end',
   items: [
     {
-      title: 'Node.js',
+      title: 'JAVA',
       level: 3,
     },
     {
-      title: 'AWS',
+      title: 'Spring boot',
       level: 3,
     },
     {
@@ -16,16 +16,12 @@ const backend: ISkill.Skill = {
       level: 2,
     },
     {
-      title: 'Java',
-      level: 1,
-    },
-    {
       title: 'Python',
-      level: 1,
+      level: 2,
     },
     {
-      title: 'C/C++',
-      level: 1,
+      title: 'JUnit',
+      level: 2,
     },
   ],
 };
@@ -35,19 +31,15 @@ const database: ISkill.Skill = {
   items: [
     {
       title: 'MySQL',
-      level: 3,
-    },
-    {
-      title: 'Oracle',
       level: 2,
     },
     {
-      title: 'Redis',
+      title: 'PostgreSQL',
       level: 2,
     },
     {
-      title: 'MongoDB',
-      level: 1,
+      title: 'H2',
+      level: 2,
     },
   ],
 };
@@ -56,20 +48,56 @@ const frontend: ISkill.Skill = {
   category: 'Front-end',
   items: [
     {
-      title: 'Next.js',
-      level: 2,
-    },
-    {
       title: 'React.js',
-      level: 2,
+      level: 3,
     },
     {
-      title: 'javascript',
+      title: 'Vue.js',
+      level: 3,
+    },
+    {
+      title: 'jquery',
+      level: 3,
+    },
+    {
+      title: 'Cypress',
+      level: 3,
+    },
+    {
+      title: 'Playwright',
+      level: 3,
+    },
+    {
+      title: 'Codecept.js',
+      level: 3,
+    },
+    {
+      title: 'Jest',
+      level: 3,
+    },
+    {
+      title: 'Javascript',
       level: 2,
     },
     {
       title: 'HTML/CSS',
       level: 2,
+    },
+    {
+      title: 'bootstrap',
+      level: 2,
+    },
+    {
+      title: 'MobX',
+      level: 2,
+    },
+    {
+      title: 'Recoil',
+      level: 2,
+    },
+    {
+      title: 'Typescript',
+      level: 1,
     },
   ],
 };
@@ -84,10 +112,28 @@ const etc: ISkill.Skill = {
       title: 'Vim',
     },
     {
-      title: 'Security',
+      title: 'Git',
+    },
+    {
+      title: 'SVN',
+    },
+    {
+      title: 'Docker',
     },
     {
       title: 'VS Code',
+    },
+    {
+      title: 'IntelliJ',
+    },
+    {
+      title: 'Github action',
+    },
+    {
+      title: 'Github action',
+    },
+    {
+      title: 'crontab',
     },
     {
       title: 'Jira',
