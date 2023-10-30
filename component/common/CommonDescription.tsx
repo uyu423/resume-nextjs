@@ -99,7 +99,12 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
         </li>
       );
     }
-    return <li style={getFontWeight(weight)}>{content}</li>;
+    return (
+      <>
+        <meta name="format-detection" content="telephone=no" />
+        <li style={getFontWeight(weight)}>{content}</li>
+      </>
+    );
   })();
 
   return component;
