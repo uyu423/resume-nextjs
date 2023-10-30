@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useState, useEffect } from 'react';
 import { Row, Col, Badge } from 'reactstrap';
 import { ISkill } from './ISkill';
 import { Style } from '../common/Style';
@@ -8,6 +8,19 @@ export default function SkillRow({
   skill,
   index,
 }: PropsWithChildren<{ skill: ISkill.Skill; index: number }>) {
+  const [isVerticalScreen, setIsVerticalScreen] = useState(false);
+
+  useEffect(() => {
+    setIsVerticalScreen(window.innerHeight > window.innerWidth);
+    const handleResize = () => {
+      setIsVerticalScreen(window.innerHeight > window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div>
       {index > 0 ? <hr /> : ''}
@@ -17,14 +30,15 @@ export default function SkillRow({
         </Col>
         <Col sm={12} md={9}>
           {/* {skill.items.map((item) => JSON.stringify(item, null, 2))} */}
-          {createCalculatedSkillItems(skill.items)}
+          {createCalculatedSkillItems(skill.items, isVerticalScreen)}{' '}
+          {/* isVerticalScreen을 인자로 전달 */}
         </Col>
       </Row>
     </div>
   );
 }
 
-function createCalculatedSkillItems(items: ISkill.Item[]) {
+function createCalculatedSkillItems(items: ISkill.Item[], isVerticalScreen: boolean) {
   const log = Util.debug('SkillRow:createCalculatedSkillItems');
 
   /**
@@ -43,6 +57,25 @@ function createCalculatedSkillItems(items: ISkill.Item[]) {
 
   log('origin', items, items.length, splitPoint);
   log('list', list);
+
+  if (isVerticalScreen) {
+    return (
+      <Row className="mt-2 mt-md-0">
+        <Col xs={12}>
+          <ul>
+            {items.map((skill, skillIndex) => {
+              return (
+                <li key={skillIndex.toString()}>
+                  {createBadge(skill.level)}
+                  {skill.title}
+                </li>
+              );
+            })}
+          </ul>
+        </Col>
+      </Row>
+    );
+  }
 
   return (
     <Row className="mt-2 mt-md-0">
