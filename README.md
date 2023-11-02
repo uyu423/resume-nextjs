@@ -6,8 +6,6 @@
   <a href="https://app.codacy.com/manual/uyu423/resume-nextjs?utm_source=github.com&utm_medium=referral&utm_content=uyu423/resume-nextjs&utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/fe3253d51d544a2a971b637ed1570ac7" alt="Codacy Badge"/></a>
   <a href="https://codeclimate.com/github/uyu423/resume-nextjs/maintainability"><img src="https://api.codeclimate.com/v1/badges/19edd90e9309634ee66a/maintainability" alt="Maintainability"/></a>
   <br/>
-  <a href="https://david-dm.org/uyu423/resume-nextjs"><img src="https://david-dm.org/uyu423/resume-nextjs/status.svg" alt="dependencies Status"/></a>
-  <a href="https://david-dm.org/uyu423/resume-nextjs?type=dev"><img src="https://david-dm.org/uyu423/resume-nextjs/dev-status.svg" alt="devDependencies Status"/></a>
 </div>
 
 ## Introduce
