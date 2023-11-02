@@ -18,6 +18,19 @@
 - Sample: https://uyu423.github.io/resume-nextjs
   - 더 많은 예제는 [EXAMPLE.md](https://github.com/uyu423/resume-nextjs/blob/master/EXAMPLE.md) 를 참고한다.
 
+## Contributors
+
+- [Yowu (uyu423)](https://github.com/uyu423)
+- [Dal-ya](https://github.com/Dal-ya)
+- [Taeyeong Kim (lizard-kim)](https://github.com/lizard-kim)
+- [Taeyang Jin (heli-os)](https://github.com/heli-os)
+- [Hyogeun Oh (Zerohertz)](https://github.com/Zerohertz)
+
+## Requirements
+
+- Node.js < 18
+  - 현재 Node.js 18 이상 버전에서 `npm run dev` 실행 시 `ERR_OSSL_EVP_UNSUPPORTED` 이슈가 있습니다.
+
 ## Install
 
 ```bash
