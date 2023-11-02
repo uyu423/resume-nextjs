@@ -28,6 +28,7 @@
 
 - Node.js < 18
   - 현재 Node.js 18 이상 버전에서 `npm run dev` 실행 시 `ERR_OSSL_EVP_UNSUPPORTED` 이슈가 있습니다.
+  - `.nvmrc` 에 기재된 Node.js 버전 사용을 권고합니다.
 
 ## Install
 

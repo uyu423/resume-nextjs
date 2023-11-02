@@ -5,7 +5,7 @@ jobs:
   build:
     executor:
       name: node/default
-      tag: '16'
+      tag: '16.20.2'
     steps:
       - checkout
       - run:
