@@ -5,8 +5,8 @@ const presentation: IPresentation.Payload = {
 
   list: [
     {
-      title: 'Lorem ipsum',
-      subTitle: 'consectetur adipiscing elit',
+      title: '"Embracing Linux in the Age of Cloud Computing"',
+      subTitle: 'Keynote Speaker at the Open Source Summit',
       at: '2017-10',
       descriptions: [
         {
@@ -14,7 +14,7 @@ const presentation: IPresentation.Payload = {
         },
         {
           content: 'Slideshare:',
-          postHref: 'https://www.slideshare.net//',
+          postHref: 'https://www.slideshare.net/',
         },
       ],
     },

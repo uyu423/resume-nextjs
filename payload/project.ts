@@ -4,39 +4,39 @@ const project: IProject.Payload = {
   disable: false,
   list: [
     {
-      title: 'Mashup API Development',
-      startedAt: '2018-02',
-      where: 'Foo Company',
+      title: 'Linux Kernel Optimization Project',
+      startedAt: '2020-06',
+      where: 'Linux Foundation',
       descriptions: [
-        { content: 'Development and operation of Mashup API of Aggregation Layer' },
         {
-          content: 'Add Foo Feature in 2019',
+          content:
+            'Initiated and lead a collaborative project aimed at optimizing the Linux Kernel for various hardware architectures.Development and operation of Mashup API of Aggregation Layer',
+        },
+        {
+          content:
+            'Achieved significant improvements in system performance and resource management.',
           weight: 'MEDIUM',
           descriptions: [
             { content: 'Integer ut libero eu libero mattis rutrum at at urna' },
             { content: 'Integer non turpis ante' },
           ],
         },
-        {
-          content: 'Launched Bar Service in 2018',
-          weight: 'MEDIUM',
-          descriptions: [
-            { content: 'Suspendisse vestibulum odio id libero facilisis gravida' },
-            {
-              content: 'In ipsum est, pellentesque vestibulum tortor eu, bibendum imperdiet metus',
-            },
-          ],
-        },
       ],
     },
     {
-      title: 'Lorem ipsum Project',
-      startedAt: '2016-10',
-      endedAt: '2017-11',
-      where: 'Bar Co., LTD.',
+      title: 'Global Linux Bootcamp',
+      startedAt: '2017-05',
+      endedAt: '2019-12',
+      where: 'Open Source Community',
       descriptions: [
-        { content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' },
-        { content: 'Integer massa magna, feugiat commodo arcu sed, sagittis sollicitudin tortor' },
+        {
+          content:
+            'Organized and conducted training bootcamps focusing on Linux system engineering skills.',
+        },
+        {
+          content:
+            'Successfully trained over 5,000 participants in system administration and security. ',
+        },
         { content: 'Nullam diam ex, interdum nec lacus vel, ultrices pretium sapien' },
         { content: 'Proin bibendum non nibh eu aliquet' },
       ],

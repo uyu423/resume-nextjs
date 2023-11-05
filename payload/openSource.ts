@@ -4,6 +4,29 @@ const openSource: IOpenSource.Payload = {
   disable: false,
   list: [
     {
+      title: 'Linux Kernal',
+      descriptions: [
+        {
+          content: 'Regular contributor to kernel patches.',
+        },
+        {
+          content: 'Active member of kernel security audit team.',
+        },
+      ],
+    },
+    {
+      title: 'GNOME',
+      descriptions: [
+        {
+          content: 'Contributor to UX improvements for system utilities.',
+        },
+        {
+          content: 'https://github.com/GNOME',
+          href: 'https://github.com/GNOME',
+        },
+      ],
+    },
+    {
       title: 'node',
       descriptions: [
         { content: 'Node.js JavaScript runtime' },
@@ -42,17 +65,6 @@ const openSource: IOpenSource.Payload = {
         {
           content: 'Github Stars: ',
           postImage: 'https://img.shields.io/github/stars/nestjs/nest.svg?style=popout',
-        },
-      ],
-    },
-    {
-      title: 'Developer Community',
-      descriptions: [
-        {
-          content: 'Presentation in 2019',
-        },
-        {
-          content: 'Hackathon participation in 2017',
         },
       ],
     },

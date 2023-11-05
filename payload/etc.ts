@@ -5,20 +5,15 @@ const etc: IEtc.Payload = {
 
   list: [
     {
-      title: 'Capstone Design Contest',
-      subTitle: 'Grand Prize',
+      title: 'Recipient of the "Open Source Hall of Fame"',
+      subTitle: 'Open Source Community',
       startedAt: '2015-05',
     },
     {
-      title: 'IT Education Service Activities',
-      subTitle: 'Wrold Friends IT Volunteer',
-      startedAt: '2013-07',
-      endedAt: '2013-08',
-    },
-    {
-      title: 'Information Olympiad',
-      subTitle: 'Silver Prize',
-      startedAt: '2008-05',
+      title: 'Featured on the cover of "Linux Monthly" as the face of Linux ',
+      subTitle: 'Linux Foundation',
+      startedAt: '2016-07',
+      endedAt: '2020-08',
     },
   ],
 };
