@@ -1,5 +1,6 @@
-import React, { PropsWithChildren, useState, useEffect } from 'react';
-import { Row, Col, Badge } from 'reactstrap';
+import { Badge, Col, Row } from 'reactstrap';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
+
 import { ISkill } from './ISkill';
 import { Style } from '../common/Style';
 import Util from '../common/Util';
@@ -8,12 +9,12 @@ export default function SkillRow({
   skill,
   index,
 }: PropsWithChildren<{ skill: ISkill.Skill; index: number }>) {
-  const [isVerticalScreen, setIsVerticalScreen] = useState(false);
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
 
   useEffect(() => {
-    setIsVerticalScreen(window.innerHeight > window.innerWidth);
+    setIsMobileScreen(window.innerWidth < 768);
     const handleResize = () => {
-      setIsVerticalScreen(window.innerHeight > window.innerWidth);
+      setIsMobileScreen(window.innerWidth < 768);
     };
     window.addEventListener('resize', handleResize);
     return () => {
@@ -30,7 +31,7 @@ export default function SkillRow({
         </Col>
         <Col sm={12} md={9}>
           {/* {skill.items.map((item) => JSON.stringify(item, null, 2))} */}
-          {createCalculatedSkillItems(skill.items, isVerticalScreen)}{' '}
+          {createCalculatedSkillItems(skill.items, isMobileScreen)}{' '}
           {/* isVerticalScreen을 인자로 전달 */}
         </Col>
       </Row>
