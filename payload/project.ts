@@ -10,15 +10,15 @@ const project: IProject.Payload = {
       descriptions: [
         {
           content:
-            'Initiated and lead a collaborative project aimed at optimizing the Linux Kernel for various hardware architectures.Development and operation of Mashup API of Aggregation Layer',
+            'Initiated and lead a collaborative project aimed at optimizing the Linux Kernel for various hardware architectures.',
         },
         {
           content:
             'Achieved significant improvements in system performance and resource management.',
           weight: 'MEDIUM',
           descriptions: [
-            { content: 'Integer ut libero eu libero mattis rutrum at at urna' },
-            { content: 'Integer non turpis ante' },
+            { content: '30% improvement in system resource efficiency' },
+            { content: 'Job Scheduler Refactor and Optimization' },
           ],
         },
       ],
@@ -37,8 +37,6 @@ const project: IProject.Payload = {
           content:
             'Successfully trained over 5,000 participants in system administration and security. ',
         },
-        { content: 'Nullam diam ex, interdum nec lacus vel, ultrices pretium sapien' },
-        { content: 'Proin bibendum non nibh eu aliquet' },
       ],
     },
   ],

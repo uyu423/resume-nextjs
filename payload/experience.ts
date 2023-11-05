@@ -22,9 +22,9 @@ const experience: IExperience.Payload = {
       startedAt: '2010-06',
       endedAt: '2018-01',
       descriptions: [
-        'Promoted the use and development of Linux globally.Online Commerce IT Startup',
-        'Developed automated scripts to streamline system configuration.Development of reservation system and service worker',
-        'Facilitated live patching systems, reducing downtime.AWS infrastructure and RDBMS maintenance and development',
+        'Promoted the use and development of Linux globally.',
+        'Developed automated scripts to streamline system configuration.',
+        'Facilitated live patching systems, reducing downtime.',
       ],
       skillKeywords: ['Open Source', 'Linux', 'AWS', 'RDBMS'],
     },
