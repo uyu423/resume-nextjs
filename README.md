@@ -26,9 +26,9 @@
 
 ## Requirements
 
-- Node.js < 18
-  - 현재 Node.js 18 이상 버전에서 `npm run dev` 실행 시 `ERR_OSSL_EVP_UNSUPPORTED` 이슈가 있습니다.
-  - `.nvmrc` 에 기재된 Node.js 버전 사용을 권고합니다.
+- Node.js > 18
+  - Node.js 18 버전 이상부터 발생하는 `ERR_OSSL_EVP_UNSUPPORTED` 이슈를 회피하기 위해 `NODE_OPTIONS=--openssl-legacy-provider` 옵션이 적용되어 있습니다.
+  - 가급적 Node.js 버전 18 이상에서 테스트하기를 권장하며 가급적 `.nvmrc` 에 기재된 Node.js 버전 사용을 권고합니다.
 
 ## Install
 
@@ -167,3 +167,5 @@ npm run export
 - Section 의 순서는 어떻게 조절하나요?
   - 현재는 `pages/index.tsx` 에서 직접 렌더링 순서를 변경하는 수 밖에 없습니다.
   - 데이터나 `_global` payload 로 핸들링하는 방법을 고민 중입니다.
+- index.html 에서 이미지, CSS가 404 발생하는 경우
+  - https://github.com/uyu423/resume-nextjs/issues/37 참고
