@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env DEBUG=yosume:* next",
-    "build": "next build",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider next build",
     "prebuild": "npm install && npm run lint",
     "start": "next start",
     "export:with-typedoc": "npm run export && npm run typedoc",
