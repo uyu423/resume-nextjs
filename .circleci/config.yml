@@ -1,11 +1,11 @@
 version: 2.1
 orbs:
-  node: circleci/node@5.1.0
+  node: circleci/node@5.2.0
 jobs:
   build:
     executor:
       name: node/default
-      tag: '16.20.2'
+      tag: '20.15.1'
     steps:
       - checkout
       - run:
