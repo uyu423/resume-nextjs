@@ -1,7 +1,7 @@
 {
   "name": "resume-nextjs",
   "lastestUpdatedAt": "2024-07-22",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Static HTML based RESUME made with next.js",
   "main": "index.js",
   "scripts": {
