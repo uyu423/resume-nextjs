@@ -32,7 +32,7 @@ export declare namespace IRow {
      * ### 폰트 두께 설정이 필요할 경우
      *
      * @default 'DEFAULT'
-     * @description Noto Sans KR 에서 font-weight 300 을 DEFAULT 로 사용하고 있다.
+     * @description Pretendard 에서 font-weight 300 을 DEFAULT 로 사용하고 있다.
      * @see https://github.com/uyu423/resume-nextjs/blob/master/component/common/CommonRow.tsx
      */
     weight?: FontWeightType;
@@ -66,5 +66,15 @@ export declare namespace IRow {
     descriptions?: Description[];
   }
 
-  export type FontWeightType = 'DEFAULT' | 'LIGHT' | 'REGULAR' | 'MEDIUM' | 'BOLD';
+  export type FontWeightType =
+    | 'DEFAULT'
+    | 'THIN'
+    | 'EXTRA_LIGHT'
+    | 'LIGHT'
+    | 'REGULAR'
+    | 'MEDIUM'
+    | 'SEMI_BOLD'
+    | 'BOLD'
+    | 'EXTRA_BOLD'
+    | 'BLACK';
 }

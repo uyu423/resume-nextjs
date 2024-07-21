@@ -13,6 +13,10 @@ export default class ResumeDocument extends Document {
             rel="stylesheet"
           />
           <link
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+            rel="stylesheet"
+          />
+          <link
             href="https://fonts.googleapis.com/css?family=Parisienne&display=swap"
             rel="stylesheet"
           />
