@@ -1,6 +1,7 @@
 import { IEtc } from '../component/etc/IEtc';
 
 const etc: IEtc.Payload = {
+  sectionId: 'etc',
   disable: false,
 
   list: [

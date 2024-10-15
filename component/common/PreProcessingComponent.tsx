@@ -15,5 +15,11 @@ export function PreProcessingComponent<T extends ICommon.Payload>({
     return <></>;
   }
 
-  return component({ payload });
+  return (
+    <div id={payload.sectionId}>
+      {' '}
+      {/* 추가: id를 div에 동적으로 추가 */}
+      {component({ payload })}
+    </div>
+  );
 }
