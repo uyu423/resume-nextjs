@@ -55,7 +55,6 @@ export const Style: Record<TStyleKey, CSSProperties> = {
   },
 };
 
-
 type TTocStyleKey =
   | 'tocBarContainer'
   | 'progressBar'
@@ -126,7 +125,6 @@ export const TocStyle: Record<TTocStyleKey, CSSProperties> = {
     cursor: 'pointer',
   },
 
-
   tocItem: {
     margin: '5px 0',
     cursor: 'pointer',
@@ -154,5 +152,4 @@ export const TocStyle: Record<TTocStyleKey, CSSProperties> = {
   tocItemDisabled: {
     color: '#a0a0a0', // 비활성화된 항목 색상 (회색)
   },
-
 };

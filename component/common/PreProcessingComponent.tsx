@@ -15,9 +15,5 @@ export function PreProcessingComponent<T extends ICommon.Payload>({
     return <></>;
   }
 
-  return (
-    <div id={payload.sectionId}>
-      {component({ payload })}
-    </div>
-  );
+  return <div id={payload.sectionId}>{component({ payload })}</div>;
 }

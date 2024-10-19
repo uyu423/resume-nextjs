@@ -23,47 +23,45 @@ export const TableOfContents = {
     };
 
     useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          setVisibleSections((prevVisibleSections) => {
-            let updatedVisibleSections = [...prevVisibleSections];
+      const observer = new IntersectionObserver((entries) => {
+        setVisibleSections((prevVisibleSections) => {
+          let updatedVisibleSections = [...prevVisibleSections];
 
-            entries.forEach(entry => {
-              const sectionId = entry.target.id;
+          entries.forEach((entry) => {
+            const sectionId = entry.target.id;
 
-              if (entry.isIntersecting) {
-                // 섹션이 화면에 나타났다면 리스트에 추가
-                if (!updatedVisibleSections.includes(sectionId)) {
-                  updatedVisibleSections.push(sectionId);
-                }
-              } else {
-                // 섹션이 화면에서 사라졌다면 리스트에서 제거
-                updatedVisibleSections = updatedVisibleSections.filter(id => id !== sectionId);
+            if (entry.isIntersecting) {
+              // 섹션이 화면에 나타났다면 리스트에 추가
+              if (!updatedVisibleSections.includes(sectionId)) {
+                updatedVisibleSections.push(sectionId);
               }
-            });
-
-            updatedVisibleSections = updatedVisibleSections.sort((a, b) => {
-              const elementA = document.getElementById(a);
-              const elementB = document.getElementById(b);
-
-              if (elementA && elementB) {
-                return elementA.getBoundingClientRect().top - elementB.getBoundingClientRect().top;
-              }
-
-              return 0;
-            });
-
-            // 리스트의 첫 번째 섹션을 활성화
-            if (updatedVisibleSections.length > 0) {
-              setActiveSection(updatedVisibleSections[0]);
             } else {
-              setActiveSection(null); // 모든 섹션이 사라지면 비활성화
+              // 섹션이 화면에서 사라졌다면 리스트에서 제거
+              updatedVisibleSections = updatedVisibleSections.filter((id) => id !== sectionId);
+            }
+          });
+
+          updatedVisibleSections = updatedVisibleSections.sort((a, b) => {
+            const elementA = document.getElementById(a);
+            const elementB = document.getElementById(b);
+
+            if (elementA && elementB) {
+              return elementA.getBoundingClientRect().top - elementB.getBoundingClientRect().top;
             }
 
-            return updatedVisibleSections;
+            return 0;
           });
-        },
-      );
+
+          // 리스트의 첫 번째 섹션을 활성화
+          if (updatedVisibleSections.length > 0) {
+            setActiveSection(updatedVisibleSections[0]);
+          } else {
+            setActiveSection(null); // 모든 섹션이 사라지면 비활성화
+          }
+
+          return updatedVisibleSections;
+        });
+      });
 
       // 각 섹션에 대해 observer 적용
       sectionIds.forEach((id) => {
@@ -93,11 +91,7 @@ export const TableOfContents = {
           {sectionIds.map((id: string) => (
             <div
               key={id}
-              style={
-                activeSection === id
-                  ? TocStyle.progressBarActive
-                  : TocStyle.progressBar
-              }
+              style={activeSection === id ? TocStyle.progressBarActive : TocStyle.progressBar}
             />
           ))}
         </div>
