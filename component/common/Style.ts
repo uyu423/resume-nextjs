@@ -71,6 +71,7 @@ type TTocStyleKey =
 
 export const TocStyle: Record<TTocStyleKey, CSSProperties> = {
   tocBarContainer: {
+    width: '30px',
     position: 'fixed',
     right: '10%',
     top: '15%',
@@ -112,7 +113,7 @@ export const TocStyle: Record<TTocStyleKey, CSSProperties> = {
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
     zIndex: 1000,
     opacity: 1,
-    transition: 'opacity 0.2s ease-in-out',
+    transition: 'opacity 0.3s ease-in-out',
   },
 
   tocButton: {

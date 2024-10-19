@@ -5,10 +5,22 @@ import { sectionIds } from '../../payload'; // Payload import
 
 export const TableOfContents = {
   Component: () => {
-    const [isVisible, setIsVisible] = useState(false);
     const [activeSection, setActiveSection] = useState<string | null>(null); // 활성화된 섹션
+    const [isTocVisible, setIsTocVisible] = useState(false); // TODO) CSSProperties는 hover를 지원하지 않아 의사클래스 지원이 되는 라이브러리 사용시 state제거 필요
     const [hoveredItem, setHoveredItem] = useState<string | null>(null); // 호버된 항목
     const [, setVisibleSections] = useState<string[]>([]); // 보이는 섹션 목록
+
+    const getTocItemStyle = (id: string) => {
+      let style = { ...TocStyle.tocItem };
+
+      if (activeSection === id) {
+        style = { ...style, ...TocStyle.tocItemActive }; // 활성화된 항목 스타일
+      } else if (hoveredItem === id) {
+        style = { ...style, ...TocStyle.tocItemHover }; // 호버된 항목 스타일
+      }
+
+      return style;
+    };
 
     useEffect(() => {
       const observer = new IntersectionObserver(
@@ -51,7 +63,6 @@ export const TableOfContents = {
             return updatedVisibleSections;
           });
         },
-        { threshold: 0.4 }, // 40% 보일 때 활성화
       );
 
       // 각 섹션에 대해 observer 적용
@@ -77,58 +88,54 @@ export const TableOfContents = {
       <>
         <div
           style={TocStyle.tocBarContainer}
-          onMouseEnter={() => setIsVisible(true)} // 마우스가 영역에 들어왔을 때 TOC 표시
+          onMouseEnter={() => setIsTocVisible(true)} // 마우스가 영역에 들어왔을 때 TOC 표시
         >
           {sectionIds.map((id: string) => (
             <div
               key={id}
               style={
                 activeSection === id
-                  ? TocStyle.progressBarActive // 활성화된 섹션 바 스타일
+                  ? TocStyle.progressBarActive
                   : TocStyle.progressBar
               }
             />
           ))}
         </div>
-        {isVisible && (
-          <div
-            style={TocStyle.toc}
-            onMouseEnter={() => setIsVisible(true)}
-            onMouseLeave={() => setIsVisible(false)}
+        <div
+          style={{
+            ...TocStyle.toc,
+            opacity: isTocVisible ? 1 : 0,
+            pointerEvents: isTocVisible ? 'auto' : 'none',
+          }}
+          onMouseEnter={() => setIsTocVisible(true)}
+          onMouseLeave={() => setIsTocVisible(false)}
+        >
+          <Scrollspy
+            items={sectionIds}
+            currentClassName="is-current"
+            style={{ listStyle: 'none', padding: 10 }}
           >
-            <Scrollspy
-              items={sectionIds}
-              currentClassName="is-current"
-              style={{ listStyle: 'none', padding: 10 }}
-            >
-              {sectionIds.map((id) => (
-                <li
+            {sectionIds.map((id) => (
+              <li
+                style={getTocItemStyle(id)}
+                key={`li-#${id}`}
+                onMouseEnter={() => setHoveredItem(id)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
+                <a
+                  href={`#${id}`}
                   style={
                     activeSection === id
-                      ? { ...TocStyle.tocItem, ...TocStyle.tocItemActive }
-                      : hoveredItem === id
-                        ? { ...TocStyle.tocItem, ...TocStyle.tocItemHover } // 호버된 항목 스타일 적용
-                        : TocStyle.tocItem
+                      ? TocStyle.tocLinkActive // 활성화된 링크는 파란색으로
+                      : TocStyle.tocLink // 비활성화된 링크는 회색으로
                   }
-                  key={`li-#${id}`}
-                  onMouseEnter={() => setHoveredItem(id)}
-                  onMouseLeave={() => setHoveredItem(null)}
                 >
-                  <a
-                    href={`#${id}`}
-                    style={
-                      activeSection === id
-                        ? TocStyle.tocLinkActive // 활성화된 링크는 파란색으로
-                        : TocStyle.tocLink // 비활성화된 링크는 회색으로
-                    }
-                  >
-                    {id.charAt(0).toUpperCase() + id.slice(1)}
-                  </a>
-                </li>
-              ))}
-            </Scrollspy>
-          </div>
-        )}
+                  {id.charAt(0).toUpperCase() + id.slice(1)}
+                </a>
+              </li>
+            ))}
+          </Scrollspy>
+        </div>
       </>
     );
   },
