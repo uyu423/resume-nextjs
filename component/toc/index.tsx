@@ -1,41 +1,60 @@
-import { PropsWithChildren, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Scrollspy from 'react-scrollspy';
-import { Style } from '../common/Style';
-import Payload from '../../payload'; // Payload import
+import { TocStyle } from '../common/Style';
+import { sectionIds } from '../../payload'; // Payload import
 
 export const TableOfContents = {
-  Component: (props: PropsWithChildren<{ payload?: Payload }>) => {
+  Component: () => {
     const [isVisible, setIsVisible] = useState(false);
     const [activeSection, setActiveSection] = useState<string | null>(null); // 활성화된 섹션
     const [hoveredItem, setHoveredItem] = useState<string | null>(null); // 호버된 항목
-
-    const sectionIds = [
-      !Payload.profile.disable && Payload.profile.sectionId,
-      !Payload.introduce.disable && Payload.introduce.sectionId,
-      !Payload.skill.disable && Payload.skill.sectionId,
-      !Payload.experience.disable && Payload.experience.sectionId,
-      !Payload.project.disable && Payload.project.sectionId,
-      !Payload.openSource.disable && Payload.openSource.sectionId,
-      !Payload.presentation.disable && Payload.presentation.sectionId,
-      !Payload.article.disable && Payload.article.sectionId,
-      !Payload.education.disable && Payload.education.sectionId,
-      !Payload.etc.disable && Payload.etc.sectionId,
-    ].filter(Boolean) as string[];
+    const [, setVisibleSections] = useState<string[]>([]); // 보이는 섹션 목록
 
     useEffect(() => {
       const observer = new IntersectionObserver(
         (entries) => {
-          const visibleSections = entries
-            .filter((entry) => entry.isIntersecting) // 뷰포트에 들어온 섹션만 필터링
-            .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top); // 가장 먼저 보이는 섹션을 찾기 위해 정렬
+          setVisibleSections((prevVisibleSections) => {
+            let updatedVisibleSections = [...prevVisibleSections];
 
-          if (visibleSections.length > 0) {
-            setActiveSection(visibleSections[0].target.id); // 첫 번째로 보이는 섹션을 활성화
-          }
+            entries.forEach(entry => {
+              const sectionId = entry.target.id;
+
+              if (entry.isIntersecting) {
+                // 섹션이 화면에 나타났다면 리스트에 추가
+                if (!updatedVisibleSections.includes(sectionId)) {
+                  updatedVisibleSections.push(sectionId);
+                }
+              } else {
+                // 섹션이 화면에서 사라졌다면 리스트에서 제거
+                updatedVisibleSections = updatedVisibleSections.filter(id => id !== sectionId);
+              }
+            });
+
+            updatedVisibleSections = updatedVisibleSections.sort((a, b) => {
+              const elementA = document.getElementById(a);
+              const elementB = document.getElementById(b);
+
+              if (elementA && elementB) {
+                return elementA.getBoundingClientRect().top - elementB.getBoundingClientRect().top;
+              }
+
+              return 0;
+            });
+
+            // 리스트의 첫 번째 섹션을 활성화
+            if (updatedVisibleSections.length > 0) {
+              setActiveSection(updatedVisibleSections[0]);
+            } else {
+              setActiveSection(null); // 모든 섹션이 사라지면 비활성화
+            }
+
+            return updatedVisibleSections;
+          });
         },
-        { threshold: 0.8 }, // 60% 보일 때 활성화
+        { threshold: 0.4 }, // 40% 보일 때 활성화
       );
 
+      // 각 섹션에 대해 observer 적용
       sectionIds.forEach((id) => {
         const sectionElement = document.getElementById(id);
         if (sectionElement) {
@@ -43,6 +62,7 @@ export const TableOfContents = {
         }
       });
 
+      // cleanup: 컴포넌트가 언마운트될 때 observer 해제
       return () => {
         sectionIds.forEach((id) => {
           const sectionElement = document.getElementById(id);
@@ -56,7 +76,7 @@ export const TableOfContents = {
     return (
       <>
         <div
-          style={Style.tocBarContainer}
+          style={TocStyle.tocBarContainer}
           onMouseEnter={() => setIsVisible(true)} // 마우스가 영역에 들어왔을 때 TOC 표시
         >
           {sectionIds.map((id: string) => (
@@ -64,15 +84,15 @@ export const TableOfContents = {
               key={id}
               style={
                 activeSection === id
-                  ? Style.progressBarActive // 활성화된 섹션 바 스타일
-                  : Style.progressBar
+                  ? TocStyle.progressBarActive // 활성화된 섹션 바 스타일
+                  : TocStyle.progressBar
               }
             />
           ))}
         </div>
         {isVisible && (
           <div
-            style={Style.toc}
+            style={TocStyle.toc}
             onMouseEnter={() => setIsVisible(true)}
             onMouseLeave={() => setIsVisible(false)}
           >
@@ -85,10 +105,10 @@ export const TableOfContents = {
                 <li
                   style={
                     activeSection === id
-                      ? { ...Style.tocItem, ...Style.tocItemActive }
+                      ? { ...TocStyle.tocItem, ...TocStyle.tocItemActive }
                       : hoveredItem === id
-                        ? { ...Style.tocItem, ...Style.tocItemHover } // 호버된 항목 스타일 적용
-                        : Style.tocItem
+                        ? { ...TocStyle.tocItem, ...TocStyle.tocItemHover } // 호버된 항목 스타일 적용
+                        : TocStyle.tocItem
                   }
                   key={`li-#${id}`}
                   onMouseEnter={() => setHoveredItem(id)}
@@ -98,8 +118,8 @@ export const TableOfContents = {
                     href={`#${id}`}
                     style={
                       activeSection === id
-                        ? Style.tocLinkActive // 활성화된 링크는 파란색으로
-                        : Style.tocLink // 비활성화된 링크는 회색으로
+                        ? TocStyle.tocLinkActive // 활성화된 링크는 파란색으로
+                        : TocStyle.tocLink // 비활성화된 링크는 회색으로
                     }
                   >
                     {id.charAt(0).toUpperCase() + id.slice(1)}

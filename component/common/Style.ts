@@ -9,18 +9,7 @@ type TStyleKey =
   | 'profileImg'
   | 'footerCover'
   | 'footer'
-  | 'skillKeywordBadge'
-  | 'toc'
-  | 'tocButton'
-  | 'tocBarContainer'
-  | 'tocItem'
-  | 'tocLink'
-  | 'tocLinkActive'
-  | 'tocItemActive'
-  | 'tocItemHover'
-  | 'tocItemDisabled'
-  | 'progressBar'
-  | 'progressBarActive';
+  | 'skillKeywordBadge';
 
 export const Style: Record<TStyleKey, CSSProperties> = {
   blue: {
@@ -64,11 +53,55 @@ export const Style: Record<TStyleKey, CSSProperties> = {
   skillKeywordBadge: {
     fontWeight: 400,
   },
+};
+
+
+type TTocStyleKey =
+  | 'tocBarContainer'
+  | 'progressBar'
+  | 'progressBarActive'
+  | 'toc'
+  | 'tocButton'
+  | 'tocItem'
+  | 'tocLink'
+  | 'tocLinkActive'
+  | 'tocItemActive'
+  | 'tocItemHover'
+  | 'tocItemDisabled';
+
+export const TocStyle: Record<TTocStyleKey, CSSProperties> = {
+  tocBarContainer: {
+    position: 'fixed',
+    right: '10%',
+    top: '15%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    zIndex: 1000,
+  },
+
+  progressBar: {
+    borderRadius: '5px',
+    backgroundColor: '#E3E2E0',
+    height: '5px',
+    width: '5px',
+    margin: '10px 0',
+    transition: 'background 0.2s',
+  },
+
+  progressBarActive: {
+    borderRadius: '5px',
+    backgroundColor: '#3c78d8',
+    height: '5px',
+    width: '5px',
+    margin: '10px 0',
+    transition: 'background 0.2s',
+  },
 
   toc: {
     position: 'fixed',
-    right: '20px',
-    top: '20%',
+    right: '10%',
+    top: '15%',
     maxHeight: '400px',
     width: '150px',
     display: 'flex',
@@ -92,15 +125,6 @@ export const Style: Record<TStyleKey, CSSProperties> = {
     cursor: 'pointer',
   },
 
-  tocBarContainer: {
-    position: 'fixed',
-    right: '20px',
-    top: '20%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    zIndex: 1000,
-  },
 
   tocItem: {
     margin: '5px 0',
@@ -130,19 +154,4 @@ export const Style: Record<TStyleKey, CSSProperties> = {
     color: '#a0a0a0', // 비활성화된 항목 색상 (회색)
   },
 
-  progressBar: {
-    backgroundColor: '#E3E2E0',
-    height: '2px',
-    width: '20px',
-    margin: '10px 0',
-    transition: 'background 0.2s',
-  },
-
-  progressBarActive: {
-    backgroundColor: '#3c78d8',
-    height: '2px',
-    width: '20px',
-    margin: '10px 0',
-    transition: 'background 0.2s',
-  },
 };
