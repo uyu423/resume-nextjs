@@ -17,19 +17,6 @@ export const TableOfContents = {
     const isManualScrollRef = useRef<boolean>(false); // 수동 스크롤(클릭) 여부
     const manualScrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // 수동 스크롤 후 타이머
 
-    const observeSections = (observer: IntersectionObserver, action: 'observe' | 'unobserve') => {
-      sectionIds.forEach((id) => {
-        const sectionElement = document.getElementById(id);
-        if (sectionElement) {
-          if (action === 'observe') {
-            observer.observe(sectionElement);
-          } else {
-            observer.unobserve(sectionElement);
-          }
-        }
-      });
-    };
-
     const getTocItemStyle = (id: string) => {
       let style = { ...TocStyle.tocItem };
 
@@ -42,63 +29,77 @@ export const TableOfContents = {
       return style;
     };
 
-    // 리팩토링: Observer 로직을 별도로 분리하여 함수화
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      if (isManualScrollRef.current) return; // 수동 스크롤 중에는 감지 중단
-
-      setVisibleSections((prevVisibleSections) => {
-        let updatedVisibleSections = [...prevVisibleSections];
-
-        entries.forEach((entry: IntersectionObserverEntry) => {
-          const sectionId = entry.target.id;
-          if (entry.isIntersecting) {
-            // 섹션이 화면에 나타났다면 리스트에 추가
-            if (!updatedVisibleSections.includes(sectionId)) {
-              updatedVisibleSections.push(sectionId);
-            }
-          } else {
-            // 섹션이 화면에서 사라졌다면 리스트에서 제거
-            updatedVisibleSections = updatedVisibleSections.filter((id) => id !== sectionId);
-          }
-        });
-
-        updatedVisibleSections = updatedVisibleSections.sort((a, b) => {
-          const elementA = document.getElementById(a);
-          const elementB = document.getElementById(b);
-
-          if (elementA && elementB) {
-            return elementA.getBoundingClientRect().top - elementB.getBoundingClientRect().top;
-          }
-
-          return 0;
-        });
-
-        if (updatedVisibleSections.length > 0) {
-          const currentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-
-          // 스크롤 방향에 따라 활성화할 섹션을 설정
-          if (currentScrollTop > prevScrollTopRef.current) {
-            setActiveSection(updatedVisibleSections[updatedVisibleSections.length - 1]);
-          } else {
-            setActiveSection(updatedVisibleSections[0]);
-          }
-          prevScrollTopRef.current = currentScrollTop;
-        }
-
-        return updatedVisibleSections;
-      });
-    };
-
     useEffect(() => {
-      const observer = new IntersectionObserver(handleIntersection, {
-        threshold: Array.from({ length: 101 }, (_, i) => i / 100), // 0% ~ 100% 비율을 감지하도록 설정
-      });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (isManualScrollRef.current) return; // 수동으로 스크롤 중일 때는 자동 스크롤 감지 비활성화
 
-      observeSections(observer, 'observe'); // 중복 제거
+          setVisibleSections((prevVisibleSections) => {
+            let updatedVisibleSections = [...prevVisibleSections];
+
+            entries.forEach((entry) => {
+              const sectionId = entry.target.id;
+              if (entry.isIntersecting) {
+                // 섹션이 화면에 나타났다면 리스트에 추가
+                if (!updatedVisibleSections.includes(sectionId)) {
+                  updatedVisibleSections.push(sectionId);
+                }
+              } else {
+                // 섹션이 화면에서 사라졌다면 리스트에서 제거
+                updatedVisibleSections = updatedVisibleSections.filter((id) => id !== sectionId);
+              }
+            });
+
+            updatedVisibleSections = updatedVisibleSections.sort((a, b) => {
+              const elementA = document.getElementById(a);
+              const elementB = document.getElementById(b);
+
+              if (elementA && elementB) {
+                return elementA.getBoundingClientRect().top - elementB.getBoundingClientRect().top;
+              }
+
+              return 0;
+            });
+
+            if (updatedVisibleSections.length > 0) {
+              const currentScrollTop =
+                document.documentElement.scrollTop || document.body.scrollTop;
+
+              // 스크롤 방향에 따라 활성화할 섹션을 설정
+              if (currentScrollTop > prevScrollTopRef.current) {
+                // 스크롤을 내릴 때: 첫 번째 보이는 섹션을 활성화
+                setActiveSection(updatedVisibleSections[updatedVisibleSections.length - 1]);
+              } else {
+                // 스크롤을 올릴 때: 마지막 보이는 섹션을 활성화
+                setActiveSection(updatedVisibleSections[0]);
+              }
+              prevScrollTopRef.current = currentScrollTop;
+            }
+
+            return updatedVisibleSections;
+          });
+        },
+        {
+          threshold: Array.from({ length: 101 }, (_, i) => i / 100), // 0% ~ 100% 비율을 감지하도록 설정
+        },
+      );
+
+      // 각 섹션에 대해 observer 적용
+      sectionIds.forEach((id) => {
+        const sectionElement = document.getElementById(id);
+        if (sectionElement) {
+          observer.observe(sectionElement);
+        }
+      });
 
       // cleanup: 컴포넌트가 언마운트될 때 observer 해제
       return () => {
-        observeSections(observer, 'unobserve'); // 중복 제거
+        sectionIds.forEach((id) => {
+          const sectionElement = document.getElementById(id);
+          if (sectionElement) {
+            observer.unobserve(sectionElement);
+          }
+        });
 
         if (manualScrollTimeoutRef.current) {
           clearTimeout(manualScrollTimeoutRef.current);
@@ -107,8 +108,9 @@ export const TableOfContents = {
     }, [sectionIds]);
 
     useEffect(() => {
+      // TODO) 반응형 기준 TOC를 어떻게 처리할까에 대한 고민이 되면 좋을것 같음.
       const handleResize = () => {
-        setIsScreenSmall(window.innerWidth <= 960); // 화면 크기에 따라 TOC 가시성 조정
+        setIsScreenSmall(window.innerWidth <= 960); // 1920px / 2
       };
 
       // 처음 로딩 시 화면 크기 체크
@@ -166,7 +168,11 @@ export const TableOfContents = {
               >
                 <a
                   href={`#${id}`}
-                  style={activeSection === id ? TocStyle.tocLinkActive : TocStyle.tocLink}
+                  style={
+                    activeSection === id
+                      ? TocStyle.tocLinkActive // 활성화된 링크는 파란색으로
+                      : TocStyle.tocLink // 비활성화된 링크는 회색으로
+                  }
                   onClick={() => handleClick(id)}
                 >
                   {id.charAt(0).toUpperCase() + id.slice(1)}
