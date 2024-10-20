@@ -42,7 +42,7 @@ export const Style: Record<TStyleKey, CSSProperties> = {
     paddingLeft: 0,
     paddingRight: 0,
     // marginTop: '50px',
-    marginTop: '50%',
+    marginTop: '50%', // 1080 전체화면 기준 , 마지막 section이 너무 짧을 경우 toc가 활성화 되지 않는 현상 방지
     height: '80px',
   },
 

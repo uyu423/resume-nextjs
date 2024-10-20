@@ -39,7 +39,7 @@ function Yosume() {
         <Etc.Component payload={Payload.etc} />
         <Footer.Component payload={Payload.footer} />
       </Container>
-      <TableOfContents.Component />
+      <TableOfContents.Component showToc />
     </>
   );
 }

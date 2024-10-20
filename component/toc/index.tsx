@@ -1,14 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Scrollspy from 'react-scrollspy';
 import { TocStyle } from '../common/Style';
 import { sectionIds } from '../../payload'; // Payload import
 
+interface TableOfContentsProps {
+  showToc: boolean; // TOC를 표시할지 여부를 props로 제어
+}
+
 export const TableOfContents = {
-  Component: () => {
+  Component: ({ showToc }: TableOfContentsProps) => {
     const [activeSection, setActiveSection] = useState<string | null>(null); // 활성화된 섹션
     const [isTocVisible, setIsTocVisible] = useState(false); // TODO) CSSProperties는 hover를 지원하지 않아 의사클래스 지원이 되는 라이브러리 사용시 state제거 필요
     const [hoveredItem, setHoveredItem] = useState<string | null>(null); // 호버된 항목
     const [, setVisibleSections] = useState<string[]>([]); // 보이는 섹션 목록
+    const [isScreenSmall, setIsScreenSmall] = useState(false); // 작은 화면인지 여부
+    const prevScrollTopRef = useRef<number>(0);
 
     const getTocItemStyle = (id: string) => {
       let style = { ...TocStyle.tocItem };
@@ -23,45 +29,58 @@ export const TableOfContents = {
     };
 
     useEffect(() => {
-      const observer = new IntersectionObserver((entries) => {
-        setVisibleSections((prevVisibleSections) => {
-          let updatedVisibleSections = [...prevVisibleSections];
+      const observer = new IntersectionObserver(
+        (entries) => {
+          setVisibleSections((prevVisibleSections) => {
+            let updatedVisibleSections = [...prevVisibleSections];
 
-          entries.forEach((entry) => {
-            const sectionId = entry.target.id;
+            entries.forEach((entry) => {
+              const sectionId = entry.target.id;
 
-            if (entry.isIntersecting) {
-              // 섹션이 화면에 나타났다면 리스트에 추가
-              if (!updatedVisibleSections.includes(sectionId)) {
-                updatedVisibleSections.push(sectionId);
+              if (entry.isIntersecting) {
+                // 섹션이 화면에 나타났다면 리스트에 추가
+                if (!updatedVisibleSections.includes(sectionId)) {
+                  updatedVisibleSections.push(sectionId);
+                }
+              } else {
+                // 섹션이 화면에서 사라졌다면 리스트에서 제거
+                updatedVisibleSections = updatedVisibleSections.filter((id) => id !== sectionId);
               }
-            } else {
-              // 섹션이 화면에서 사라졌다면 리스트에서 제거
-              updatedVisibleSections = updatedVisibleSections.filter((id) => id !== sectionId);
+            });
+
+            updatedVisibleSections = updatedVisibleSections.sort((a, b) => {
+              const elementA = document.getElementById(a);
+              const elementB = document.getElementById(b);
+
+              if (elementA && elementB) {
+                return elementA.getBoundingClientRect().top - elementB.getBoundingClientRect().top;
+              }
+
+              return 0;
+            });
+
+            if (updatedVisibleSections.length > 0) {
+              const currentScrollTop =
+                document.documentElement.scrollTop || document.body.scrollTop;
+
+              // 스크롤 방향에 따라 활성화할 섹션을 설정
+              if (currentScrollTop > prevScrollTopRef.current) {
+                // 스크롤을 내릴 때: 첫 번째 보이는 섹션을 활성화
+                setActiveSection(updatedVisibleSections[updatedVisibleSections.length - 1]);
+              } else {
+                // 스크롤을 올릴 때: 마지막 보이는 섹션을 활성화
+                setActiveSection(updatedVisibleSections[0]);
+              }
+              prevScrollTopRef.current = currentScrollTop;
             }
+
+            return updatedVisibleSections;
           });
-
-          updatedVisibleSections = updatedVisibleSections.sort((a, b) => {
-            const elementA = document.getElementById(a);
-            const elementB = document.getElementById(b);
-
-            if (elementA && elementB) {
-              return elementA.getBoundingClientRect().top - elementB.getBoundingClientRect().top;
-            }
-
-            return 0;
-          });
-
-          // 리스트의 첫 번째 섹션을 활성화
-          if (updatedVisibleSections.length > 0) {
-            setActiveSection(updatedVisibleSections[0]);
-          } else {
-            setActiveSection(null); // 모든 섹션이 사라지면 비활성화
-          }
-
-          return updatedVisibleSections;
-        });
-      });
+        },
+        {
+          threshold: Array.from({ length: 101 }, (_, i) => i / 100), // 0% ~ 100% 비율을 감지하도록 설정
+        },
+      );
 
       // 각 섹션에 대해 observer 적용
       sectionIds.forEach((id) => {
@@ -82,12 +101,29 @@ export const TableOfContents = {
       };
     }, [sectionIds]);
 
+    useEffect(() => {
+      // TODO) 반응형 기준 TOC를 어떻게 처리할까에 대한 고민이 되면 좋을것 같음.
+      const handleResize = () => {
+        setIsScreenSmall(window.innerWidth <= 960); // 1920px / 2
+      };
+
+      // 처음 로딩 시 화면 크기 체크
+      handleResize();
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
+    if (!showToc || isScreenSmall) {
+      return null; // TOC를 숨김
+    }
+
     return (
       <>
-        <div
-          style={TocStyle.tocBarContainer}
-          onMouseEnter={() => setIsTocVisible(true)} // 마우스가 영역에 들어왔을 때 TOC 표시
-        >
+        <div style={TocStyle.tocBarContainer} onMouseEnter={() => setIsTocVisible(true)}>
           {sectionIds.map((id: string) => (
             <div
               key={id}
@@ -101,7 +137,6 @@ export const TableOfContents = {
             opacity: isTocVisible ? 1 : 0,
             pointerEvents: isTocVisible ? 'auto' : 'none',
           }}
-          onMouseEnter={() => setIsTocVisible(true)}
           onMouseLeave={() => setIsTocVisible(false)}
         >
           <Scrollspy
