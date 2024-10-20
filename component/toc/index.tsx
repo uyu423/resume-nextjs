@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import Scrollspy from 'react-scrollspy';
 import { TocStyle } from '../common/Style';
 import { sectionIds } from '../../payload'; // Payload import
 
@@ -159,11 +158,7 @@ export const TableOfContents = {
           }}
           onMouseLeave={() => setIsTocVisible(false)}
         >
-          <Scrollspy
-            items={sectionIds}
-            currentClassName="is-current"
-            style={{ listStyle: 'none', padding: 10 }}
-          >
+          <ul style={{ listStyle: 'none', padding: 10 }}>
             {sectionIds.map((id) => (
               <li
                 style={getTocItemStyle(id)}
@@ -184,7 +179,7 @@ export const TableOfContents = {
                 </a>
               </li>
             ))}
-          </Scrollspy>
+          </ul>
         </div>
       </>
     );
