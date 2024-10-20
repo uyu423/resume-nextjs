@@ -17,8 +17,15 @@ import { Style } from '../component/common/Style';
 import { Payload } from '../payload';
 import { Article } from '../component/article';
 import { TableOfContents } from '../component/toc';
+import { useLayoutEffect } from 'react';
+
 
 function Yosume() {
+  useLayoutEffect(() => {
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }, []);
   return (
     <>
       <NextSeo {...Payload._global.seo} />
