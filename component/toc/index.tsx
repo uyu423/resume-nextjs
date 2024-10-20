@@ -6,111 +6,16 @@ interface TableOfContentsProps {
   showToc: boolean; // TOC를 표시할지 여부를 props로 제어
 }
 
-const useTocState = () => {
-  const [activeSection, setActiveSection] = useState<string | null>(null); // 활성화된 섹션
-  const [isTocVisible, setIsTocVisible] = useState(false); // TODO) CSSProperties는 hover를 지원하지 않아 의사클래스 지원이 되는 라이브러리 사용시 state제거 필요
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [, setVisibleSections] = useState<string[]>([]);
-  const [isScreenSmall, setIsScreenSmall] = useState(false);
-
-  return {
-    activeSection,
-    setActiveSection,
-    isTocVisible,
-    setIsTocVisible,
-    hoveredItem,
-    setHoveredItem,
-    setVisibleSections,
-    isScreenSmall,
-    setIsScreenSmall,
-  };
-};
-
-// 윈도우 크기 감지 - 타입 추가
-const useWindowResize = (setIsScreenSmall: React.Dispatch<React.SetStateAction<boolean>>) => {
-  useEffect(() => {
-    const handleResize = () => {
-      setIsScreenSmall(window.innerWidth <= 960);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [setIsScreenSmall]);
-};
-
-const updateVisibleSections = (
-  entries: IntersectionObserverEntry[],
-  prevVisibleSections: string[],
-  setActiveSection: React.Dispatch<React.SetStateAction<string | null>>,
-  prevScrollTopRef: React.MutableRefObject<number>,
-): string[] => {
-  let updatedVisibleSections = [...prevVisibleSections];
-
-  entries.forEach((entry) => {
-    const sectionId = entry.target.id;
-    if (entry.isIntersecting) {
-      if (!updatedVisibleSections.includes(sectionId)) {
-        updatedVisibleSections.push(sectionId);
-      }
-    } else {
-      updatedVisibleSections = updatedVisibleSections.filter((id) => id !== sectionId);
-    }
-  });
-
-  updatedVisibleSections = updatedVisibleSections.sort((a, b) => {
-    const elementA = document.getElementById(a);
-    const elementB = document.getElementById(b);
-    return (
-      (elementA?.getBoundingClientRect().top || 0) - (elementB?.getBoundingClientRect().top || 0)
-    );
-  });
-
-  if (updatedVisibleSections.length > 0) {
-    const currentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (currentScrollTop > prevScrollTopRef.current) {
-      setActiveSection(updatedVisibleSections[updatedVisibleSections.length - 1]);
-    } else {
-      setActiveSection(updatedVisibleSections[0]);
-    }
-    prevScrollTopRef.current = currentScrollTop; // eslint-disable-line no-param-reassign
-  }
-
-  return updatedVisibleSections;
-};
-
-const handleIntersection = (
-  entries: IntersectionObserverEntry[],
-  prevScrollTopRef: React.MutableRefObject<number>,
-  isManualScrollRef: React.MutableRefObject<boolean>,
-  setActiveSection: React.Dispatch<React.SetStateAction<string | null>>,
-  setVisibleSections: React.Dispatch<React.SetStateAction<string[]>>,
-) => {
-  if (isManualScrollRef.current) return;
-  setVisibleSections((prevVisibleSections) => {
-    return updateVisibleSections(entries, prevVisibleSections, setActiveSection, prevScrollTopRef);
-  });
-};
-
 export const TableOfContents = {
   Component: ({ showToc }: TableOfContentsProps) => {
-    const {
-      activeSection,
-      setActiveSection,
-      isTocVisible,
-      setIsTocVisible,
-      hoveredItem,
-      setHoveredItem,
-      setVisibleSections,
-      isScreenSmall,
-      setIsScreenSmall,
-    } = useTocState();
-
+    const [activeSection, setActiveSection] = useState<string | null>(null); // 활성화된 섹션
+    const [isTocVisible, setIsTocVisible] = useState(false); // TODO) CSSProperties는 hover를 지원하지 않아 의사클래스 지원이 되는 라이브러리 사용시 state제거 필요
+    const [hoveredItem, setHoveredItem] = useState<string | null>(null); // 호버된 항목
+    const [, setVisibleSections] = useState<string[]>([]); // 보이는 섹션 목록
+    const [isScreenSmall, setIsScreenSmall] = useState(false); // 작은 화면인지 여부
     const prevScrollTopRef = useRef<number>(0);
     const isManualScrollRef = useRef<boolean>(false); // 수동 스크롤(클릭) 여부
     const manualScrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // 수동 스크롤 후 타이머
-
-    useWindowResize(setIsScreenSmall);
 
     const observeSections = (observer: IntersectionObserver, action: 'observe' | 'unobserve') => {
       sectionIds.forEach((id) => {
@@ -137,21 +42,57 @@ export const TableOfContents = {
       return style;
     };
 
+    // 리팩토링: Observer 로직을 별도로 분리하여 함수화
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      if (isManualScrollRef.current) return; // 수동 스크롤 중에는 감지 중단
+
+      setVisibleSections((prevVisibleSections) => {
+        let updatedVisibleSections = [...prevVisibleSections];
+
+        entries.forEach((entry: IntersectionObserverEntry) => {
+          const sectionId = entry.target.id;
+          if (entry.isIntersecting) {
+            // 섹션이 화면에 나타났다면 리스트에 추가
+            if (!updatedVisibleSections.includes(sectionId)) {
+              updatedVisibleSections.push(sectionId);
+            }
+          } else {
+            // 섹션이 화면에서 사라졌다면 리스트에서 제거
+            updatedVisibleSections = updatedVisibleSections.filter((id) => id !== sectionId);
+          }
+        });
+
+        updatedVisibleSections = updatedVisibleSections.sort((a, b) => {
+          const elementA = document.getElementById(a);
+          const elementB = document.getElementById(b);
+
+          if (elementA && elementB) {
+            return elementA.getBoundingClientRect().top - elementB.getBoundingClientRect().top;
+          }
+
+          return 0;
+        });
+
+        if (updatedVisibleSections.length > 0) {
+          const currentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+          // 스크롤 방향에 따라 활성화할 섹션을 설정
+          if (currentScrollTop > prevScrollTopRef.current) {
+            setActiveSection(updatedVisibleSections[updatedVisibleSections.length - 1]);
+          } else {
+            setActiveSection(updatedVisibleSections[0]);
+          }
+          prevScrollTopRef.current = currentScrollTop;
+        }
+
+        return updatedVisibleSections;
+      });
+    };
+
     useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          handleIntersection(
-            entries,
-            prevScrollTopRef,
-            isManualScrollRef,
-            setActiveSection,
-            setVisibleSections,
-          );
-        },
-        {
-          threshold: Array.from({ length: 101 }, (_, i) => i / 100), // 0% ~ 100% 비율을 감지하도록 설정
-        },
-      );
+      const observer = new IntersectionObserver(handleIntersection, {
+        threshold: Array.from({ length: 101 }, (_, i) => i / 100), // 0% ~ 100% 비율을 감지하도록 설정
+      });
 
       observeSections(observer, 'observe'); // 중복 제거
 
