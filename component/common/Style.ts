@@ -132,11 +132,13 @@ export const TocStyle: Record<TTocStyleKey, CSSProperties> = {
   },
 
   tocLink: {
+    display: 'block',
     color: '#1D1B16', // 링크의 기본 색상을 회색으로 변경
     textDecoration: 'none', // 링크의 밑줄 제거
   },
 
   tocLinkActive: {
+    display: 'block',
     color: '#3c78d8', // 활성화된 링크는 파란색으로
   },
 

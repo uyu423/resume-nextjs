@@ -15,6 +15,8 @@ export const TableOfContents = {
     const [, setVisibleSections] = useState<string[]>([]); // 보이는 섹션 목록
     const [isScreenSmall, setIsScreenSmall] = useState(false); // 작은 화면인지 여부
     const prevScrollTopRef = useRef<number>(0);
+    const isManualScrollRef = useRef<boolean>(false); // 수동 스크롤(클릭) 여부
+    const manualScrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // 수동 스크롤 후 타이머
 
     const getTocItemStyle = (id: string) => {
       let style = { ...TocStyle.tocItem };
@@ -31,12 +33,13 @@ export const TableOfContents = {
     useEffect(() => {
       const observer = new IntersectionObserver(
         (entries) => {
+          if (isManualScrollRef.current) return; // 수동으로 스크롤 중일 때는 자동 스크롤 감지 비활성화
+
           setVisibleSections((prevVisibleSections) => {
             let updatedVisibleSections = [...prevVisibleSections];
 
             entries.forEach((entry) => {
               const sectionId = entry.target.id;
-
               if (entry.isIntersecting) {
                 // 섹션이 화면에 나타났다면 리스트에 추가
                 if (!updatedVisibleSections.includes(sectionId)) {
@@ -98,6 +101,10 @@ export const TableOfContents = {
             observer.unobserve(sectionElement);
           }
         });
+
+        if (manualScrollTimeoutRef.current) {
+          clearTimeout(manualScrollTimeoutRef.current);
+        }
       };
     }, [sectionIds]);
 
@@ -120,6 +127,19 @@ export const TableOfContents = {
     if (!showToc || isScreenSmall) {
       return null; // TOC를 숨김
     }
+
+    const handleClick = (id: string) => {
+      setActiveSection(id); // 수동으로 활성화된 섹션 설정
+      isManualScrollRef.current = true; // 수동 스크롤 상태로 설정
+
+      // 일정 시간 동안만 수동 스크롤 상태를 유지
+      if (manualScrollTimeoutRef.current) {
+        clearTimeout(manualScrollTimeoutRef.current);
+      }
+      manualScrollTimeoutRef.current = setTimeout(() => {
+        isManualScrollRef.current = false; // 자동 스크롤 감지 다시 활성화
+      }, 1000); // 1초 동안 수동 스크롤 상태 유지
+    };
 
     return (
       <>
@@ -158,6 +178,7 @@ export const TableOfContents = {
                       ? TocStyle.tocLinkActive // 활성화된 링크는 파란색으로
                       : TocStyle.tocLink // 비활성화된 링크는 회색으로
                   }
+                  onClick={() => handleClick(id)}
                 >
                   {id.charAt(0).toUpperCase() + id.slice(1)}
                 </a>
