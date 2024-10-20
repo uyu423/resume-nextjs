@@ -3,6 +3,7 @@ import { Container } from 'reactstrap';
 
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
+import { useLayoutEffect } from 'react';
 import { Education } from '../component/education';
 import { Etc } from '../component/etc';
 import { Experience } from '../component/experience';
@@ -17,15 +18,14 @@ import { Style } from '../component/common/Style';
 import { Payload } from '../payload';
 import { Article } from '../component/article';
 import { TableOfContents } from '../component/toc';
-import { useLayoutEffect } from 'react';
-
 
 function Yosume() {
   useLayoutEffect(() => {
     if (window.location.hash) {
-      history.replaceState(null, '', window.location.pathname + window.location.search);
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
     }
   }, []);
+
   return (
     <>
       <NextSeo {...Payload._global.seo} />
