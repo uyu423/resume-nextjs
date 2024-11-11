@@ -19,8 +19,13 @@ export declare namespace IExperience {
     /** ### (직장)경험 명 */
     title: string;
 
+    /** ### (직장)수행한 직위/직책 포지션 정보 */
+    positions: Position[];
+  }
+
+  export interface Position {
     /** ### (직장)역할 명 (or Subtitle) */
-    position: string;
+    title: string;
 
     /**
      * ### (직장)경험 시작 일

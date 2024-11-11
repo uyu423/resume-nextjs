@@ -1,12 +1,13 @@
-import { DateTime, Duration } from 'luxon';
-import { PropsWithChildren } from 'react';
 import { Badge, Col, Row } from 'reactstrap';
+import { DateTime, Duration } from 'luxon';
+
 import { EmptyRowCol } from '../common';
+import ExperienceRow from './row';
+import { IExperience } from './IExperience';
 import { PreProcessingComponent } from '../common/PreProcessingComponent';
+import { PropsWithChildren } from 'react';
 import { Style } from '../common/Style';
 import Util from '../common/Util';
-import { IExperience } from './IExperience';
-import ExperienceRow from './row';
 
 type Payload = IExperience.Payload;
 
@@ -31,7 +32,6 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
     );
   };
 
-  // 여기는 기간 표시, Skill Keywords 같은 특이 요소가 있어서 CommonSection, CommonRow 로 못바꾸지 않을까..
   return (
     <div className="mt-5">
       <EmptyRowCol>
@@ -49,20 +49,21 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
 }
 
 function getFormattingExperienceTotalDuration(payload: IExperience.Payload) {
-  const durations = payload.list
-    .map((item) => {
-      return {
-        endedAt: item.endedAt
-          ? DateTime.fromFormat(item.endedAt, Util.LUXON_DATE_FORMAT.YYYY_LL)
-          : DateTime.local(),
-        startedAt: DateTime.fromFormat(item.startedAt, Util.LUXON_DATE_FORMAT.YYYY_LL),
-      };
-    })
-    .map(({ endedAt, startedAt }) => {
-      return endedAt.plus({ month: 1 }).diff(startedAt);
+  const durations = payload.list.reduce((acc: Duration[], item: IExperience.Item) => {
+    const itemDurations = item.positions.map((position: IExperience.Position) => {
+      const endedAt = position.endedAt
+        ? DateTime.fromFormat(position.endedAt, Util.LUXON_DATE_FORMAT.YYYY_LL)
+        : DateTime.local();
+      const startedAt = DateTime.fromFormat(position.startedAt, Util.LUXON_DATE_FORMAT.YYYY_LL);
+      return endedAt.diff(startedAt);
     });
+    return acc.concat(itemDurations); // 중첩된 배열 평탄화
+  }, []);
 
-  const totalExperience = durations.reduce((prev, cur) => prev.plus(cur), Duration.fromMillis(0));
+  const totalExperience = durations.reduce(
+    (prev: Duration, cur: Duration) => prev.plus(cur),
+    Duration.fromMillis(0),
+  );
 
   return totalExperience.toFormat(`총 ${Util.LUXON_DATE_FORMAT.DURATION_KINDNESS}`);
 }
