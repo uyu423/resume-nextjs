@@ -1,11 +1,11 @@
 import { Badge, Col, Row } from 'reactstrap';
 import { DateTime, Duration } from 'luxon';
 
+import { PropsWithChildren } from 'react';
 import { EmptyRowCol } from '../common';
 import ExperienceRow from './row';
 import { IExperience } from './IExperience';
 import { PreProcessingComponent } from '../common/PreProcessingComponent';
-import { PropsWithChildren } from 'react';
 import { Style } from '../common/Style';
 import Util from '../common/Util';
 

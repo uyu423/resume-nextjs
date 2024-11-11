@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Payload | Resume Next.js: TypeDoc</title>
+	<title>Position | Resume Next.js: TypeDoc</title>
 	<meta name="description" content="Documentation for Resume Next.js: TypeDoc">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,41 +57,21 @@
 					<a href="../modules/iexperience.html">IExperience</a>
 				</li>
 				<li>
-					<a href="iexperience.payload.html">Payload</a>
+					<a href="iexperience.position.html">Position</a>
 				</li>
 			</ul>
-			<h1>Interface Payload</h1>
+			<h1>Interface Position</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<a href="#sample-rendering" id="sample-rendering" style="color: inherit; text-decoration: none;">
-							<h3>Sample Rendering</h3>
-						</a>
-					</div>
-					<p><img src="https://user-images.githubusercontent.com/8033320/78032558-27540200-73a0-11ea-83cd-3fd1cea68402.png" alt="image"></p>
-					<dl class="tsd-comment-tags">
-						<dt>example</dt>
-						<dd><p><a href="https://github.com/uyu423/resume-nextjs/blob/master/payload/experience.ts">https://github.com/uyu423/resume-nextjs/blob/master/payload/experience.ts</a></p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="icommon.payload.html" class="tsd-signature-type">Payload</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">Payload</span>
-							</li>
-						</ul>
+						<span class="target">Position</span>
 					</li>
 				</ul>
 			</section>
@@ -102,9 +82,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="iexperience.payload.html#disable" class="tsd-kind-icon">disable</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.payload.html#disabletotalperiod" class="tsd-kind-icon">disable<wbr>Total<wbr>Period</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.payload.html#list" class="tsd-kind-icon">list</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.position.html#descriptions" class="tsd-kind-icon">descriptions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.position.html#endedat" class="tsd-kind-icon">ended<wbr>At</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.position.html#skillkeywords" class="tsd-kind-icon">skill<wbr>Keywords</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.position.html#startedat" class="tsd-kind-icon">started<wbr>At</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.position.html#title" class="tsd-kind-icon">title</a></li>
 							</ul>
 						</section>
 					</div>
@@ -112,57 +94,119 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="disable" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="descriptions" class="tsd-anchor"></a>
+					<h3>descriptions</h3>
+					<div class="tsd-signature tsd-kind-icon">descriptions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="icommon.payload.html">Payload</a>.<a href="icommon.payload.html#disable">disable</a></p>
 						<ul>
-							<li>Defined in common/ICommon.ts:11</li>
+							<li>Defined in experience/IExperience.ts:54</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Section Enable Flag</p>
+							<a href="#직장경험-설명" id="직장경험-설명" style="color: inherit; text-decoration: none;">
+								<h3>(직장)경험 설명</h3>
+							</a>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>description</dt>
-							<dd><p>해당 옵션이 <code>true</code> 라면 렌더링 하지 않는다. <code>undefined</code> 거나 <code>false</code> 라면 렌더링한다.</p>
+							<dd><p>하나의 <code>string</code> 요소가 <code>&lt;ul&gt;</code> 태그 안의 <code>&lt;li&gt;</code> 가 된다.</p>
+							</dd>
+							<dt>todo</dt>
+							<dd><p><code>IRow.Description[]</code> 으로 변경</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="disabletotalperiod" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable<wbr>Total<wbr>Period</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<wbr>Total<wbr>Period<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<a name="endedat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ended<wbr>At</h3>
+					<div class="tsd-signature tsd-kind-icon">ended<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in experience/IExperience.ts:15</li>
+							<li>Defined in experience/IExperience.ts:46</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<a href="#총-경력-기간-표시-유무" id="총-경력-기간-표시-유무" style="color: inherit; text-decoration: none;">
-								<h3>총 경력 기간 표시 유/무</h3>
+							<a href="#직장경험-종료-일" id="직장경험-종료-일" style="color: inherit; text-decoration: none;">
+								<h3>(직장)경험 종료 일</h3>
 							</a>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>format</dt>
+							<dd><p>YYYY-MM</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>&quot;2021-02&quot;</p>
+							</dd>
+							<dt>description</dt>
+							<dd><p>해당 값이 undefined 일 경우 <strong>&quot;재직 중&quot;</strong> 뱃지가 추가로 나타난다.</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="list" class="tsd-anchor"></a>
-					<h3>list</h3>
-					<div class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">:</span> <a href="iexperience.item.html" class="tsd-signature-type">Item</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="skillkeywords" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> skill<wbr>Keywords</h3>
+					<div class="tsd-signature tsd-kind-icon">skill<wbr>Keywords<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in experience/IExperience.ts:13</li>
+							<li>Defined in experience/IExperience.ts:61</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<a href="#experience-데이터-목록" id="experience-데이터-목록" style="color: inherit; text-decoration: none;">
-								<h3>Experience 데이터 목록</h3>
+							<a href="#직장경험의-키워드" id="직장경험의-키워드" style="color: inherit; text-decoration: none;">
+								<h3>(직장)경험의 키워드</h3>
+							</a>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>description</dt>
+							<dd><p>undefined 가 아닐 경우 해당 경험 하단에 <strong>Skill Keywords</strong> 목록이 추가된다.</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="startedat" class="tsd-anchor"></a>
+					<h3>started<wbr>At</h3>
+					<div class="tsd-signature tsd-kind-icon">started<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in experience/IExperience.ts:37</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<a href="#직장경험-시작-일" id="직장경험-시작-일" style="color: inherit; text-decoration: none;">
+								<h3>(직장)경험 시작 일</h3>
+							</a>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>format</dt>
+							<dd><p>YYYY-MM</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>&quot;2018-02&quot;</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="title" class="tsd-anchor"></a>
+					<h3>title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in experience/IExperience.ts:28</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<a href="#직장역할-명-or-subtitle" id="직장역할-명-or-subtitle" style="color: inherit; text-decoration: none;">
+								<h3>(직장)역할 명 (or Subtitle)</h3>
 							</a>
 						</div>
 					</div>
@@ -224,27 +268,33 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="iexperience.item.html" class="tsd-kind-icon">Item</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="iexperience.payload.html" class="tsd-kind-icon">Payload</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="iexperience.payload.html" class="tsd-kind-icon">Payload</a>
+						<a href="iexperience.position.html" class="tsd-kind-icon">Position</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="iexperience.payload.html#disable" class="tsd-kind-icon">disable</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="iexperience.position.html#descriptions" class="tsd-kind-icon">descriptions</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iexperience.payload.html#disabletotalperiod" class="tsd-kind-icon">disable<wbr>Total<wbr>Period</a>
+								<a href="iexperience.position.html#endedat" class="tsd-kind-icon">ended<wbr>At</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iexperience.payload.html#list" class="tsd-kind-icon">list</a>
+								<a href="iexperience.position.html#skillkeywords" class="tsd-kind-icon">skill<wbr>Keywords</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="iexperience.position.html#startedat" class="tsd-kind-icon">started<wbr>At</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="iexperience.position.html#title" class="tsd-kind-icon">title</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="iexperience.position.html" class="tsd-kind-icon">Position</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

@@ -82,11 +82,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.item.html#descriptions" class="tsd-kind-icon">descriptions</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.item.html#endedat" class="tsd-kind-icon">ended<wbr>At</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.item.html#position" class="tsd-kind-icon">position</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.item.html#skillkeywords" class="tsd-kind-icon">skill<wbr>Keywords</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.item.html#startedat" class="tsd-kind-icon">started<wbr>At</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.item.html#positions" class="tsd-kind-icon">positions</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iexperience.item.html#title" class="tsd-kind-icon">title</a></li>
 							</ul>
 						</section>
@@ -96,62 +92,9 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="descriptions" class="tsd-anchor"></a>
-					<h3>descriptions</h3>
-					<div class="tsd-signature tsd-kind-icon">descriptions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in experience/IExperience.ts:49</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<a href="#직장경험-설명" id="직장경험-설명" style="color: inherit; text-decoration: none;">
-								<h3>(직장)경험 설명</h3>
-							</a>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>description</dt>
-							<dd><p>하나의 <code>string</code> 요소가 <code>&lt;ul&gt;</code> 태그 안의 <code>&lt;li&gt;</code> 가 된다.</p>
-							</dd>
-							<dt>todo</dt>
-							<dd><p><code>IRow.Description[]</code> 으로 변경</p>
-							</dd>
-						</dl>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="endedat" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ended<wbr>At</h3>
-					<div class="tsd-signature tsd-kind-icon">ended<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in experience/IExperience.ts:41</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<a href="#직장경험-종료-일" id="직장경험-종료-일" style="color: inherit; text-decoration: none;">
-								<h3>(직장)경험 종료 일</h3>
-							</a>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>format</dt>
-							<dd><p>YYYY-MM</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>&quot;2021-02&quot;</p>
-							</dd>
-							<dt>description</dt>
-							<dd><p>해당 값이 undefined 일 경우 <strong>&quot;재직 중&quot;</strong> 뱃지가 추가로 나타난다.</p>
-							</dd>
-						</dl>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="position" class="tsd-anchor"></a>
-					<h3>position</h3>
-					<div class="tsd-signature tsd-kind-icon">position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="positions" class="tsd-anchor"></a>
+					<h3>positions</h3>
+					<div class="tsd-signature tsd-kind-icon">positions<span class="tsd-signature-symbol">:</span> <a href="iexperience.position.html" class="tsd-signature-type">Position</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in experience/IExperience.ts:23</li>
@@ -159,57 +102,10 @@
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<a href="#직장역할-명-or-subtitle" id="직장역할-명-or-subtitle" style="color: inherit; text-decoration: none;">
-								<h3>(직장)역할 명 (or Subtitle)</h3>
+							<a href="#직장수행한-직위직책-포지션-정보" id="직장수행한-직위직책-포지션-정보" style="color: inherit; text-decoration: none;">
+								<h3>(직장)수행한 직위/직책 포지션 정보</h3>
 							</a>
 						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="skillkeywords" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> skill<wbr>Keywords</h3>
-					<div class="tsd-signature tsd-kind-icon">skill<wbr>Keywords<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in experience/IExperience.ts:56</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<a href="#직장경험의-키워드" id="직장경험의-키워드" style="color: inherit; text-decoration: none;">
-								<h3>(직장)경험의 키워드</h3>
-							</a>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>description</dt>
-							<dd><p>undefined 가 아닐 경우 해당 경험 하단에 <strong>Skill Keywords</strong> 목록이 추가된다.</p>
-							</dd>
-						</dl>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="startedat" class="tsd-anchor"></a>
-					<h3>started<wbr>At</h3>
-					<div class="tsd-signature tsd-kind-icon">started<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in experience/IExperience.ts:32</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<a href="#직장경험-시작-일" id="직장경험-시작-일" style="color: inherit; text-decoration: none;">
-								<h3>(직장)경험 시작 일</h3>
-							</a>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>format</dt>
-							<dd><p>YYYY-MM</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>&quot;2018-02&quot;</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -289,19 +185,7 @@
 						<a href="iexperience.item.html" class="tsd-kind-icon">Item</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iexperience.item.html#descriptions" class="tsd-kind-icon">descriptions</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iexperience.item.html#endedat" class="tsd-kind-icon">ended<wbr>At</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iexperience.item.html#position" class="tsd-kind-icon">position</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iexperience.item.html#skillkeywords" class="tsd-kind-icon">skill<wbr>Keywords</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iexperience.item.html#startedat" class="tsd-kind-icon">started<wbr>At</a>
+								<a href="iexperience.item.html#positions" class="tsd-kind-icon">positions</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="iexperience.item.html#title" class="tsd-kind-icon">title</a>
@@ -312,6 +196,9 @@
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="iexperience.payload.html" class="tsd-kind-icon">Payload</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="iexperience.position.html" class="tsd-kind-icon">Position</a>
 					</li>
 				</ul>
 			</nav>

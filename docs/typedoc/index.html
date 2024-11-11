@@ -97,9 +97,9 @@
 					<h2>Requirements</h2>
 				</a>
 				<ul>
-					<li>Node.js &lt; 18<ul>
-							<li>현재 Node.js 18 이상 버전에서 <code>npm run dev</code> 실행 시 <code>ERR_OSSL_EVP_UNSUPPORTED</code> 이슈가 있습니다.</li>
-							<li><code>.nvmrc</code> 에 기재된 Node.js 버전 사용을 권고합니다.</li>
+					<li>Node.js &gt; 18<ul>
+							<li>Node.js 18 버전 이상부터 발생하는 <code>ERR_OSSL_EVP_UNSUPPORTED</code> 이슈를 회피하기 위해 <code>NODE_OPTIONS=--openssl-legacy-provider</code> 옵션이 적용되어 있습니다.</li>
+							<li>가급적 Node.js 버전 18 이상에서 테스트하기를 권장하며 가급적 <code>.nvmrc</code> 에 기재된 Node.js 버전 사용을 권고합니다.</li>
 						</ul>
 					</li>
 				</ul>
@@ -291,6 +291,10 @@ npm install
 					<li>Section 의 순서는 어떻게 조절하나요?<ul>
 							<li>현재는 <code>pages/index.tsx</code> 에서 직접 렌더링 순서를 변경하는 수 밖에 없습니다.</li>
 							<li>데이터나 <code>_global</code> payload 로 핸들링하는 방법을 고민 중입니다.</li>
+						</ul>
+					</li>
+					<li>index.html 에서 이미지, CSS가 404 발생하는 경우<ul>
+							<li><a href="https://github.com/uyu423/resume-nextjs/issues/37">https://github.com/uyu423/resume-nextjs/issues/37</a> 참고</li>
 						</ul>
 					</li>
 				</ul>
