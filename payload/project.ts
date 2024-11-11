@@ -1,6 +1,7 @@
 import { IProject } from '../component/project/IProject';
 
 const project: IProject.Payload = {
+  sectionId: 'project',
   disable: false,
   list: [
     {
