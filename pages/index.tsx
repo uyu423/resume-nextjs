@@ -5,7 +5,6 @@ import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 import { Education } from '../component/education';
 import { Etc } from '../component/etc';
-import { Experience } from '../component/experience';
 import { Footer } from '../component/footer';
 import { Introduce } from '../component/introduce';
 import { Profile } from '../component/profile';
@@ -26,7 +25,6 @@ function Yosume() {
         <Profile.Component payload={Payload.profile} />
         <Introduce.Component payload={Payload.introduce} />
         <Skill.Component payload={Payload.skill} />
-        <Experience.Component payload={Payload.experience} />
         <Project.Component payload={Payload.project} />
         <Education.Component payload={Payload.education} />
         <Etc.Component payload={Payload.etc} />

@@ -5,11 +5,12 @@ const experience: IExperience.Payload = {
   disableTotalPeriod: false,
   list: [
     {
-      title: 'Linux Foundation',
+      title: '온라인 수업 강의 보조',
       positions: [
         {
-          title: 'System Engineer',
-          startedAt: '1996-05',
+          title: 'AI이해및활용 조교',
+          startedAt: '2024-03',
+          endedAt: '2025-06',
           descriptions: [
             'Steering Kernel patching and updates for various distributions',
             'Automating deployment and integration processes for Linux servers',
@@ -19,7 +20,7 @@ const experience: IExperience.Payload = {
           skillKeywords: ['C', 'Linux', 'Kernel', 'Security', 'Automation'],
         },
         {
-          title: 'System Engineer Intern',
+          title: '오픈소스SW 조교',
           startedAt: '1996-02',
           endedAt: '1996-05',
           descriptions: [
@@ -32,18 +33,15 @@ const experience: IExperience.Payload = {
       ],
     },
     {
-      title: 'Open Source Community',
+      title: '사회리더대학생멘토링',
       positions: [
         {
-          title: 'System Advocate and Developer',
-          startedAt: '2010-06',
-          endedAt: '2018-01',
+          title: '리더십 분야',
+          startedAt: '2025-03',
+          endedAt: '2025-11',
           descriptions: [
-            'Promoted the use and development of Linux globally.',
-            'Developed automated scripts to streamline system configuration.',
-            'Facilitated live patching systems, reducing downtime.',
+            '사회리더 대학생 멘토링은 대기업 CEO와 석학, 사회 각 분야의 리더 등 다양한 성공경험과 전문지식을 겸비한 사회지도층 멘토의 지혜를 대학생 멘티에게 전달하여 리더십과 섬김 정신을 함양한 인재로 육성하는 프로그램이다.',
           ],
-          skillKeywords: ['Open Source', 'Linux', 'AWS', 'RDBMS'],
         },
       ],
     },
