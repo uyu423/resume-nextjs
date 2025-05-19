@@ -32,7 +32,7 @@ const profile: IProfile.Payload = {
   ],
   notice: {
     title:
-      "The content below is all fictitious and is just a sample from 'https://github.com/uyu423/resume-nextjs'.",
+      "test.",
     icon: faBell,
   },
 };
