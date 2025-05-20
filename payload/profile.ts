@@ -1,9 +1,10 @@
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
+//import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { IProfile } from '../component/profile/IProfile';
 import image from '../asset/Me.jpg';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const profile: IProfile.Payload = {
   disable: false,
@@ -11,13 +12,13 @@ const profile: IProfile.Payload = {
   // image: 'https://resume.yowu.dev/static/image/profile_2019.png',
   image,
   name: {
-    title: 'Tux Linux Penguin',
-    small: '(Tux)',
+    title: '배아현',
+    small: '(BaeAHyun)',
   },
   contact: [
     {
-      title: 'tux@linux.org',
-      link: 'mailto:tux@linux.org',
+      title: 'qodkgus0104@gmail.com',
+      link: 'qodkgus0104@gmail.com',
       icon: faEnvelope,
     },
     {
@@ -26,13 +27,13 @@ const profile: IProfile.Payload = {
       badge: true,
     },
     {
-      link: 'https://github.com/uyu423/resume-nextjs',
+      link: 'https://github.com/BaeAhyun',
       icon: faGithub,
     },
-    {
-      link: 'https://www.facebook.com/groups/ubuntu.ko',
-      icon: faFacebook,
-    },
+    //{
+      //link: 'none',
+      //icon: faFacebook,
+    //},
   ],
   notice: {
     title:
