@@ -1,10 +1,10 @@
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-//import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
+// import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { faBell } from '@fortawesome/free-regular-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { IProfile } from '../component/profile/IProfile';
 import image from '../asset/Me.jpg';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const profile: IProfile.Payload = {
   disable: false,
@@ -30,10 +30,10 @@ const profile: IProfile.Payload = {
       link: 'https://github.com/BaeAhyun',
       icon: faGithub,
     },
-    //{
-      //link: 'none',
-      //icon: faFacebook,
-    //},
+    // {
+    // link: 'none',
+    // icon: faFacebook,
+    // },
   ],
   notice: {
     title:
