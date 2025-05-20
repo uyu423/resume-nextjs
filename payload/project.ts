@@ -4,38 +4,18 @@ const project: IProject.Payload = {
   disable: false,
   list: [
     {
-      title: 'Linux Kernel Optimization Project',
-      startedAt: '2020-06',
-      where: 'Linux Foundation',
+      title: '동아리 모바일 게임 프로젝트',
+      startedAt: '2025-04',
+      where: 'PLAYER',
       descriptions: [
         {
-          content:
-            'Initiated and lead a collaborative project aimed at optimizing the Linux Kernel for various hardware architectures.',
+          content: '프로젝트 기획 및 설계',
         },
         {
-          content:
-            'Achieved significant improvements in system performance and resource management.',
-          weight: 'MEDIUM',
-          descriptions: [
-            { content: '30% improvement in system resource efficiency' },
-            { content: 'Job Scheduler Refactor and Optimization' },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Global Linux Bootcamp',
-      startedAt: '2017-05',
-      endedAt: '2019-12',
-      where: 'Open Source Community',
-      descriptions: [
-        {
-          content:
-            'Organized and conducted training bootcamps focusing on Linux system engineering skills.',
+          content: '프로젝트 관리 및 협업',
         },
         {
-          content:
-            'Successfully trained over 5,000 participants in system administration and security. ',
+          content: '프로젝트 문서 작성',
         },
       ],
     },

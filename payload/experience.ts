@@ -4,49 +4,22 @@ const experience: IExperience.Payload = {
   disable: false,
   disableTotalPeriod: false,
   list: [
-    {
-      title: 'Linux Foundation',
+    /* {
+      title: '동아리 모바일 게임 프로젝트',
       positions: [
         {
           title: 'System Engineer',
-          startedAt: '1996-05',
+          startedAt: '2025-04',
           descriptions: [
-            'Steering Kernel patching and updates for various distributions',
-            'Automating deployment and integration processes for Linux servers',
-            'Spearheading initiatives to enhance Linux kernel security',
-            'Collaborating with global developers to coordinate code contributions',
+            '프로젝트 기획 및 설계',
+            '프로젝트 관리 및 협업',
+            '프로젝트 문서 작성'
           ],
-          skillKeywords: ['C', 'Linux', 'Kernel', 'Security', 'Automation'],
+          skillKeywords: ['C#', 'Unity'],
         },
-        {
-          title: 'System Engineer Intern',
-          startedAt: '1996-02',
-          endedAt: '1996-05',
-          descriptions: [
-            'Assisted senior engineers in maintaining and updating kernel patches for Linux distributions',
-            'Supported deployment and integration tasks for Linux server environments',
-            'Conducted research on Linux kernel security practices and presented findings to the team',
-          ],
-          skillKeywords: ['C', 'Linux', 'Kernel', 'Support', 'Research'],
-        },
+        
       ],
-    },
-    {
-      title: 'Open Source Community',
-      positions: [
-        {
-          title: 'System Advocate and Developer',
-          startedAt: '2010-06',
-          endedAt: '2018-01',
-          descriptions: [
-            'Promoted the use and development of Linux globally.',
-            'Developed automated scripts to streamline system configuration.',
-            'Facilitated live patching systems, reducing downtime.',
-          ],
-          skillKeywords: ['Open Source', 'Linux', 'AWS', 'RDBMS'],
-        },
-      ],
-    },
+    }, */
   ],
 };
 
