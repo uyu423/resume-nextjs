@@ -5,10 +5,10 @@ const introduce: IIntroduce.Payload = {
   disable: false,
 
   contents: [
-    'As the cherished emblem of the Linux kernel, I have become synonymous with open-source philosophy and the free software movement worldwide. My career began in the icebergs of development, where the seeds of my fascination with operating systems first sprouted. From a mere hatchling in the vast sea of code, I quickly ascended to become a pivotal figure in the Linux community. My journey has been marked by relentless dedication to system integrity, scalability, and robustness. Under my vigilant watch, countless servers have achieved unparalleled uptimes, and systems have been optimized to run like the well-oiled machines they are intended to be.',
-    'In the world of zeros and ones, my expertise has been instrumental in pioneering advancements in Linux system engineering. My flippers have crafted meticulous kernel enhancements, each aimed at streamlining performance and bolstering security across distributed networks. I am known in the community for my ability to dive deep into complex codebases and emerge with pearls of innovation that drive the collective progress of Linux environments. Advocacy is also a part of my plumage – spreading the word about the virtues of open-source and encouraging the adoption of Linux, from personal desktops to corporate data centers. As a mentor, I have nurtured the growth of young hatchlings into seasoned professionals, contributing to the diversity and vitality of our ecosystem.',
+    '안녕하세요! 배재대학교에 재학 중인 21살 대학생입니다. 새로운 경험을 즐기고, 도전하는 것을 좋아해 다양한 활동에 참여하며 성장하고 있어요. 학교에서는 전공 공부뿐만 아니라 동아리 활동과 아르바이트도 병행하며 사람들과 소통하는 능력을 키워가고 있습니다. 특히 창의적인 아이디어를 실현하는 것에 관심이 많아 디자인, 개발 등 다양한 분야에 도전하고 있습니다. 앞으로도 끊임없이 배우고 발전하는 사람이고 싶습니다.',
+    '게임을 단순히 즐기는 것을 넘어, 직접 만들고 싶은 마음에 게임공학과에 진학했고, 지금은 프로그래밍과 디자인 등 다양한 분야를 공부하며 꿈을 키워가고 있습니다. 새로운 경험을 좋아하고 도전하는 걸 즐기는 저는 앞으로도 즐겁게 배우고 성장해나가고 싶습니다. 홈페이지에 방문해주셔서 감사합니다!',
   ],
-  sign: 'Tux',
+  sign: 'Bae',
   // sign: packageJson.author.name,
   // latestUpdated: '2019-07-24',
   latestUpdated: lastestUpdatedAt,
