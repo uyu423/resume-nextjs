@@ -99,7 +99,7 @@ const project: IProject.Payload = {
     },
     {
       title: '인삼잎 계폐를 조절할 수 있는 생육장치에 대한 연구',
-      startedAt: '2018-18',
+      startedAt: '2018-05',
       where: '대전교육과학연구원',
       descriptions: [
         {
