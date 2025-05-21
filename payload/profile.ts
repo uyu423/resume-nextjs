@@ -3,7 +3,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { IProfile } from '../component/profile/IProfile';
-import image from '../asset/sample_tux.png';
+import image from '../asset/profile.jpg';
 
 const profile: IProfile.Payload = {
   disable: false,
@@ -31,8 +31,7 @@ const profile: IProfile.Payload = {
     },
   ],
   notice: {
-    title:
-      "빠른 답신이 필요한 경우 전화 또는 문자, 그 외 사항은 메일로 연락 바랍니다.",
+    title: '빠른 답신이 필요한 경우 전화 또는 문자, 그 외 사항은 메일로 연락 바랍니다.',
     icon: faBell,
   },
 };
