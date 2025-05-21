@@ -4,46 +4,34 @@ const experience: IExperience.Payload = {
   disable: false,
   disableTotalPeriod: false,
   list: [
+    // {
+    //  title: 'Linux Foundation',
+    //  positions: [
+    //    {
+    //      title: 'System Engineer',
+    //      startedAt: '1996-05',
+    //      descriptions: [
+    //        'Steering Kernel patching and updates for various distributions',
+    //       'Automating deployment and integration processes for Linux servers',
+    //        'Spearheading initiatives to enhance Linux kernel security',
+    //        'Collaborating with global developers to coordinate code contributions',
+    //      ],
+    //      skillKeywords: ['C', 'Linux', 'Kernel', 'Security', 'Automation'],
+    //    },
+    //  ],
+    // },
     {
-      title: 'Linux Foundation',
+      title: '(주)투비유니콘',
       positions: [
         {
-          title: 'System Engineer',
-          startedAt: '1996-05',
+          title: '웹사이트 관리자',
+          startedAt: '2023-01',
+          endedAt: '2025-08',
           descriptions: [
-            'Steering Kernel patching and updates for various distributions',
-            'Automating deployment and integration processes for Linux servers',
-            'Spearheading initiatives to enhance Linux kernel security',
-            'Collaborating with global developers to coordinate code contributions',
+            '스쿨로직 홈페이지의 이슈 업데이트',
+            '뉴스래터 콘텐츠 제작 및 디자인, 발송 업무',
           ],
-          skillKeywords: ['C', 'Linux', 'Kernel', 'Security', 'Automation'],
-        },
-        {
-          title: 'System Engineer Intern',
-          startedAt: '1996-02',
-          endedAt: '1996-05',
-          descriptions: [
-            'Assisted senior engineers in maintaining and updating kernel patches for Linux distributions',
-            'Supported deployment and integration tasks for Linux server environments',
-            'Conducted research on Linux kernel security practices and presented findings to the team',
-          ],
-          skillKeywords: ['C', 'Linux', 'Kernel', 'Support', 'Research'],
-        },
-      ],
-    },
-    {
-      title: 'Open Source Community',
-      positions: [
-        {
-          title: 'System Advocate and Developer',
-          startedAt: '2010-06',
-          endedAt: '2018-01',
-          descriptions: [
-            'Promoted the use and development of Linux globally.',
-            'Developed automated scripts to streamline system configuration.',
-            'Facilitated live patching systems, reducing downtime.',
-          ],
-          skillKeywords: ['Open Source', 'Linux', 'AWS', 'RDBMS'],
+          skillKeywords: ['phpstorm', 'JAVA', 'HTML', 'PhotoShop'],
         },
       ],
     },
