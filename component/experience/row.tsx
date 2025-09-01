@@ -1,8 +1,8 @@
 import { Badge, Col, Row } from 'reactstrap';
 
 import { DateTime } from 'luxon';
-import { PropsWithChildren } from 'react';
 import { IExperience } from './IExperience';
+import { PropsWithChildren } from 'react';
 import { Style } from '../common/Style';
 import Util from '../common/Util';
 
@@ -110,6 +110,11 @@ function createOverallWorkingPeriod(positions: PositionWithDates[]) {
   const startedAt = positions[positions.length - 1].startedAtDate;
   const isCurrentlyEmployed = positions.some((position) => position.isCurrent);
 
+  // 재직 중일 때는 종료일 없이 표시
+  if (isCurrentlyEmployed) {
+    return `${startedAt.toFormat(DATE_FORMAT)} ~`;
+  }
+
   function hasEndedAtDate(
     position: PositionWithDates,
   ): position is PositionWithDates & { endedAtDate: DateTime } {
@@ -119,9 +124,7 @@ function createOverallWorkingPeriod(positions: PositionWithDates[]) {
   const endedAtDates = positions.filter(hasEndedAtDate).map((position) => position.endedAtDate);
 
   let endedAt: DateTime;
-  if (isCurrentlyEmployed) {
-    endedAt = DateTime.local();
-  } else if (endedAtDates.length > 0) {
+  if (endedAtDates.length > 0) {
     endedAt = DateTime.max(...endedAtDates);
   } else {
     endedAt = DateTime.local();
