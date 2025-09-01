@@ -1,8 +1,8 @@
 import { Badge, Col, Row } from 'reactstrap';
 
 import { DateTime } from 'luxon';
-import { IExperience } from './IExperience';
 import { PropsWithChildren } from 'react';
+import { IExperience } from './IExperience';
 import { Style } from '../common/Style';
 import Util from '../common/Util';
 
