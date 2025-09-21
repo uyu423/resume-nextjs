@@ -1,6 +1,7 @@
 import { IArticle } from '../component/article/IArticle';
 
 const article: IArticle.Payload = {
+  sectionId: 'article',
   disable: false,
 
   list: [

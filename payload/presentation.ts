@@ -1,6 +1,7 @@
 import { IPresentation } from '../component/presentation/IPresentation';
 
 const presentation: IPresentation.Payload = {
+  sectionId: 'presentation',
   disable: false,
 
   list: [

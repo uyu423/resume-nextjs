@@ -163,6 +163,7 @@ const misc: ISkill.Skill = {
 };
 
 const skill: ISkill.Payload = {
+  sectionId: 'skill',
   disable: false,
   skills: [
     programmingLanguages,

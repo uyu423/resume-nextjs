@@ -1,6 +1,7 @@
 import { IEducation } from '../component/education/IEducation';
 
 const education: IEducation.Payload = {
+  sectionId: 'education',
   disable: false,
 
   list: [

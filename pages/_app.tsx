@@ -1,5 +1,6 @@
 import 'jquery/dist/jquery.slim';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../style/global.css';
 
 import { NextComponentType } from 'next';
 

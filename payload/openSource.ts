@@ -1,6 +1,7 @@
 import { IOpenSource } from '../component/openSource/IOpenSource';
 
 const openSource: IOpenSource.Payload = {
+  sectionId: 'openSource',
   disable: false,
   list: [
     {
