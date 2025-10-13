@@ -6,18 +6,18 @@ import { IProfile } from '../component/profile/IProfile';
 import image from '../asset/sample_tux.png';
 
 const profile: IProfile.Payload = {
-  disable: false,
+  disable: true,
 
   // image: 'https://resume.yowu.dev/static/image/profile_2019.png',
   image,
   name: {
-    title: 'Tux Linux Penguin',
-    small: '(Tux)',
+    title: '최민선',
+    small: '',
   },
   contact: [
     {
-      title: 'tux@linux.org',
-      link: 'mailto:tux@linux.org',
+      title: 'cminseon0603@gmail.com',
+      link: '',
       icon: faEnvelope,
     },
     {
@@ -25,14 +25,14 @@ const profile: IProfile.Payload = {
       icon: faPhone,
       badge: true,
     },
-    {
-      link: 'https://github.com/uyu423/resume-nextjs',
-      icon: faGithub,
-    },
-    {
-      link: 'https://www.facebook.com/groups/ubuntu.ko',
-      icon: faFacebook,
-    },
+    // {
+    //   link: 'https://github.com/uyu423/resume-nextjs',
+    //   icon: faGithub,
+    // },
+    // {
+    //   link: 'https://www.facebook.com/groups/ubuntu.ko',
+    //   icon: faFacebook,
+    // },
   ],
   notice: {
     title:
