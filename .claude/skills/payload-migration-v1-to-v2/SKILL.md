@@ -137,6 +137,18 @@ descriptions: [{ content: '문장1' }, { content: '문장2' }];
 
 즉시 사용하지 않으면 `disable: true`로 둔다.
 
+### `docs/` 추적 해제
+
+v1에서는 `docs/`가 git에 tracked 상태였으나, v2에서는 `.gitignore`에 포함되어 있고 CI가 `gh-pages` 브랜치로 배포한다. 이미 tracked된 파일은 `.gitignore`만으로 무시되지 않으므로 명시적으로 해제한다.
+
+```bash
+git ls-files docs/
+# 출력이 있으면 추적 해제 필요
+git rm --cached -r docs/
+```
+
+추적 해제 후 로컬 `docs/` 파일은 삭제되지 않는다.
+
 ## 필수 검증
 
 다음 검증을 모두 통과해야 완료로 간주한다.
@@ -145,12 +157,14 @@ descriptions: [{ content: '문장1' }, { content: '문장2' }];
 2. `payload/skill.ts`에 `tooltip`이 없는가?
 3. `payload/index.ts`에 `highlight`, `testimonial` import/등록이 모두 있는가?
 4. `payload/_global.ts`가 v2 스타일(문자열 이미지 경로 + seo 구조)인가?
-5. lint/build가 성공하는가?
+5. `docs/`가 git에서 untracked 상태인가?
+6. lint/build가 성공하는가?
 
 실행 명령:
 
 ```bash
 git add payload
+git ls-files docs/  # 출력 없어야 통과
 npm run lint
 npm run build
 ```
@@ -175,6 +189,7 @@ npm run build
   - descriptions object-array 변환: pass/fail
   - skill tooltip 제거: pass/fail
   - highlight/testimonial 등록: pass/fail
+  - docs/ untracked: pass/fail
   - npm run lint: pass/fail
   - npm run build: pass/fail
 - Risk/Follow-up: 추가 수동 확인 필요 항목
