@@ -11,8 +11,8 @@ const profile: IProfile.Payload = {
   // image: 'https://resume.yowu.dev/static/image/profile_2019.png',
   image,
   name: {
-    title: 'Tux Linux Penguin',
-    small: '(Tux)',
+    title: '전자공학과 손성우',
+    small: '(전대호는 내 소유물이다.)',
   },
   contact: [
     {
