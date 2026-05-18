@@ -3,7 +3,7 @@ import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { IProfile } from '../component/profile/IProfile';
-import image from '../asset/sample_tux.png';
+import image from '../asset/스티치.jpg';
 
 const profile: IProfile.Payload = {
   disable: false,
@@ -16,8 +16,8 @@ const profile: IProfile.Payload = {
   },
   contact: [
     {
-      title: 'tux@linux.org',
-      link: 'mailto:tux@linux.org',
+      title: '2190002@pcu.ac.kr',
+      link: 'mailto:2190002@pcu.ac.kr',
       icon: faEnvelope,
     },
     {
@@ -26,7 +26,7 @@ const profile: IProfile.Payload = {
       badge: true,
     },
     {
-      link: 'https://github.com/uyu423/resume-nextjs',
+      link: 'https://2190002-source.github.io/resume-nextjs/',
       icon: faGithub,
     },
     {
@@ -36,7 +36,7 @@ const profile: IProfile.Payload = {
   ],
   notice: {
     title:
-      "The content below is all fictitious and is just a sample from 'https://github.com/uyu423/resume-nextjs'.",
+      "The content below is all fictitious and is just a sample from 'https://2190002-source.github.io/resume-nextjs/'.",
     icon: faBell,
   },
 };
