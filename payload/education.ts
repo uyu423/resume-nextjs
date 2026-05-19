@@ -1,7 +1,7 @@
 import { IEducation } from '../component/education/IEducation';
 
 const education: IEducation.Payload = {
-  disable: false,
+  disable: true,
 
   list: [
     {
