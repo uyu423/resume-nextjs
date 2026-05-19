@@ -4,136 +4,38 @@ const programmingLanguages: ISkill.Skill = {
   category: 'Programming Languages',
   items: [
     {
-      title: 'C',
+      title: '무현코드',
       level: 3,
-    },
-    {
-      title: 'Shell Scripting',
-      level: 3,
-    },
-    {
-      title: 'Python',
-      level: 3,
-    },
-    {
-      title: 'Perl',
-      level: 2,
-    },
-    {
-      title: 'Golang',
-      level: 2,
-    },
-    {
-      title: 'Rust',
-      level: 1,
     },
   ],
 };
 
 const kernelDevelopment: ISkill.Skill = {
   category: 'Kernel Development',
-  items: [
-    {
-      title: 'Kernel Programming',
-      level: 3,
-    },
-    {
-      title: 'GNU Debugger',
-      level: 3,
-    },
-    {
-      title: 'Memory Management',
-      level: 2,
-    },
-    {
-      title: 'System Call Interface',
-      level: 2,
-    },
-  ],
+  items: [],
 };
 
 const virtualization: ISkill.Skill = {
   category: 'Virtualization',
   items: [
     {
-      title: 'Docker',
+      title: '응디시티',
       level: 3,
-    },
-    {
-      title: 'KVM',
-      level: 3,
-    },
-    {
-      title: 'Xen',
-      level: 2,
-    },
-    {
-      title: 'VirtualBox',
-      level: 2,
-    },
-    {
-      title: 'VMware ESXi',
-      level: 1,
     },
   ],
 };
 
 const automation: ISkill.Skill = {
   category: 'Automation',
-  items: [
-    {
-      title: 'Ansible',
-      level: 3,
-    },
-    {
-      title: 'Puppet',
-      level: 3,
-    },
-    {
-      title: 'Chef',
-      level: 2,
-    },
-    {
-      title: 'Jenkins',
-      level: 2,
-    },
-    {
-      title: 'CI/CD Pipelines',
-      level: 1,
-    },
-    {
-      title: 'Infrastructure as Code',
-      level: 1,
-    },
-  ],
+  items: [],
 };
 
 const networkSecurity: ISkill.Skill = {
   category: 'Network Security',
   items: [
     {
-      title: 'iptables',
+      title: '노무현이 주도하는 질서',
       level: 3,
-    },
-    {
-      title: 'OpenSSH',
-      level: 3,
-    },
-    {
-      title: 'OpenSSL',
-      level: 2,
-    },
-    {
-      title: 'NACLs',
-      level: 2,
-    },
-    {
-      title: 'VPN Technologies',
-      level: 2,
-    },
-    {
-      title: 'Intrusion Detection',
-      level: 1,
     },
   ],
 };
@@ -142,22 +44,19 @@ const misc: ISkill.Skill = {
   category: 'Misc',
   items: [
     {
-      title: 'Coffee Brewing',
+      title: '화악 올라갔다',
     },
     {
-      title: "Rubik's Cube Solving",
+      title: '파악 내려갔다',
     },
     {
-      title: 'Table Tennis',
+      title: '오늘은 제가 쏩니다',
     },
     {
-      title: 'Guitar Playing',
+      title: '흔들으라 이기야',
     },
     {
-      title: 'Joke Telling',
-    },
-    {
-      title: 'Duct Tape Crafting',
+      title: '피아제 시계',
     },
   ],
 };
@@ -172,7 +71,7 @@ const skill: ISkill.Payload = {
     networkSecurity,
     misc,
   ],
-  tooltip: '1: 기초 수준\n2: 취미 개발 수준\n3: Production 개발 가능 수준',
+  tooltip: '1: 湲곗큹 �닔以�\n2: 痍⑤�� 媛쒕컻 �닔以�\n3: Production 媛쒕컻 媛��뒫 �닔以�',
 };
 
 export default skill;

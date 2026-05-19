@@ -4,38 +4,27 @@ const project: IProject.Payload = {
   disable: false,
   list: [
     {
-      title: 'Linux Kernel Optimization Project',
-      startedAt: '2020-06',
-      where: 'Linux Foundation',
+      title: '盧드 JS 개발',
+      startedAt: '2026-05',
+      where: '예아',
       descriptions: [
         {
-          content:
-            'Initiated and lead a collaborative project aimed at optimizing the Linux Kernel for various hardware architectures.',
+          content: '스멜!',
         },
         {
-          content:
-            'Achieved significant improvements in system performance and resource management.',
+          content: '야~ 기분좋다!!',
           weight: 'MEDIUM',
-          descriptions: [
-            { content: '30% improvement in system resource efficiency' },
-            { content: 'Job Scheduler Refactor and Optimization' },
-          ],
+          descriptions: [],
         },
       ],
     },
     {
-      title: 'Global Linux Bootcamp',
-      startedAt: '2017-05',
-      endedAt: '2019-12',
-      where: 'Open Source Community',
+      title: '운지',
+      startedAt: '2009-05',
+      where: '부엉이 바위',
       descriptions: [
         {
-          content:
-            'Organized and conducted training bootcamps focusing on Linux system engineering skills.',
-        },
-        {
-          content:
-            'Successfully trained over 5,000 participants in system administration and security. ',
+          content: '국정원 지하 개발자가 되기 위하여',
         },
       ],
     },
