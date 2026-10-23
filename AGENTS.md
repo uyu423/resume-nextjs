@@ -15,6 +15,7 @@ Next.js 기반 정적 웹 이력서 생성기. `payload/` 디렉토리의 데이
 | `eslint.config.js` | ESLint flat config (TypeScript + Prettier, single quotes) |
 | `shellwork.js` | postbuild 스크립트 (`docs/.nojekyll` 생성, 조건부 `docs/CNAME` 생성) |
 | `.nvmrc` | Node.js 버전 지정 (24.13.0) |
+| `DESIGN_GUIDE.md` | 디자인 규칙 (색·글꼴·간격·컴포넌트). UI·스타일을 고치기 전에 읽는다 |
 
 ## Subdirectories
 
