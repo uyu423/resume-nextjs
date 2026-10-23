@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from '../common/useMediaQuery';
+import { resolveActiveId } from './resolveActiveId';
 
 interface NavItem {
   id: string;
@@ -11,6 +12,7 @@ export function FloatingNav() {
   const [activeId, setActiveId] = useState<string>('');
   const [visible, setVisible] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 992px)');
+  const clickedIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     const sections = document.querySelectorAll('section[aria-labelledby]');
@@ -39,34 +41,26 @@ export function FloatingNav() {
       .map((item) => document.getElementById(item.id))
       .filter((heading): heading is HTMLElement => !!heading);
 
-    const resolveActiveId = () => {
-      const activationTop = 24;
-      const passed: { id: string; top: number }[] = [];
-
-      headings.forEach((heading) => {
-        const top = heading.getBoundingClientRect().top;
-        if (top <= activationTop) {
-          passed.push({ id: heading.id, top });
-        }
-      });
-
-      if (passed.length > 0) {
-        passed.sort((a, b) => b.top - a.top);
-        return passed[0].id;
-      }
-
-      return headings[0]?.id || items[0].id;
-    };
-
     let rafId = 0;
     const updateActiveId = () => {
-      const id = resolveActiveId();
+      const isAtBottom =
+        Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight;
+      const id = resolveActiveId(
+        headings.map((heading) => ({ id: heading.id, top: heading.getBoundingClientRect().top })),
+        window.innerHeight,
+        isAtBottom,
+      );
       if (id) {
         setActiveId(id);
       }
     };
 
     const requestUpdate = () => {
+      // 메뉴 클릭으로 이동하는 동안에는 클릭한 섹션을 유지한다.
+      // 페이지 끝에 걸린 섹션은 위치만으로는 클릭한 섹션과 마지막 섹션을 구분할 수 없다.
+      if (clickedIdRef.current) {
+        return;
+      }
       if (rafId) {
         cancelAnimationFrame(rafId);
       }
@@ -76,8 +70,17 @@ export function FloatingNav() {
       });
     };
 
+    // 이동이 끝나거나 사용자가 직접 스크롤하면 다시 위치로 판단한다
+    const releaseClickedId = () => {
+      clickedIdRef.current = null;
+    };
+
     window.addEventListener('scroll', requestUpdate, { passive: true });
     window.addEventListener('resize', requestUpdate);
+    window.addEventListener('scrollend', releaseClickedId);
+    window.addEventListener('wheel', releaseClickedId, { passive: true });
+    window.addEventListener('touchmove', releaseClickedId, { passive: true });
+    window.addEventListener('keydown', releaseClickedId);
     requestUpdate();
 
     return () => {
@@ -86,6 +89,10 @@ export function FloatingNav() {
       }
       window.removeEventListener('scroll', requestUpdate);
       window.removeEventListener('resize', requestUpdate);
+      window.removeEventListener('scrollend', releaseClickedId);
+      window.removeEventListener('wheel', releaseClickedId);
+      window.removeEventListener('touchmove', releaseClickedId);
+      window.removeEventListener('keydown', releaseClickedId);
     };
   }, [isDesktop, items]);
 
@@ -99,6 +106,7 @@ export function FloatingNav() {
   const handleClick = (id: string) => {
     const heading = document.getElementById(id);
     if (heading) {
+      clickedIdRef.current = id;
       setActiveId(id);
       heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }

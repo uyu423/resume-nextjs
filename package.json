@@ -5,7 +5,7 @@
   "description": "Static HTML based RESUME made with next.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test \"component/**/*.test.ts\"",
     "dev": "cross-env DEBUG=yosume:* next",
     "build": "next build",
     "postbuild": "node shellwork.js",

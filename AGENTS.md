@@ -34,7 +34,8 @@ Next.js 기반 정적 웹 이력서 생성기. `payload/` 디렉토리의 데이
 ### Working In This Directory
 - `npm run build` → `docs/`에 static HTML 생성. `docs/`는 gitignored이며 CI가 `gh-pages`로 배포
 - `npm run typecheck && npm run lint` — 코드 변경 후 반드시 실행
-- 테스트 스위트 없음. typecheck + lint + build 성공이 품질 기준
+- `npm test` — `node:test` 단위 테스트 (`component/**/*.test.ts`, 의존성 없이 Node 24 타입 스트리핑으로 실행)
+- typecheck + lint + test + build 성공이 품질 기준
 
 ### Data Flow
 ```

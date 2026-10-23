@@ -11,6 +11,7 @@
 | File | Description |
 |------|-------------|
 | `FloatingNav.tsx` | 플로팅 네비게이션 컴포넌트 (smooth scroll, 섹션 링크) |
+| `resolveActiveId.ts` | 스크롤 위치로 활성 섹션을 고르는 순수 함수 (`resolveActiveId.test.ts`로 검증) |
 
 ## Dependencies
 
