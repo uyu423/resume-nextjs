@@ -108,7 +108,8 @@ export function FloatingNav() {
     if (heading) {
       clickedIdRef.current = id;
       setActiveId(id);
-      heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      heading.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
     }
   };
 
@@ -119,7 +120,8 @@ export function FloatingNav() {
       className="floating-nav"
       style={{
         opacity: visible ? 1 : 0,
-        pointerEvents: visible ? 'auto' : 'none',
+        // opacity만 0이면 Tab 포커스가 보이지 않는 버튼에 머문다
+        visibility: visible ? 'visible' : 'hidden',
       }}
       aria-label="Section navigation"
     >
