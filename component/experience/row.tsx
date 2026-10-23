@@ -127,7 +127,7 @@ function createSkillKeywords(skillKeywords?: string[]) {
       <strong>Skill Keywords</strong>
       <div className="experience-keywords">
         {skillKeywords.map((keyword, index) => (
-          <span key={index.toString()} className="tag tag--accent">
+          <span key={index.toString()} className="tag tag--muted">
             {keyword}
           </span>
         ))}

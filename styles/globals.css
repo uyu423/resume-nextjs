@@ -73,7 +73,7 @@
   --color-bg-card: #111b31;
   --color-border: #20304d;
   --color-border-light: #172640;
-  --color-rule: #dbeafe;
+  --color-rule: #3b4f72;
   --color-success: #22c55e;
 }
 
@@ -117,7 +117,8 @@ p {
 a {
   color: var(--color-accent);
   text-decoration: underline;
-  text-decoration-color: transparent;
+  /* 다크 모드에서 링크·본문 색 대비가 3:1 미만이라 색만으로 구분되지 않도록 옅은 밑줄을 둔다 */
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
   text-underline-offset: 2px;
   transition:
     color var(--transition-fast),
@@ -170,7 +171,7 @@ img {
 @media screen and (max-width: 767px) {
   .split-row {
     grid-template-columns: 1fr;
-    gap: var(--space-md);
+    gap: var(--space-sm);
   }
   .split-left {
     text-align: left;
@@ -219,7 +220,7 @@ img {
 }
 @media screen and (max-width: 767px) {
   .stats-grid {
-    grid-template-columns: 1fr;
+    gap: var(--space-sm);
   }
 }
 
@@ -265,7 +266,9 @@ img {
   font-weight: var(--fw-semibold);
   font-size: 0.9rem;
   text-decoration: none;
-  transition: all var(--transition-base);
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base);
   cursor: pointer;
   border: 1px solid var(--color-accent);
 }
@@ -461,7 +464,7 @@ img {
 
 .profile-stat-label {
   font-size: var(--text-xs);
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -506,6 +509,7 @@ img {
 
 .experience-period {
   color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
 }
 
 .experience-company-heading {
@@ -544,9 +548,12 @@ img {
 .experience-position-period {
   color: var(--color-text-muted);
   font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
 }
 
+/* Pretendard에는 이탤릭이 없어 브라우저가 한글을 강제로 기울이므로 정체로 둔다 */
 .experience-position-title {
+  font-style: normal;
   color: var(--color-text-secondary);
 }
 
@@ -556,6 +563,10 @@ img {
 
 .experience-description-list li {
   margin-bottom: 3px;
+}
+
+.experience-description-list li:has(> .experience-keywords) {
+  list-style: none;
 }
 
 .skill-category {
@@ -677,7 +688,9 @@ img {
   width: 100%;
   max-width: 170px;
   line-height: 1.45;
-  transition: all var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .floating-nav-button:hover,
@@ -705,7 +718,9 @@ img {
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  transition: all var(--transition-base);
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base);
   z-index: 99;
 }
 
@@ -729,7 +744,9 @@ img {
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  transition: all var(--transition-base);
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base);
   z-index: 99;
 }
 
@@ -750,13 +767,19 @@ img {
 
   .profile-contacts {
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
+    gap: var(--space-xs) var(--space-md);
   }
 
   .profile-stats-band {
     padding: var(--space-md);
+  }
+
+  .profile-stat-value {
+    font-size: 1.4rem;
+  }
+
+  .profile-stat-label {
+    letter-spacing: 0.04em;
   }
 
   .profile-image {
@@ -764,14 +787,20 @@ img {
     height: 148px;
   }
 
-  .notice-banner {
-    text-align: center;
+  /* 1열로 접히면 날짜가 앞 항목보다 자기 직책에 가깝게 붙도록 위 여백을 넓힌다 */
+  .experience-position-row:has(.experience-position-period) {
+    margin-top: var(--space-lg);
+  }
+
+  /* 고정 버튼이 본문을 가리는 면적을 줄인다. 모바일 인쇄는 브라우저 공유 메뉴로 충분하다 */
+  .print-button {
+    display: none;
   }
 }
 
 /* === Footer === */
 .resume-footer {
-  background-color: var(--color-bg-subtle);
+  border-top: 1px solid var(--color-border);
   margin-top: var(--section-gap);
   padding: var(--space-lg) 0;
   text-align: center;
@@ -834,7 +863,9 @@ a:focus-visible {
   font-family: var(--font-body);
   font-size: var(--text-sm);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .show-more-toggle:hover {
