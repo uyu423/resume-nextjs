@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon';
 import { ExperienceItem, ExperiencePosition } from '../../types/experience';
 import Util from '../common/Util';
+import { useNow } from '../common/useNow';
 
 type PositionWithDates = ExperiencePosition & {
   startedAtDate: DateTime;
@@ -15,6 +16,7 @@ function hasEndedAtDate(
 }
 
 export default function ExperienceRow({ item, index }: { item: ExperienceItem; index: number }) {
+  const now = useNow();
   const positionsWithDates: PositionWithDates[] = item.positions.map((position) => ({
     ...position,
     startedAtDate: DateTime.fromFormat(position.startedAt, Util.LUXON_DATE_FORMAT.YYYY_LL),
@@ -38,7 +40,7 @@ export default function ExperienceRow({ item, index }: { item: ExperienceItem; i
 
   let maxEndedAt: DateTime<boolean>;
   if (isCurrentlyEmployed) {
-    maxEndedAt = DateTime.local();
+    maxEndedAt = now;
   } else if (endedAtDates.length > 0) {
     maxEndedAt = DateTime.max(...endedAtDates) ?? DateTime.local();
   } else {

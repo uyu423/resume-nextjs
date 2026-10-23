@@ -4,6 +4,7 @@ import Util from '../common/Util';
 import { IntroducePayload } from '../../types/introduce';
 import { Section } from '../common/Section';
 import { SectionAnimate } from '../common/SectionAnimate';
+import { useNow } from '../common/useNow';
 
 type Payload = IntroducePayload;
 
@@ -16,13 +17,12 @@ export function IntroduceSection({ payload }: { payload: Payload }) {
 }
 
 function IntroduceContent({ payload }: { payload: Payload }) {
+  const now = useNow();
   const latestUpdated = DateTime.fromFormat(
     payload.latestUpdated,
     Util.LUXON_DATE_FORMAT.YYYY_LL_DD,
   );
-  const latestUpdatedByNow = Math.floor(
-    DateTime.local().diff(latestUpdated).milliseconds / 1000 / 60 / 60 / 24,
-  );
+  const latestUpdatedByNow = Math.floor(now.diff(latestUpdated).milliseconds / 1000 / 60 / 60 / 24);
 
   const sectionId = 'section-introduce';
 

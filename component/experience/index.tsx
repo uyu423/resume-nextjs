@@ -6,6 +6,7 @@ import ExperienceRow from './row';
 import { ExperiencePayload, ExperienceItem } from '../../types/experience';
 import { Section } from '../common/Section';
 import Util from '../common/Util';
+import { useNow } from '../common/useNow';
 
 type Payload = ExperiencePayload;
 
@@ -18,6 +19,7 @@ export function ExperienceSection({ payload }: { payload: Payload }) {
 }
 
 function ExperienceContent({ payload }: { payload: Payload }) {
+  const now = useNow();
   return (
     <CommonSection title="EXPERIENCE">
       {!payload.disableTotalPeriod && (
@@ -26,7 +28,9 @@ function ExperienceContent({ payload }: { payload: Payload }) {
             <span className="experience-summary-label">TOTAL</span>
           </div>
           <div className="experience-total-period">
-            <span className="tag tag--muted">{getFormattingExperienceTotalDuration(payload)}</span>
+            <span className="tag tag--muted">
+              {getFormattingExperienceTotalDuration(payload, now)}
+            </span>
           </div>
         </div>
       )}
@@ -39,16 +43,14 @@ function ExperienceContent({ payload }: { payload: Payload }) {
   );
 }
 
-function getFormattingExperienceTotalDuration(payload: ExperiencePayload) {
+function getFormattingExperienceTotalDuration(payload: ExperiencePayload, now: DateTime) {
   // 회사(item) 단위로 전체 재직 기간을 계산하여 포지션 간 중복을 방지
   const durations = payload.list.map((item: ExperienceItem) => {
     const startDates = item.positions.map((p) =>
       DateTime.fromFormat(p.startedAt, Util.LUXON_DATE_FORMAT.YYYY_LL),
     );
     const endDates = item.positions.map((p) =>
-      p.endedAt
-        ? DateTime.fromFormat(p.endedAt, Util.LUXON_DATE_FORMAT.YYYY_LL)
-        : DateTime.local(),
+      p.endedAt ? DateTime.fromFormat(p.endedAt, Util.LUXON_DATE_FORMAT.YYYY_LL) : now,
     );
     const minStart = DateTime.min(...startDates) ?? DateTime.local();
     const maxEnd = DateTime.max(...endDates) ?? DateTime.local();
