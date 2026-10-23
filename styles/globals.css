@@ -31,7 +31,6 @@
   --color-text-muted: #64748b;
   --color-bg: #f8fafc;
   --color-bg-subtle: #eef3f9;
-  --color-bg-highlight: #eaf1ff;
   --color-bg-card: #ffffff;
   --color-border: #d7e1ef;
   --color-border-light: #e6edf8;
@@ -55,7 +54,6 @@
   --transition-fast: 150ms ease-out;
   --transition-base: 200ms ease-out;
   --transition-slow: 300ms ease-out;
-  --transition-enter: 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Dark mode tokens (Blue) */
@@ -70,7 +68,6 @@
   --color-text-muted: #6b7f9a;
   --color-bg: #070d1a;
   --color-bg-subtle: #0f1729;
-  --color-bg-highlight: #0f1d3a;
   --color-bg-card: #111b31;
   --color-border: #20304d;
   --color-border-light: #172640;
@@ -244,12 +241,6 @@ img {
   line-height: 1.6;
 }
 
-.tag--accent {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  background: var(--color-accent-subtle);
-}
-
 .tag--success {
   border-color: var(--color-success);
   color: var(--color-success);
@@ -302,7 +293,7 @@ img {
   font-weight: var(--fw-semibold);
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-primary);
   padding-bottom: var(--space-sm);
   border-bottom: 1px solid var(--color-rule);
   margin-bottom: var(--subsection-gap);
@@ -318,12 +309,15 @@ img {
 /* === Editorial Section === */
 .editorial-section {
   margin-top: var(--section-gap);
+  /* 화면 밖 섹션은 가까워질 때까지 렌더링을 건너뛴다 */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 /* === Pullquote (Testimonial) === */
 .pullquote {
   position: relative;
-  border-left: 2px solid var(--color-accent);
+  border-left: 2px solid var(--color-text-muted);
   padding: var(--space-lg) var(--space-lg) var(--space-lg) var(--space-xl);
   background: var(--color-bg-card);
   border-radius: 0 2px 2px 0;
@@ -333,7 +327,7 @@ img {
   content: '\201C';
   font-family: Georgia, serif;
   font-size: 4rem;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
   opacity: 0.2;
   position: absolute;
   top: 0;
@@ -349,15 +343,6 @@ img {
   padding: var(--space-lg);
   height: 100%;
   box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
-  transition:
-    border-color var(--transition-base),
-    transform var(--transition-base),
-    box-shadow var(--transition-base);
-}
-.highlight-card:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.12);
 }
 
 .highlight-title {
@@ -466,20 +451,18 @@ img {
   font-family: var(--font-display);
   font-size: clamp(1.65rem, 3vw, 2rem);
   font-weight: var(--fw-medium);
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin-bottom: var(--space-xs);
 }
 
 .profile-stat-label {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--color-text-secondary);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .notice-banner {
   border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid var(--color-text-muted);
   background-color: var(--color-bg-card);
   border-radius: 10px;
   padding: var(--space-md);
@@ -490,7 +473,7 @@ img {
 
 .notice-icon {
   margin-right: var(--space-sm);
-  color: var(--color-accent);
+  color: var(--color-text-muted);
 }
 
 .experience-total-period {
@@ -504,15 +487,6 @@ img {
 
 .experience-item > .split-row:first-of-type {
   align-items: baseline;
-}
-
-.experience-summary-label {
-  display: inline-block;
-  font-size: var(--text-xs);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  line-height: 1.6;
 }
 
 .experience-period {
@@ -533,7 +507,7 @@ img {
   height: 8px;
   border-radius: 50%;
   margin-right: var(--space-sm);
-  background: var(--color-accent);
+  background: var(--color-text-muted);
 }
 
 .experience-dot.is-current {
@@ -595,7 +569,7 @@ img {
 }
 
 .skill-dot--filled {
-  background: #3b82f6;
+  background: var(--color-text-secondary);
 }
 
 .skill-dot--empty {
@@ -640,10 +614,6 @@ img {
   .skill-chip-title {
     font-size: 0.82rem;
   }
-}
-
-[data-theme='dark'] .skill-dot--filled {
-  background: #3b82f6;
 }
 
 [data-theme='dark'] .skill-dot--empty {
@@ -788,10 +758,6 @@ img {
     font-size: 1.4rem;
   }
 
-  .profile-stat-label {
-    letter-spacing: 0.04em;
-  }
-
   .profile-image {
     width: 148px;
     height: 148px;
@@ -909,9 +875,7 @@ a:focus-visible {
   }
 
   /* 3. 애니메이션/전환 제거 + content-visibility 강제 표시 */
-  .section-animate {
-    opacity: 1 !important;
-    transform: none !important;
+  .editorial-section {
     content-visibility: visible !important;
     contain-intrinsic-size: auto !important;
   }
@@ -1035,7 +999,7 @@ a:focus-visible {
 
   /* 12. 다크모드에서도 skill-dot 라이트 색상 복원 */
   html[data-theme='dark'] .skill-dot--filled {
-    background: #3b82f6 !important;
+    background: #334155 !important;
   }
   html[data-theme='dark'] .skill-dot--empty {
     background: #cbd5e1 !important;
@@ -1049,14 +1013,9 @@ a:focus-visible {
     print-color-adjust: exact !important;
   }
 
-  /* 14. accent 색상 유지 */
+  /* 14. 섹션 제목 구분선은 다크 모드에서 인쇄해도 진하게 유지 */
   .section-heading {
-    color: #2563eb !important;
     border-bottom-color: #0f172a !important;
-  }
-  .tag--accent {
-    color: #2563eb !important;
-    border-color: #2563eb !important;
   }
 
   /* 15. Skill chip / tag 축소 */
@@ -1077,19 +1036,4 @@ a:focus-visible {
     font-size: 8pt !important;
   }
 
-}
-
-/* Below-fold sections: skip rendering until near viewport */
-.section-animate {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 500px;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .section-animate {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
 }

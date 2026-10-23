@@ -64,7 +64,7 @@ export default function ExperienceRow({ item, index }: { item: ExperienceItem; i
             {item.title}{' '}
             <span className="experience-meta">
               {isCurrentlyEmployed && <span className="tag tag--success">재직 중</span>}
-              <span className="tag tag--accent">
+              <span className="tag tag--muted">
                 {Util.getFormattingDuration(minStartedAt, maxEndedAt)}
               </span>
             </span>
@@ -126,7 +126,6 @@ function createSkillKeywords(skillKeywords?: string[]) {
   }
   return (
     <li>
-      <strong>Skill Keywords</strong>
       <div className="experience-keywords">
         {skillKeywords.map((keyword, index) => (
           <span key={index.toString()} className="tag tag--muted">

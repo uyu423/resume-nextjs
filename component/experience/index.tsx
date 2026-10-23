@@ -24,9 +24,7 @@ function ExperienceContent({ payload }: { payload: Payload }) {
     <CommonSection title="EXPERIENCE">
       {!payload.disableTotalPeriod && (
         <div className="split-row experience-summary-row">
-          <div className="split-left">
-            <span className="experience-summary-label">TOTAL</span>
-          </div>
+          <div className="split-left" />
           <div className="experience-total-period">
             <span className="tag tag--muted">
               {getFormattingExperienceTotalDuration(payload, now)}

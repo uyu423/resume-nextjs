@@ -32,7 +32,7 @@ function HighlightCard({ item }: { item: HighlightItem }) {
       {item.keywords && item.keywords.length > 0 && (
         <div className="highlight-keywords">
           {item.keywords.map((keyword, idx) => (
-            <span key={idx.toString()} className="tag tag--accent">
+            <span key={idx.toString()} className="tag tag--muted">
               {keyword}
             </span>
           ))}
