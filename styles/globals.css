@@ -550,9 +550,7 @@ img {
   font-variant-numeric: tabular-nums;
 }
 
-/* Pretendard에는 이탤릭이 없어 브라우저가 한글을 강제로 기울이므로 정체로 둔다 */
 .experience-position-title {
-  font-style: normal;
   color: var(--color-text-secondary);
 }
 

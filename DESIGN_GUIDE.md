@@ -39,7 +39,7 @@ resume-nextjs v2 화면을 고칠 때 지키는 규칙이다. 스타일은 모�
 | `--font-signature` | Parisienne | 소개 섹션 서명 한 곳 |
 
 - 크기는 `--text-xs`(12px)부터 `--text-3xl`까지 토큰으로만 쓴다. 본문은 16px, 줄 높이 1.72다.
-- **한글에 이탤릭을 쓰지 않는다.** Pretendard에는 이탤릭이 없어서 브라우저가 글자를 억지로 기울인다. 구분은 색과 굵기로 한다.
+- **이탤릭은 직책·부제목 줄(`.experience-position-title`, `<i>`)에만 쓴다.** Pretendard와 Sora에는 이탤릭 파일이 없어 브라우저가 합성한 이탤릭(synthetic oblique)으로 그려진다. 나무위키 등 Pretendard를 쓰는 사이트도 같은 방식이다. 합성 이탤릭은 한글이 비스듬히 밀려 보이므로 다른 요소로 넓히지 않는다. `font-synthesis`를 끄면 이 줄도 정체로 바뀐다.
 - 날짜와 숫자는 `font-variant-numeric: tabular-nums`로 폭을 맞춘다.
 - 대문자에 자간을 넓히는 처리는 섹션 제목(`.section-heading`)에만 쓴다.
 - 제목은 `text-wrap: balance`, 문단과 목록은 `text-wrap: pretty`를 쓴다 (이미 전역 적용).
