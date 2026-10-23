@@ -63,7 +63,7 @@ export default function ExperienceRow({ item, index }: { item: ExperienceItem; i
             <span className={`experience-dot ${isCurrentlyEmployed ? 'is-current' : ''}`} />
             {item.title}{' '}
             <span className="experience-meta">
-              {isCurrentlyEmployed && <span className="tag tag--success">재직 중</span>}
+              {isCurrentlyEmployed && <span className="tag tag--current">재직 중</span>}
               <span className="tag tag--muted">
                 {Util.getFormattingDuration(minStartedAt, maxEndedAt)}
               </span>

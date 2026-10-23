@@ -35,7 +35,6 @@
   --color-border: #d7e1ef;
   --color-border-light: #e6edf8;
   --color-rule: #0f172a;
-  --color-success: #15803d;
 
   /* Spacing */
   --space-xs: 4px;
@@ -60,7 +59,8 @@
 [data-theme='dark'] {
   color-scheme: dark;
   --color-primary: #dbeafe;
-  --color-accent: #60a5fa;
+  /* 링크는 밑줄 없이 색으로만 구분하므로 본문 대비 3:1, 배경 대비 4.5:1 이상을 함께 맞춘다 (3.01 / 5.28) */
+  --color-accent: #3b82f6;
   --color-accent-hover: #93c5fd;
   --color-accent-subtle: #0f1d3a;
   --color-text: #dbeafe;
@@ -72,7 +72,6 @@
   --color-border: #20304d;
   --color-border-light: #172640;
   --color-rule: #3b4f72;
-  --color-success: #22c55e;
 }
 
 /* === Base Reset === */
@@ -121,8 +120,7 @@ p {
 a {
   color: var(--color-accent);
   text-decoration: underline;
-  /* 다크 모드에서 링크·본문 색 대비가 3:1 미만이라 색만으로 구분되지 않도록 옅은 밑줄을 둔다 */
-  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-decoration-color: transparent;
   text-underline-offset: 2px;
   transition:
     color var(--transition-fast),
@@ -141,7 +139,7 @@ ul {
 hr {
   border: none;
   border-top: 1px solid var(--color-border);
-  margin: var(--subsection-gap) 0;
+  margin: var(--space-lg) 0;
 }
 
 img {
@@ -157,6 +155,10 @@ img {
 }
 
 @media screen and (max-width: 767px) {
+  :root {
+    --section-gap: 64px;
+  }
+
   .resume-container {
     padding: 0 var(--space-md);
   }
@@ -241,9 +243,9 @@ img {
   line-height: 1.6;
 }
 
-.tag--success {
-  border-color: var(--color-success);
-  color: var(--color-success);
+.tag--current {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
   background: transparent;
 }
 
@@ -308,6 +310,7 @@ img {
 
 /* === Editorial Section === */
 .editorial-section {
+  position: relative;
   margin-top: var(--section-gap);
   /* 화면 밖 섹션은 가까워질 때까지 렌더링을 건너뛴다 */
   content-visibility: auto;
@@ -476,13 +479,20 @@ img {
   color: var(--color-text-muted);
 }
 
-.experience-total-period {
-  margin-bottom: 0;
+/* 하이라이트가 프로필 바로 뒤에 오면 프로필 요약의 일부로 붙인다 */
+.profile-section + .highlight-section {
+  margin-top: var(--space-lg);
 }
 
-.experience-summary-row {
-  margin-bottom: var(--space-lg);
-  align-items: baseline;
+/* 섹션 전체 요약이므로 섹션 제목 줄 오른쪽 끝에 둔다 */
+.experience-total {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: var(--text-sm);
+  line-height: calc(0.95rem * 1.3);
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
 }
 
 .experience-item > .split-row:first-of-type {
@@ -507,11 +517,13 @@ img {
   height: 8px;
   border-radius: 50%;
   margin-right: var(--space-sm);
-  background: var(--color-text-muted);
+  border: 1.5px solid var(--color-text-muted);
 }
 
+/* 색만으로 구분하지 않도록 현재는 채운 점, 과거는 빈 원으로 모양도 다르게 한다 */
 .experience-dot.is-current {
-  background: var(--color-success);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .experience-meta {
@@ -525,6 +537,11 @@ img {
 
 .experience-position-row {
   margin-top: var(--space-sm);
+}
+
+/* 같은 회사의 다음 직책은 bullet 줄 간격보다 확실히 떨어뜨린다 */
+.experience-position-row + .experience-position-row {
+  margin-top: var(--space-lg);
 }
 
 .experience-position-period {
@@ -761,11 +778,6 @@ img {
   .profile-image {
     width: 148px;
     height: 148px;
-  }
-
-  /* 1열로 접히면 날짜가 앞 항목보다 자기 직책에 가깝게 붙도록 위 여백을 넓힌다 */
-  .experience-position-row:has(.experience-position-period) {
-    margin-top: var(--space-lg);
   }
 
   /* 고정 버튼이 본문을 가리는 면적을 줄인다. 모바일 인쇄는 브라우저 공유 메뉴로 충분하다 */
