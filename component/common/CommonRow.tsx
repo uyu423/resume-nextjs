@@ -1,5 +1,6 @@
 import { RowPayload } from '../../types/row';
 import { CommonDescription } from './CommonDescription';
+import { SkillKeywords } from './SkillKeywords';
 
 export function CommonRows({ index, payload }: { payload: RowPayload; index: number }) {
   const { left, right } = payload;
@@ -21,7 +22,9 @@ export function CommonRows({ index, payload }: { payload: RowPayload; index: num
             <CommonDescription
               descriptions={right.descriptions}
               option={{ padding: isNeedDescriptionPadding }}
-            />
+            >
+              <SkillKeywords keywords={right.skillKeywords} />
+            </CommonDescription>
           ) : (
             ''
           )}

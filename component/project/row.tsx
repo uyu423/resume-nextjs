@@ -27,6 +27,7 @@ function serialize(payload: ProjectItem): RowPayload {
       title: payload.title,
       subTitle: payload.where,
       descriptions: payload.descriptions,
+      skillKeywords: payload.skillKeywords,
     },
   };
 }

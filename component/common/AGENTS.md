@@ -13,7 +13,8 @@
 | `Section.tsx` | `disable`/`printExclude` 플래그 기반 조건부 렌더링 래퍼 |
 | `CommonSection.tsx` | 섹션 제목 포함 표준 섹션 래퍼 (aria-labelledby) |
 | `CommonRow.tsx` | 2열 레이아웃 (좌: 제목, 우: 설명) |
-| `CommonDescription.tsx` | 재귀적 중첩 bullet list 렌더러 |
+| `CommonDescription.tsx` | 재귀적 중첩 bullet list 렌더러. `children`은 목록 끝 `<li>`로 붙는다 |
+| `SkillKeywords.tsx` | 키워드 태그 줄 (`<li>`). Experience position과 Project가 함께 쓴다 |
 | `Style.ts` | CSS-in-JS 스타일 상수 (color, font, layout) |
 | `Util.ts` | luxon 기반 날짜 포맷팅, 기간 계산, debug 채널 (`yosume:*`) |
 | `useMediaQuery.ts` | 반응형 미디어 쿼리 hook |

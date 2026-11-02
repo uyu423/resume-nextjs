@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
 
 import { HrefTargetBlank } from '.';
 import { RowDescription, FontWeightType } from '../../types/row';
@@ -7,9 +7,12 @@ import { RowDescription, FontWeightType } from '../../types/row';
 export function CommonDescription({
   descriptions,
   option,
+  children,
 }: {
   descriptions: RowDescription[];
   option?: { padding?: boolean };
+  /** 목록 끝에 붙는 `<li>` (예: 키워드 태그 줄) */
+  children?: ReactNode;
 }) {
   return (
     <>
@@ -27,6 +30,7 @@ export function CommonDescription({
               </React.Fragment>
             );
           })}
+          {children}
         </ul>
       ) : (
         ''

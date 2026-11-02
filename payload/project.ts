@@ -22,6 +22,7 @@ const project: ProjectPayload = {
           ],
         },
       ],
+      skillKeywords: ['C', 'Linux Kernel', 'Performance Tuning'],
     },
     {
       title: 'Global Linux Bootcamp',

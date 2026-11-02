@@ -562,7 +562,7 @@ img {
   margin-bottom: 3px;
 }
 
-.experience-description-list li:has(> .experience-keywords) {
+li:has(> .experience-keywords) {
   list-style: none;
 }
 

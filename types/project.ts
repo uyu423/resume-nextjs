@@ -41,4 +41,11 @@ export interface ProjectItem {
    * ### 프로젝트 설명
    */
   descriptions: RowDescription[];
+
+  /**
+   * ### 프로젝트의 키워드
+   *
+   * @description undefined 가 아닐 경우 해당 프로젝트 설명 하단에 키워드 태그 목록이 추가된다.
+   */
+  skillKeywords?: string[];
 }

@@ -11,7 +11,7 @@
 | File | Description |
 |------|-------------|
 | `index.tsx` | 프로젝트 리스트 렌더링 |
-| `row.tsx` | 개별 프로젝트 (제목, 기간, 설명) |
+| `row.tsx` | 개별 프로젝트 (제목, 기간, 설명, 선택적 `skillKeywords` 태그) |
 
 ## Dependencies
 

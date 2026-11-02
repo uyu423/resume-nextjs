@@ -12,6 +12,7 @@ export interface RowRight {
   title?: string;
   subTitle?: string;
   descriptions?: RowDescription[];
+  skillKeywords?: string[];
 }
 
 /**

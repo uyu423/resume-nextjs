@@ -2,6 +2,7 @@ import { DateTime } from 'luxon';
 import { ExperienceItem, ExperiencePosition } from '../../types/experience';
 import Util from '../common/Util';
 import { useNow } from '../common/useNow';
+import { SkillKeywords } from '../common/SkillKeywords';
 
 type PositionWithDates = ExperiencePosition & {
   startedAtDate: DateTime;
@@ -89,7 +90,7 @@ export default function ExperienceRow({ item, index }: { item: ExperienceItem; i
               {position.descriptions.map((description, descIndex) => (
                 <li key={descIndex.toString()}>{description.content}</li>
               ))}
-              {createSkillKeywords(position.skillKeywords)}
+              <SkillKeywords keywords={position.skillKeywords} />
             </ul>
           </div>
         </div>
@@ -118,23 +119,6 @@ function createOverallWorkingPeriod(positions: PositionWithDates[]) {
   }
 
   return `${startedAt.toFormat(DATE_FORMAT)} ~ ${endedAt.toFormat(DATE_FORMAT)}`;
-}
-
-function createSkillKeywords(skillKeywords?: string[]) {
-  if (!skillKeywords) {
-    return null;
-  }
-  return (
-    <li>
-      <div className="experience-keywords">
-        {skillKeywords.map((keyword, index) => (
-          <span key={index.toString()} className="tag tag--muted">
-            {keyword}
-          </span>
-        ))}
-      </div>
-    </li>
-  );
 }
 
 function createWorkingPeriod(startedAt: DateTime, endedAt?: DateTime | null) {

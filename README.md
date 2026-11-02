@@ -146,6 +146,7 @@ npm run dev
 #### Project
 
 - 수행 프로젝트에 대한 소개 영역
+- `skillKeywords?: string[]`를 넣으면 설명 아래에 키워드 태그가 붙는다 (Experience의 직책별 키워드와 같은 모양)
 - Type: [`ProjectPayload`](./types/project.ts)
 - Sample: [`payload/project.ts`](./payload/project.ts)
 
